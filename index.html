@@ -2095,24 +2095,24 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
 
   <!-- ===== ADMIN : HORAIRES ===== -->
   <div class="section" id="sec-admin-horaires">
-
-    <div class="s-header">Aujourd'hui — jeudi</div>
-    <div class="card"><div class="card-body open" style="padding-top:14px;">
-      <div class="info-row"><span class="info-label"><strong style="color:var(--text);">Julien</strong> · chef — journée + fermeture</span><span class="info-val"><span class="tag tag-green">9 h → 22 h 30</span></span></div>
-      <div class="info-row"><span class="info-label"><strong style="color:var(--text);">Élise</strong> · garde-manger — ouverture</span><span class="info-val"><span class="tag tag-green">8 h 30 → 16 h 30</span></span></div>
-      <div class="info-row"><span class="info-label"><strong style="color:var(--text);">Marco</strong> · chaud — double du jeudi</span><span class="info-val"><span class="tag tag-yellow">9 h-14 h · 17 h-23 h</span></span></div>
-      <div class="info-row"><span class="info-label"><strong style="color:var(--text);">Nadia</strong> · pâtisserie — production</span><span class="info-val"><span class="tag tag-green">9 h → 15 h</span></span></div>
-      <div class="info-row"><span class="info-label"><strong style="color:var(--text);">Olivier</strong> · direction — au plancher</span><span class="info-val"><span class="tag tag-green">dès 11 h</span></span></div>
+    <div class="mapaq-crit" style="background:rgba(232,80,10,.10);border-color:rgba(232,80,10,.35);">
+      <div class="mapaq-crit-title" style="color:var(--col-admin);">📅 Horaires — la brigade</div>
+      <div class="mapaq-crit-body" style="color:var(--text-sub);">Chaque poste est couvert, chaque quart est nommé.
+      La cuisine sait qui est là aujourd'hui, le gestionnaire voit la semaine complète et ce qu'elle coûte.</div>
+    </div>
+    <div id="hor-jour-admin"></div>
+    <div class="s-header">La semaine — mardi au samedi</div>
+    <div id="hor-sem-admin"></div>
+    <div class="card" style="margin-top:10px;"><div class="card-body open" style="padding-top:12px;">
+      <div style="font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--col-admin);margin-bottom:6px;">💰 Main-d'œuvre cuisine — semaine</div>
+      <div style="display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--text-sub);">
+        <span>Heures : <strong style="color:#fff;">254 h 30</strong></span>
+        <span>Coût : <strong class="me-tz" style="color:#fff;">4 454 $</strong></span>
+        <span>% des ventes : <strong class="me-tz" style="color:#F5B341;">37,1 %</strong></span>
+      </div>
+      <div style="font-size:11px;color:var(--muted);margin-top:7px;">Calculé automatiquement depuis la grille. Changez un quart, tout se recalcule.</div>
     </div></div>
 
-    <div class="s-header">Semaine type</div>
-    <div class="card"><div class="card-body open" style="padding-top:14px;">
-      <div class="info-row"><span class="info-label">Julien — chef</span><span class="info-val" style="font-size:11px;font-weight:700;color:var(--text-sub);">mardi → samedi</span></div>
-      <div class="info-row"><span class="info-label">Élise — garde-manger · ouvertures</span><span class="info-val" style="font-size:11px;font-weight:700;color:var(--text-sub);">mercredi → dimanche</span></div>
-      <div class="info-row"><span class="info-label">Marco — chaud · doubles jeu-ven</span><span class="info-val" style="font-size:11px;font-weight:700;color:var(--text-sub);">jeudi → lundi</span></div>
-      <div class="info-row"><span class="info-label">Nadia — pâtisserie · production</span><span class="info-val" style="font-size:11px;font-weight:700;color:var(--text-sub);">lun · jeu · ven</span></div>
-      <div style="font-size:11px;color:var(--text-sub);margin-top:10px;line-height:1.7;">Les remplacements et la paie se gèrent côté <strong>Gestionnaire</strong> à l'implantation — la cuisine voit toujours qui est là aujourd'hui.</div>
-    </div></div>
   </div>
 
   <div class="section" id="sec-cuisinier-contact">
@@ -2189,24 +2189,13 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
 
   <!-- ===== CUISINIER : HORAIRES ===== -->
   <div class="section" id="sec-cuisinier-horaires">
-
-    <div class="s-header">Aujourd'hui — jeudi</div>
-    <div class="card"><div class="card-body open" style="padding-top:14px;">
-      <div class="info-row"><span class="info-label"><strong style="color:var(--text);">Julien</strong> · chef — journée + fermeture</span><span class="info-val"><span class="tag tag-green">9 h → 22 h 30</span></span></div>
-      <div class="info-row"><span class="info-label"><strong style="color:var(--text);">Élise</strong> · garde-manger — ouverture</span><span class="info-val"><span class="tag tag-green">8 h 30 → 16 h 30</span></span></div>
-      <div class="info-row"><span class="info-label"><strong style="color:var(--text);">Marco</strong> · chaud — double du jeudi</span><span class="info-val"><span class="tag tag-yellow">9 h-14 h · 17 h-23 h</span></span></div>
-      <div class="info-row"><span class="info-label"><strong style="color:var(--text);">Nadia</strong> · pâtisserie — production</span><span class="info-val"><span class="tag tag-green">9 h → 15 h</span></span></div>
-      <div class="info-row"><span class="info-label"><strong style="color:var(--text);">Olivier</strong> · direction — au plancher</span><span class="info-val"><span class="tag tag-green">dès 11 h</span></span></div>
+    <div id="hor-jour-cui"></div>
+    <div class="s-header">La semaine — mardi au samedi</div>
+    <div id="hor-sem-cui"></div>
+    <div class="card" style="margin-top:10px;"><div class="card-body open" style="padding-top:12px;">
+      <div style="font-size:12px;color:var(--text-sub);line-height:1.55;">Les remplacements et la paie se gèrent côté <strong>Gestionnaire</strong> — la cuisine voit toujours qui est là aujourd'hui et qui rentre demain.</div>
     </div></div>
 
-    <div class="s-header">Semaine type</div>
-    <div class="card"><div class="card-body open" style="padding-top:14px;">
-      <div class="info-row"><span class="info-label">Julien — chef</span><span class="info-val" style="font-size:11px;font-weight:700;color:var(--text-sub);">mardi → samedi</span></div>
-      <div class="info-row"><span class="info-label">Élise — garde-manger · ouvertures</span><span class="info-val" style="font-size:11px;font-weight:700;color:var(--text-sub);">mercredi → dimanche</span></div>
-      <div class="info-row"><span class="info-label">Marco — chaud · doubles jeu-ven</span><span class="info-val" style="font-size:11px;font-weight:700;color:var(--text-sub);">jeudi → lundi</span></div>
-      <div class="info-row"><span class="info-label">Nadia — pâtisserie · production</span><span class="info-val" style="font-size:11px;font-weight:700;color:var(--text-sub);">lun · jeu · ven</span></div>
-      <div style="font-size:11px;color:var(--text-sub);margin-top:10px;line-height:1.7;">Les remplacements et la paie se gèrent côté <strong>Gestionnaire</strong> à l'implantation — la cuisine voit toujours qui est là aujourd'hui.</div>
-    </div></div>
     
   </div>
 
@@ -7356,6 +7345,103 @@ document.addEventListener('click', function(){ setTimeout(colorizeAll, 150); }, 
 }
 @media (min-width:1400px){ .section{max-width:980px;} }
 </style>
+
+
+<script id="sdc-horaires-js">
+/* ===== brigade et grille de la semaine ===== */
+const HOR_JOURS = ['Mar', 'Mer', 'Jeu', 'Ven', 'Sam'];
+const BRIGADE = [
+  {nom:'Julien Mercier', role:'Chef · passe & tickets', poste:'Passe', col:'#E8500A',
+   sem:['10h-20h30','10h-20h30','10h-20h30','10h-22h','15h-22h30'], tot:'51 h'},
+  {nom:'Élise Tanguay', role:'Garde-manger · ouverture', poste:'Garde-manger', col:'#3DD6AC',
+   sem:['8h30-16h30','8h30-16h30','8h30-16h30','8h30-16h30','9h-17h'], tot:'40 h'},
+  {nom:'Sofia Almeida', role:'Garde-manger · soir', poste:'Garde-manger', col:'#3DD6AC',
+   sem:['OFF','16h-22h30','16h-22h30','16h-23h','16h-23h'], tot:'27 h'},
+  {nom:'Marco Dieudonné', role:'Friture · chaud', poste:'Friture', col:'#F5B841',
+   sem:['11h-15h · 17h-22h','11h-15h · 17h-22h','OFF','11h-15h · 17h-22h30','17h-23h'], tot:'33 h 30'},
+  {nom:'Thomas Rivard', role:'Grillardin', poste:'Grillardin', col:'#FF7B5A',
+   sem:['OFF','16h-22h30','16h-22h30','15h-23h','15h-23h'], tot:'29 h'},
+  {nom:'Nadia Benali', role:'Pâtisserie · desserts', poste:'Pâtisserie', col:'#B49CF5',
+   sem:['9h-16h','9h-16h','9h-16h','9h-15h','OFF'], tot:'27 h'},
+  {nom:'Kevin Bouchard', role:'Plonge · soir', poste:'Plonge', col:'#5AA9E6',
+   sem:['17h-23h','17h-23h','17h-23h','17h-23h30','17h-23h30'], tot:'31 h'},
+  {nom:'J-S Caron', role:'Plonge · lunch (TP)', poste:'Plonge', col:'#5AA9E6',
+   sem:['11h-15h','OFF','11h-15h','11h-15h','11h-15h'], tot:'16 h'},
+];
+/* aujourd'hui = vendredi (colonne 3) — service lunch 11h-14h30, souper 17h-22h */
+const HOR_AUJ_IX = 3;
+function horJourHtml(accent){
+  var postes = {};
+  BRIGADE.forEach(function(p){
+    var q = p.sem[HOR_AUJ_IX];
+    if(!postes[p.poste]) postes[p.poste] = {col:p.col, gens:[]};
+    postes[p.poste].gens.push({nom:p.nom, role:p.role, q:q});
+  });
+  var enCuisine = BRIGADE.filter(function(p){ return p.sem[HOR_AUJ_IX] !== 'OFF'; }).length;
+  var h = '<div class="s-header">Aujourd\'hui — vendredi · <span style="color:' + accent + ';">' + enCuisine + ' en cuisine</span></div>';
+  Object.keys(postes).forEach(function(nomP){
+    var P = postes[nomP];
+    var actifs = P.gens.filter(function(g){ return g.q !== 'OFF'; });
+    h += '<div class="card" style="margin-bottom:8px;border-left:3px solid ' + P.col + ';"><div class="card-body open" style="padding-top:11px;padding-bottom:11px;">'
+      + '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:' + (actifs.length ? '8px' : '0') + ';">'
+      + '<span style="font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:' + P.col + ';">' + nomP + '</span>'
+      + '<span class="me-badge" style="color:' + P.col + ';background:' + P.col + '22;border:1px solid ' + P.col + '55;">' + (actifs.length || 'personne') + (actifs.length ? (actifs.length > 1 ? ' personnes' : ' personne') : '') + '</span></div>';
+    if (!actifs.length) h += '<div style="font-size:11.5px;color:var(--muted);">Poste couvert par la passe aujourd\'hui.</div>';
+    actifs.forEach(function(g){
+      h += '<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;padding:4px 0;">'
+        + '<div style="min-width:0;"><div style="font-size:13px;font-weight:700;color:#fff;">' + g.nom + '</div>'
+        + '<div style="font-size:10.5px;color:var(--muted);">' + g.role + '</div></div>'
+        + '<span class="tag tag-green" style="white-space:nowrap;">' + g.q + '</span></div>';
+    });
+    h += '</div></div>';
+  });
+  return h;
+}
+function horSemHtml(accent){
+  var h = '<div class="card"><div class="card-body open" style="padding:6px 4px 10px;">'
+    + '<div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">'
+    + '<table style="border-collapse:collapse;width:100%;min-width:640px;font-size:11px;">'
+    + '<thead><tr><th style="text-align:left;padding:8px 10px;position:sticky;left:0;background:var(--surface);z-index:2;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);">Brigade</th>';
+  HOR_JOURS.forEach(function(j, ix){
+    h += '<th style="padding:8px 6px;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:' + (ix === HOR_AUJ_IX ? accent : 'var(--muted)') + ';">' + j + (ix === HOR_AUJ_IX ? ' ●' : '') + '</th>';
+  });
+  h += '<th style="padding:8px 8px;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:right;">Total</th></tr></thead><tbody>';
+  BRIGADE.forEach(function(p){
+    h += '<tr style="border-top:1px solid rgba(255,255,255,.05);">'
+      + '<td style="padding:7px 10px;position:sticky;left:0;background:var(--surface);z-index:1;border-left:3px solid ' + p.col + ';min-width:150px;">'
+      + '<div style="font-size:12px;font-weight:700;color:#fff;white-space:nowrap;">' + p.nom + '</div>'
+      + '<div style="font-size:9.5px;color:var(--muted);white-space:nowrap;">' + p.role + '</div></td>';
+    p.sem.forEach(function(q, ix){
+      var off = q === 'OFF';
+      h += '<td style="padding:7px 6px;text-align:center;font-variant-numeric:tabular-nums;white-space:nowrap;'
+        + (ix === HOR_AUJ_IX ? 'background:rgba(255,255,255,.03);' : '')
+        + (off ? 'color:var(--muted2);font-weight:600;' : 'color:var(--text);font-weight:700;') + '">'
+        + (off ? '—' : q) + '</td>';
+    });
+    h += '<td style="padding:7px 8px;text-align:right;font-weight:900;color:' + p.col + ';white-space:nowrap;">' + p.tot + '</td></tr>';
+  });
+  h += '</tbody></table></div>'
+    + '<div style="display:flex;gap:12px;flex-wrap:wrap;padding:10px 8px 0;font-size:9.5px;font-weight:800;color:var(--text-sub);">'
+    + '<span><span style="color:#3DD6AC;">●</span> Garde-manger ×2</span>'
+    + '<span><span style="color:#F5B841;">●</span> Friture</span>'
+    + '<span><span style="color:#FF7B5A;">●</span> Grillardin</span>'
+    + '<span><span style="color:#E8500A;">●</span> Passe</span>'
+    + '<span><span style="color:#B49CF5;">●</span> Pâtisserie</span>'
+    + '<span><span style="color:#5AA9E6;">●</span> Plonge ×2</span>'
+    + '</div><div style="font-size:10px;color:var(--muted);padding:6px 8px 0;">Fermé dimanche et lundi · lunch 11 h - 14 h 30 · souper 17 h - 22 h</div></div></div>';
+  return h;
+}
+function buildHoraires(){
+  var ja = document.getElementById('hor-jour-admin'), jc = document.getElementById('hor-jour-cui');
+  var sa = document.getElementById('hor-sem-admin'), sc = document.getElementById('hor-sem-cui');
+  if (ja) ja.innerHTML = horJourHtml('var(--col-admin)');
+  if (jc) jc.innerHTML = horJourHtml('var(--col-cuisinier)');
+  if (sa) sa.innerHTML = horSemHtml('var(--col-admin)');
+  if (sc) sc.innerHTML = horSemHtml('var(--col-cuisinier)');
+  if (typeof sdcTease === 'function') sdcTease();
+}
+document.addEventListener('DOMContentLoaded', function(){ setTimeout(buildHoraires, 350); });
+</script>
 
 </body>
 </html>
