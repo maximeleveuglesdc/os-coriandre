@@ -7885,9 +7885,7 @@ document.addEventListener('DOMContentLoaded', function(){ setTimeout(buildHorair
     MENU_ENG.forEach(function(x){ x.mix = Math.round(x.mix * 2.18); });
   }
 
-  function v2Money(n){ return Number(n).toLocaleString('fr-CA',{minimumFractionDigits:2,maximumFractionDigits:2}) + ' 
-</html>
-; }
+  function v2Money(n){ return Number(n).toLocaleString('fr-CA',{minimumFractionDigits:2,maximumFractionDigits:2}) + ' ' + String.fromCharCode(36); }
   function v2Pct(n){ return (n>0?'+':'') + n.toFixed(1).replace('.',',') + ' %'; }
   function v2Norm(s){ return String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
 
@@ -7970,20 +7968,14 @@ document.addEventListener('DOMContentLoaded', function(){ setTimeout(buildHorair
 
   function buildV2PosFeed(){
     var f=document.getElementById('v2-pos-feed'); if(!f) return;
-    var rows=[];
+    var rows=[], dollar=String.fromCharCode(36);
     if(typeof MENU_ENG!=='undefined' && MENU_ENG.length){
       [0,3,7,10,13].forEach(function(ix,j){
         var x=MENU_ENG[ix%MENU_ENG.length];
-        rows.push({t:['21:42','21:39','21:36','21:31','21:28'][j],d:(x.id||'PLU')+' · '+x.nom,a:(x.prix||0).toFixed(2).replace('.',',')+' 
-</html>
-});
+        rows.push({t:['21:42','21:39','21:36','21:31','21:28'][j],d:(x.id||'PLU')+' · '+x.nom,a:(x.prix||0).toFixed(2).replace('.',',')+' '+dollar});
       });
     } else {
-      rows=[{t:'21:42',d:'PLU A14 · Flétan poêlé',a:'34,00 
-</html>
-},{t:'21:39',d:'PLU A12 · Keftas agneau',a:'27,00 
-</html>
-}];
+      rows=[{t:'21:42',d:'PLU A14 · Flétan poêlé',a:'34,00 '+dollar},{t:'21:39',d:'PLU A12 · Keftas agneau',a:'27,00 '+dollar}];
     }
     f.innerHTML=rows.map(function(x){return '<div class="v2-pos-event"><span class="t">'+x.t+'</span><span class="d">'+x.d+'</span><span class="a">'+x.a+'</span></div>';}).join('');
   }
@@ -8007,24 +7999,12 @@ document.addEventListener('DOMContentLoaded', function(){ setTimeout(buildHorair
       nums[6].textContent='6 744';
       nums[7].textContent='36,31';
     }
-    replaceExact(d,'Un point de food cost vaut 6 237 $ par année','Un point de food cost vaut 13 593 $ par année');
+    replaceExact(d,'Un point de food cost vaut 6 237','Un point de food cost vaut 13 593');
     replaceExact(d,'330','720');
     replaceExact(d,'656','1 432');
-    replaceExact(d,'8 898 
-</html>
-,'19 396 
-</html>
-);
-    replaceExact(d,'623 740 
-</html>
-,'1 359 280 
-</html>
-);
-    replaceExact(d,'161 033 
-</html>
-,'350 694 
-</html>
-);
+    replaceExact(d,'8 898','19 396');
+    replaceExact(d,'623 740','1 359 280');
+    replaceExact(d,'161 033','350 694');
   }
   function addDemoChip(){
     var right=document.querySelector('.topbar-right'); if(!right || document.getElementById('v2-demo-chip')) return;
