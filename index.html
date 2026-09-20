@@ -8196,5 +8196,219 @@ document.addEventListener('DOMContentLoaded', function(){ setTimeout(buildHorair
 })();
 </script>
 
+
+<style id="sdc-staff-cards-css">
+/* ============================================================
+   SDC · STAFF CARDS · cohérence Contact / Équipe
+   Portraits fictifs stylisés — données de démonstration
+   ============================================================ */
+.sdc-staff-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+}
+.sdc-staff-card{
+  position:relative;
+  min-height:72px;
+  display:grid;
+  grid-template-columns:46px minmax(0,1fr) auto;
+  gap:11px;
+  align-items:center;
+  padding:11px 12px;
+  background:linear-gradient(180deg,#151c23 0%,#10161c 100%);
+  border:1px solid rgba(180,205,226,.13);
+  border-left:2px solid rgba(61,214,172,.35);
+  border-radius:5px;
+  cursor:pointer;
+  transition:transform .14s ease,border-color .14s ease,background .14s ease;
+}
+.sdc-staff-card:hover{
+  transform:translateY(-1px);
+  border-color:rgba(61,214,172,.38);
+  border-left-color:var(--v2-green);
+  background:linear-gradient(180deg,#18222b 0%,#111820 100%);
+}
+.sdc-staff-card.management{border-left-color:rgba(232,80,10,.65);}
+.sdc-staff-card.management:hover{border-color:rgba(232,80,10,.4);border-left-color:var(--v2-orange);}
+.sdc-staff-card.foh{border-left-color:rgba(139,92,246,.5);}
+.sdc-staff-card.foh:hover{border-color:rgba(139,92,246,.4);border-left-color:var(--v2-violet);}
+.sdc-staff-portrait{
+  width:46px;height:46px;object-fit:cover;border-radius:4px;
+  border:1px solid rgba(255,255,255,.12);
+  background:#0c141b;
+  filter:saturate(.78) contrast(1.04);
+}
+.sdc-staff-main{min-width:0;}
+.sdc-staff-name{
+  font-family:'Manrope',system-ui,sans-serif;
+  font-size:12.5px;font-weight:850;color:#fff;line-height:1.15;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.sdc-staff-role{
+  margin-top:3px;
+  color:#81929f;font-size:9px;font-weight:750;line-height:1.35;
+  letter-spacing:.05em;text-transform:uppercase;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.sdc-staff-phone{
+  margin-top:4px;color:#5dcfb0;
+  font:800 8.5px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+.sdc-staff-actions{display:flex;gap:5px;align-items:center;}
+.sdc-staff-call,.sdc-staff-open{
+  height:28px;border-radius:3px;cursor:pointer;
+  font:850 8px/1 ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing:.07em;text-transform:uppercase;
+}
+.sdc-staff-call{
+  padding:0 9px;color:#62ddb9;border:1px solid rgba(61,214,172,.4);
+  background:rgba(61,214,172,.07);
+}
+.sdc-staff-open{
+  width:30px;padding:0;color:#9dadba;border:1px solid rgba(180,205,226,.18);
+  background:#101821;
+}
+.sdc-staff-call:hover{background:rgba(61,214,172,.14);}
+.sdc-staff-open:hover{color:#fff;border-color:rgba(180,205,226,.34);}
+.sdc-staff-cost{
+  text-align:right;min-width:72px;
+  font:850 8.5px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;
+  color:#b7c4ce;
+}
+.sdc-staff-cost b{display:block;color:#55d8b5;font-size:9px;}
+.sdc-staff-demo-note{
+  margin-top:9px;color:#61727f;
+  font:750 8px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing:.05em;text-transform:uppercase;
+}
+#sec-admin-equipe .sdc-staff-card{
+  grid-template-columns:46px minmax(0,1fr) 82px;
+}
+#sec-admin-equipe .sdc-staff-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+}
+@media(max-width:760px){
+  .sdc-staff-grid,#sec-admin-equipe .sdc-staff-grid{grid-template-columns:1fr;}
+}
+@media(max-width:480px){
+  .sdc-staff-card{grid-template-columns:42px minmax(0,1fr) auto;padding:9px;}
+  .sdc-staff-portrait{width:42px;height:42px;}
+  .sdc-staff-call{display:none;}
+}
+</style>
+
+<script id="sdc-staff-cards-js">
+(function(){
+  if(window.__SDC_STAFF_CARDS__) return;
+  window.__SDC_STAFF_CARDS__=true;
+
+  var STAFF=[
+    {n:'Sarah Beaulieu',r:'Direction générale',group:'management',phone:'4185550101',mail:'sarah.beaulieu@coriandre.example',rate:'1 250 $/sem',hours:'45 h / sem'},
+    {n:'Julien Mercier',r:'Chef · passe & tickets',group:'management',phone:'4185550182',mail:'julien.mercier@coriandre.example',rate:'1 200 $/sem',hours:'51 h / sem'},
+    {n:'Élise Tanguay',r:'Garde-manger · ouverture',group:'kitchen',phone:'4185550167',mail:'elise.tanguay@coriandre.example',rate:'23,50 $/h',hours:'40 h / sem'},
+    {n:'Sofia Almeida',r:'Garde-manger · soir',group:'kitchen',phone:'4185550174',mail:'sofia.almeida@coriandre.example',rate:'22,50 $/h',hours:'27 h / sem'},
+    {n:'Marco Dieudonné',r:'Chaud · friture',group:'kitchen',phone:'4185550129',mail:'marco.dieudonne@coriandre.example',rate:'23,00 $/h',hours:'33,5 h / sem'},
+    {n:'Thomas Rivard',r:'Grillardin',group:'kitchen',phone:'4185550136',mail:'thomas.rivard@coriandre.example',rate:'24,00 $/h',hours:'29 h / sem'},
+    {n:'Nadia Benali',r:'Pâtisserie · desserts',group:'kitchen',phone:'4185550195',mail:'nadia.benali@coriandre.example',rate:'22,50 $/h',hours:'27 h / sem'},
+    {n:'Kevin Bouchard',r:'Plonge · soir',group:'kitchen',phone:'4185550158',mail:'kevin.bouchard@coriandre.example',rate:'19,00 $/h',hours:'31 h / sem'},
+    {n:'J-S Caron',r:'Plonge · lunch',group:'kitchen',phone:'4185550118',mail:'js.caron@coriandre.example',rate:'18,75 $/h',hours:'16 h / sem'},
+    {n:'Camille Roy',r:'Supervision salle',group:'foh',phone:'4185550148',mail:'camille.roy@coriandre.example',rate:'25,00 $/h',hours:'35 h / sem'},
+    {n:'Malik Haddad',r:'Bar',group:'foh',phone:'4185550111',mail:'malik.haddad@coriandre.example',rate:'16,50 $/h + tips',hours:'30 h / sem'},
+    {n:'Léa Martin',r:'Service',group:'foh',phone:'4185550112',mail:'lea.martin@coriandre.example',rate:'14,25 $/h + tips',hours:'26 h / sem'},
+    {n:'William Caron',r:'Service',group:'foh',phone:'4185550113',mail:'william.caron@coriandre.example',rate:'14,25 $/h + tips',hours:'24 h / sem'},
+    {n:'Maya Fortin',r:'Service',group:'foh',phone:'4185550114',mail:'maya.fortin@coriandre.example',rate:'14,25 $/h + tips',hours:'22 h / sem'},
+    {n:'Olivier Blais',r:'Accueil · soutien salle',group:'foh',phone:'4185550115',mail:'olivier.blais@coriandre.example',rate:'18,25 $/h',hours:'20 h / sem'}
+  ];
+
+  function portraitUrl(p){
+    var seed=encodeURIComponent(p.n.replace(/[^A-Za-zÀ-ÿ0-9]/g,''));
+    return 'https://api.dicebear.com/9.x/lorelei/svg?seed='+seed+'&backgroundColor=0f1720,1c2732,262d36&backgroundType=solid&radius=8';
+  }
+  function prettyPhone(v){
+    var s=String(v||'').replace(/\D/g,'');
+    return s.length===10?s.slice(0,3)+'-'+s.slice(3,6)+'-'+s.slice(6):v;
+  }
+  function esc(v){return String(v||'').replace(/'/g,"&#39;");}
+  function openPerson(p){
+    if(typeof openContactModal==='function') openContactModal(p.n,p.r,p.phone,p.mail);
+  }
+  window.sdcOpenStaff=function(ix){var p=STAFF[ix];if(p)openPerson(p);};
+
+  function contactCard(p,ix){
+    return '<div class="sdc-staff-card '+p.group+'" onclick="sdcOpenStaff('+ix+')">'
+      +'<img class="sdc-staff-portrait" src="'+portraitUrl(p)+'" alt="Portrait fictif de '+p.n+'" loading="lazy">'
+      +'<div class="sdc-staff-main"><div class="sdc-staff-name">'+p.n+'</div><div class="sdc-staff-role">'+p.r+'</div>'
+      +'<div class="sdc-staff-phone">'+prettyPhone(p.phone)+'</div></div>'
+      +'<div class="sdc-staff-actions">'
+      +'<button class="sdc-staff-call" onclick="event.stopPropagation();location.href=\\'tel:+'+p.phone+'\\'">Appeler</button>'
+      +'<button class="sdc-staff-open" onclick="event.stopPropagation();sdcOpenStaff('+ix+')" title="Ouvrir la fiche">↗</button>'
+      +'</div></div>';
+  }
+  function teamCard(p,ix){
+    return '<div class="sdc-staff-card '+p.group+'" onclick="sdcOpenStaff('+ix+')">'
+      +'<img class="sdc-staff-portrait" src="'+portraitUrl(p)+'" alt="Portrait fictif de '+p.n+'" loading="lazy">'
+      +'<div class="sdc-staff-main"><div class="sdc-staff-name">'+p.n+'</div><div class="sdc-staff-role">'+p.r+'</div>'
+      +'<div class="sdc-staff-phone">'+prettyPhone(p.phone)+' · '+p.mail+'</div></div>'
+      +'<div class="sdc-staff-cost">'+p.rate+'<b>'+p.hours+'</b></div></div>';
+  }
+
+  function findStaffBlock(section){
+    if(!section) return null;
+    var hs=section.querySelectorAll('.s-header');
+    for(var i=0;i<hs.length;i++){
+      if(/Équipe\s*[—-]\s*Staff complet/i.test(hs[i].textContent||'')) return {head:hs[i],card:hs[i].nextElementSibling};
+    }
+    return null;
+  }
+
+  function renderContacts(sectionId,mode){
+    var sec=document.getElementById(sectionId), hit=findStaffBlock(sec); if(!hit||!hit.card) return;
+    var source;
+    if(mode==='kitchen') source=STAFF.map(function(p,i){return {p:p,i:i};}).filter(function(x){return x.p.group==='kitchen' && x.p.n!=='Julien Mercier';});
+    else source=STAFF.map(function(p,i){return {p:p,i:i};}).filter(function(x){return x.p.n!=='Julien Mercier';});
+    hit.card.className='card';
+    hit.card.innerHTML='<div class="card-body open" style="padding:10px;"><div class="sdc-staff-grid">'
+      +source.map(function(x){return contactCard(x.p,x.i);}).join('')
+      +'</div><div class="sdc-staff-demo-note">Portraits, coordonnées et employés fictifs · environnement de démonstration</div></div>';
+  }
+
+  function renderManagerTeam(){
+    var grid=document.getElementById('v2-team-grid'); if(!grid) return;
+    grid.className='sdc-staff-grid';
+    grid.innerHTML=STAFF.map(function(p,i){return teamCard(p,i);}).join('');
+    var note=document.createElement('div');
+    note.className='sdc-staff-demo-note';
+    note.style.gridColumn='1 / -1';
+    note.textContent='Portraits, coordonnées et employés fictifs · données de démonstration';
+    grid.appendChild(note);
+  }
+
+  function upgradeLeadCards(sectionId){
+    var sec=document.getElementById(sectionId); if(!sec) return;
+    var names={'Olivier':'Olivier Blais','Julien':'Julien Mercier'};
+    sec.querySelectorAll('.contact-name').forEach(function(el){
+      var full=names[(el.textContent||'').trim()]; if(!full) return;
+      var p=STAFF.find(function(x){return x.n===full;}); if(!p) return;
+      var wrap=el.closest('.card-header'); if(!wrap) return;
+      var first=wrap.querySelector('div[style*="flex-shrink:0"],div[style*="width:40px"]');
+      if(first){
+        first.innerHTML='<img class="sdc-staff-portrait" src="'+portraitUrl(p)+'" alt="Portrait fictif de '+p.n+'" loading="lazy">';
+        first.style.width='46px';first.style.height='46px';first.style.border='0';first.style.background='transparent';
+      }
+      if(el.textContent.trim()==='Julien') el.textContent='Julien Mercier';
+      if(el.textContent.trim()==='Olivier') el.textContent='Olivier';
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded',function(){
+    renderContacts('sec-cuisinier-contact','kitchen');
+    renderContacts('sec-admin-contact','all');
+    renderManagerTeam();
+    upgradeLeadCards('sec-cuisinier-contact');
+    upgradeLeadCards('sec-admin-contact');
+  });
+})();
+</script>
+
 </body>
 </html>
