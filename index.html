@@ -8340,7 +8340,7 @@ document.addEventListener('DOMContentLoaded', function(){ setTimeout(buildHorair
       +'<div class="sdc-staff-main"><div class="sdc-staff-name">'+p.n+'</div><div class="sdc-staff-role">'+p.r+'</div>'
       +'<div class="sdc-staff-phone">'+prettyPhone(p.phone)+'</div></div>'
       +'<div class="sdc-staff-actions">'
-      +'<a class="sdc-staff-call" href="tel:+"+p.phone+"" onclick="event.stopPropagation()">Appeler</a>'
+      +'<a class="sdc-staff-call" href="tel:+'+p.phone+'" onclick="event.stopPropagation()">Appeler</a>'
       +'<button class="sdc-staff-open" onclick="event.stopPropagation();sdcOpenStaff('+ix+')" title="Ouvrir la fiche">↗</button>'
       +'</div></div>';
   }
