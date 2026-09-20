@@ -2031,7 +2031,7 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
           <div style="flex-shrink:0;"><img src="__SDC_LOGO_B64__" alt="SDC" style="width:44px;height:44px;border-radius:50%;object-fit:cover;border:1.5px solid var(--orange);"></div>
           <div>
             <div class="contact-name">Maxime Leveugle</div>
-            <div style="font-size:10px;class="contact-role" style="color:var(--col-admin);font-size:11px;letter-spacing:.08em;text-transform:uppercase;">Fondateur SDC</div>
+            <div class="contact-role" style="color:var(--col-admin);">Fondateur SDC</div>
             <div style="font-size:11px;color:var(--text-sub);font-weight:600;">structuredecuisine.ca</div>
           </div>
         </div>
@@ -2048,7 +2048,7 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
           <div style="width:40px;height:40px;border-radius:50%;background:var(--orange-bg);border:1.5px solid var(--orange);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">👑</div>
           <div>
             <div class="contact-name">Olivier</div>
-            <div style="font-size:10px;class="contact-role" style="color:var(--col-admin);font-size:11px;letter-spacing:.08em;text-transform:uppercase;">Propriétaire</div>
+            <div class="contact-role" style="color:var(--col-admin);">Propriétaire</div>
           </div>
         </div>
         <div style="display:flex;gap:8px;">
@@ -2127,7 +2127,7 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
           <div style="flex-shrink:0;"><img src="__SDC_LOGO_B64__" alt="SDC" style="width:44px;height:44px;border-radius:50%;object-fit:cover;border:1.5px solid var(--orange);"></div>
           <div>
             <div class="contact-name">Maxime Leveugle</div>
-            <div style="font-size:10px;class="contact-role" style="color:var(--col-admin);font-size:11px;letter-spacing:.08em;text-transform:uppercase;">Fondateur SDC</div>
+            <div class="contact-role" style="color:var(--col-admin);">Fondateur SDC</div>
             <div style="font-size:11px;color:var(--text-sub);font-weight:600;">structuredecuisine.ca</div>
           </div>
         </div>
@@ -2144,7 +2144,7 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
           <div style="width:40px;height:40px;border-radius:50%;background:var(--orange-bg);border:1.5px solid var(--orange);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">👑</div>
           <div>
             <div class="contact-name">Olivier</div>
-            <div style="font-size:10px;class="contact-role" style="color:var(--col-admin);font-size:11px;letter-spacing:.08em;text-transform:uppercase;">Propriétaire</div>
+            <div class="contact-role" style="color:var(--col-admin);">Propriétaire</div>
           </div>
         </div>
         <div style="display:flex;gap:8px;">
@@ -6631,12 +6631,6 @@ function chargerMeteo(lat, lon) {
     if (c && Date.now() - c.t < 1800000) { meteoMaj(c.hero, c.acc); return; }
   } catch (e) {}
   chargerMeteo('46.813', '-71.21');
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-      function(pos) { chargerMeteo(pos.coords.latitude.toFixed(3), pos.coords.longitude.toFixed(3)); },
-      function() {}, { timeout: 8000, maximumAge: 600000 }
-    );
-  }
 })();
 
 // Rafraîchissement automatique pendant que la page reste ouverte (vérifie aux 5 min, met à jour si le cache a 30 min)
@@ -6646,12 +6640,6 @@ setInterval(function() {
     if (c && Date.now() - c.t < 1800000) return;
   } catch (e) {}
   chargerMeteo('46.813', '-71.21');
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-      function(pos) { chargerMeteo(pos.coords.latitude.toFixed(3), pos.coords.longitude.toFixed(3)); },
-      function() {}, { timeout: 8000, maximumAge: 600000 }
-    );
-  }
 }, 300000);
 
 // ---- Gate Gestionnaire ----
@@ -8019,6 +8007,191 @@ document.addEventListener('DOMContentLoaded', function(){ setTimeout(buildHorair
     buildV2Team();
     buildV2PosFeed();
     recalibrateLegacyDashboard();
+  });
+})();
+</script>
+
+
+<style id="sdc-coherence-pass-css">
+/* ============================================================
+   SDC · COHERENCE PASS · Sept 2026
+   Harmonise Accueil / Food Cost / Équipe / Contact
+   ============================================================ */
+
+/* ACCUEIL — remplace l'ancien écran "Commencer" par un brief vivant */
+#sec-admin-accueil{max-width:1180px!important;margin-left:auto!important;margin-right:auto!important;padding:18px 16px 92px!important;}
+.v2-home-hero{
+  display:grid;grid-template-columns:minmax(0,1.4fr) minmax(270px,.6fr);
+  border-bottom:1px solid var(--v2-line);
+}
+.v2-home-main{padding:26px 24px 22px;}
+.v2-home-side{padding:20px;border-left:1px solid var(--v2-line);background:rgba(255,255,255,.012);}
+.v2-home-status{
+  display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:10px;align-items:center;
+  min-height:48px;padding:9px 0;border-bottom:1px solid rgba(180,205,226,.08);
+}
+.v2-home-status:last-child{border-bottom:0;}
+.v2-home-mark{width:32px;height:32px;display:grid;place-items:center;border:1px solid var(--v2-line-strong);background:#0c151e;font:900 9px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:#fff;}
+.v2-home-status-title{font-size:11px;font-weight:850;color:#fff;}
+.v2-home-status-sub{font-size:9.5px;color:#70818f;margin-top:2px;line-height:1.4;}
+.v2-home-status-val{font:850 9px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--v2-green);text-transform:uppercase;}
+.v2-home-quick{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.v2-home-link{
+  border:1px solid var(--v2-line);background:#0b131b;color:#fff;padding:13px;text-align:left;cursor:pointer;
+  min-height:70px;border-radius:3px;
+}
+.v2-home-link:hover{border-color:rgba(232,80,10,.48);background:rgba(232,80,10,.055);}
+.v2-home-link strong{display:block;font-size:11px;font-weight:850;}
+.v2-home-link span{display:block;font-size:9px;color:#6f8190;margin-top:4px;line-height:1.35;}
+.v2-home-strip{
+  padding:11px 15px;border-top:1px solid var(--v2-line);
+  font:800 8.5px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing:.08em;text-transform:uppercase;color:#667887;
+}
+.v2-home-strip b{color:#aab9c5;font-weight:850;}
+@media(max-width:860px){
+  .v2-home-hero{grid-template-columns:1fr;}
+  .v2-home-side{border-left:0;border-top:1px solid var(--v2-line);}
+}
+@media(max-width:520px){.v2-home-quick{grid-template-columns:1fr;}}
+
+/* FOOD COST — couleur = état opérationnel, pas décoration */
+#sec-admin-foodcost .fc-row{
+  position:relative;
+  margin:3px 0;
+  padding:11px 10px 11px 13px;
+  border:1px solid rgba(255,255,255,.045);
+  border-left-width:3px;
+  border-radius:4px;
+  background:#111820;
+}
+#sec-admin-foodcost .fc-row.fc-state-good{
+  border-left-color:rgba(61,214,172,.65);
+  background:linear-gradient(90deg,rgba(61,214,172,.075),rgba(17,24,32,.96) 42%);
+}
+#sec-admin-foodcost .fc-row.fc-state-warn{
+  border-left-color:rgba(245,184,65,.8);
+  background:linear-gradient(90deg,rgba(245,184,65,.09),rgba(17,24,32,.96) 42%);
+}
+#sec-admin-foodcost .fc-row.fc-state-bad{
+  border-left-color:rgba(255,102,95,.9);
+  background:linear-gradient(90deg,rgba(255,102,95,.11),rgba(17,24,32,.96) 48%);
+}
+#sec-admin-foodcost .fc-cout{color:#ff9a68;font-weight:800;font-variant-numeric:tabular-nums;}
+#sec-admin-foodcost .fc-prix{color:#a9bfd1;font-weight:750;font-variant-numeric:tabular-nums;}
+#sec-admin-foodcost .fc-pct{
+  min-width:60px;text-align:center;padding:4px 6px;border-radius:3px;
+  font:900 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;
+  border:1px solid transparent;
+}
+#sec-admin-foodcost .fc-pct.good{background:rgba(61,214,172,.09);border-color:rgba(61,214,172,.26);color:#58e0ba;}
+#sec-admin-foodcost .fc-pct.warn{background:rgba(245,184,65,.11);border-color:rgba(245,184,65,.33);color:#ffd071;}
+#sec-admin-foodcost .fc-pct.bad{background:rgba(255,102,95,.12);border-color:rgba(255,102,95,.4);color:#ff837d;}
+#sec-admin-foodcost .fc-detail-good{border-left:3px solid rgba(61,214,172,.45);}
+#sec-admin-foodcost .fc-detail-warn{border-left:3px solid rgba(245,184,65,.65);}
+#sec-admin-foodcost .fc-detail-bad{border-left:3px solid rgba(255,102,95,.8);}
+#sec-admin-foodcost .fc-detail-good .card-header{background:linear-gradient(90deg,rgba(61,214,172,.045),transparent 45%);}
+#sec-admin-foodcost .fc-detail-warn .card-header{background:linear-gradient(90deg,rgba(245,184,65,.055),transparent 45%);}
+#sec-admin-foodcost .fc-detail-bad .card-header{background:linear-gradient(90deg,rgba(255,102,95,.075),transparent 48%);}
+
+/* CONTACT / ÉQUIPE — une seule échelle typo */
+#sec-admin-contact .contact-name,
+#sec-admin-equipe .v2-person-name{
+  font-family:'Manrope',system-ui,sans-serif!important;
+  font-size:13.5px!important;
+  line-height:1.15!important;
+  font-weight:850!important;
+  letter-spacing:-.01em!important;
+}
+#sec-admin-contact .contact-role,
+#sec-admin-equipe .v2-person-role{
+  font-size:9.5px!important;
+  line-height:1.35!important;
+  letter-spacing:.07em!important;
+  text-transform:uppercase!important;
+}
+#sec-admin-contact .card-header{padding:11px 13px!important;}
+#sec-admin-contact .card-header img{width:38px!important;height:38px!important;}
+#sec-admin-contact .card-header > div:first-child > div:first-child:not(:has(img)){width:38px!important;height:38px!important;font-size:16px!important;}
+#sec-admin-equipe .v2-person{min-height:64px;padding:11px 12px;}
+#sec-admin-equipe .v2-avatar{width:38px;height:38px;}
+#sec-admin-equipe .v2-person-contact{font-size:9px;line-height:1.45;}
+#sec-admin-contact .info-label strong{font-size:12.5px;}
+</style>
+
+<script id="sdc-coherence-pass-js">
+(function(){
+  if(window.__SDC_COHERENCE_PASS__) return;
+  window.__SDC_COHERENCE_PASS__=true;
+
+  function buildAdminHome(){
+    var root=document.getElementById('sec-admin-accueil'); if(!root) return;
+    root.innerHTML =
+      '<div class="v2-shell">'
+      +'<div class="v2-briefbar"><div class="v2-brief-left">'
+      +'<span class="v2-code">SDC // CORIANDRE // BRIEF-01</span>'
+      +'<span class="v2-pill violet">DÉMONSTRATION</span>'
+      +'<span class="v2-pill green"><i class="v2-live-dot"></i>PRÊT SERVICE</span>'
+      +'</div><div class="v2-brief-right"><span class="v2-pill">VIEUX-QUÉBEC</span><span class="v2-pill orange">4 ACTIONS</span></div></div>'
+      +'<div class="v2-home-hero">'
+      +'<div class="v2-home-main"><div class="v2-eyebrow">BRIEF D’OUVERTURE · GESTIONNAIRE</div>'
+      +'<div class="v2-title" style="font-size:clamp(31px,4vw,44px);">Bonjour.<br><em>La Coriandre est prête pour le service.</em></div>'
+      +'<div class="v2-lead">Pas d’écran de bienvenue inutile : ici, l’accueil résume ce qui mérite une décision avant d’entrer dans le détail.</div>'
+      +'<div style="display:flex;gap:7px;flex-wrap:wrap;margin-top:15px;">'
+      +'<span class="v2-pill green">MAPAQ · NOMINAL</span><span class="v2-pill violet">MAÎTRE’D · SYNCHRO DÉMO</span><span class="v2-pill orange">RADAR · 4 ACTIONS</span>'
+      +'</div></div>'
+      +'<div class="v2-home-side"><div class="v2-side-label">ÉTAT DU SYSTÈME</div>'
+      +'<div class="v2-home-status"><div class="v2-home-mark">POS</div><div><div class="v2-home-status-title">Maître’D</div><div class="v2-home-status-sub">Synchronisation fictive · dernière synchro 2 min</div></div><div class="v2-home-status-val">OK</div></div>'
+      +'<div class="v2-home-status"><div class="v2-home-mark">FC</div><div><div class="v2-home-status-title">Food cost</div><div class="v2-home-status-sub">25,8 % réel · cible 30 %</div></div><div class="v2-home-status-val">SOUS CIBLE</div></div>'
+      +'<div class="v2-home-status"><div class="v2-home-mark">LAB</div><div><div class="v2-home-status-title">Main-d’œuvre</div><div class="v2-home-status-sub">34,3 % des ventes · mois de référence</div></div><div class="v2-home-status-val" style="color:var(--v2-amber)">+0,3 PT</div></div>'
+      +'</div></div>'
+      +'<div class="v2-grid-kpi">'
+      +'<div class="v2-kpi"><div class="v2-kpi-code">OPS-01 · SERVICE</div><div class="v2-kpi-val" style="font-size:20px;">11 h–14 h 30</div><div class="v2-kpi-label">Lunch · souper 17 h–22 h</div></div>'
+      +'<div class="v2-kpi"><div class="v2-kpi-code">FC-02 · FOOD COST</div><div class="v2-kpi-val green">25,8 %</div><div class="v2-kpi-label">Réel · théorique 24,1 %</div></div>'
+      +'<div class="v2-kpi"><div class="v2-kpi-code">LAB-03 · M.O.</div><div class="v2-kpi-val amber">34,3 %</div><div class="v2-kpi-label">Cible opérationnelle 34,0 %</div></div>'
+      +'<div class="v2-kpi"><div class="v2-kpi-code">RAD-04 · À TRAITER</div><div class="v2-kpi-val orange">4</div><div class="v2-kpi-label">2 coût · 1 inventaire · 1 commande</div></div>'
+      +'</div>'
+      +'<div class="v2-layout">'
+      +'<div class="v2-panel"><div class="v2-panel-head"><div><div class="v2-panel-kicker">BRIEF-02 · PRIORITÉS</div><div class="v2-panel-title">Avant le prochain service</div></div><span class="v2-pill orange">4 ACTIONS</span></div>'
+      +'<div class="v2-alert"><i class="v2-sev red"></i><div><div class="v2-alert-title">A14 · Flétan à 40,7 %</div><div class="v2-alert-sub">Produit hors cible. Voir scénarios prix / portion / fournisseur.</div></div><div class="v2-alert-code">FC</div></div>'
+      +'<div class="v2-alert"><i class="v2-sev violet"></i><div><div class="v2-alert-title">Format d’ail à optimiser</div><div class="v2-alert-sub">Le format d’achat actuel pénalise plusieurs fiches.</div></div><div class="v2-alert-code">BUY</div></div>'
+      +'<div class="v2-alert"><i class="v2-sev"></i><div><div class="v2-alert-title">Écart inventaire flétan</div><div class="v2-alert-sub">-0,50 kg contre le théorique. Contrôle requis.</div></div><div class="v2-alert-code">INV</div></div>'
+      +'<div class="v2-alert"><i class="v2-sev green"></i><div><div class="v2-alert-title">Commande suggérée prête</div><div class="v2-alert-sub">6 articles générés à partir des niveaux MEP.</div></div><div class="v2-alert-code">PO</div></div>'
+      +'</div>'
+      +'<div class="v2-panel"><div class="v2-panel-head"><div><div class="v2-panel-kicker">NAV-03 · ACCÈS RAPIDE</div><div class="v2-panel-title">Aller au dossier</div></div></div>'
+      +'<div class="v2-home-quick">'
+      +'<button class="v2-home-link" onclick="showSection(\'sec-admin-cockpit\')"><strong>Cockpit</strong><span>Finance, POS et radar global</span></button>'
+      +'<button class="v2-home-link" onclick="showSection(\'sec-admin-foodcost\')"><strong>Food Cost</strong><span>Assiette, marge et écarts</span></button>'
+      +'<button class="v2-home-link" onclick="showSection(\'sec-admin-achats\')"><strong>Achats</strong><span>Pricelist, inventaire, commande</span></button>'
+      +'<button class="v2-home-link" onclick="showSection(\'sec-admin-equipe\')"><strong>Équipe</strong><span>Staff, heures et coût chargé</span></button>'
+      +'</div></div></div>'
+      +'<div class="v2-home-strip"><b>FLUX :</b> MAÎTRE’D → VENTES → RECETTES → INVENTAIRE → ACHATS → COMMANDE → PRODUCTION</div>'
+      +'</div>';
+  }
+
+  function colorFoodCost(){
+    var root=document.getElementById('sec-admin-foodcost'); if(!root) return;
+    root.querySelectorAll('.fc-row').forEach(function(row){
+      row.classList.remove('fc-state-good','fc-state-warn','fc-state-bad');
+      var pct=row.querySelector('.fc-pct');
+      if(!pct) return;
+      if(pct.classList.contains('bad')) row.classList.add('fc-state-bad');
+      else if(pct.classList.contains('warn')) row.classList.add('fc-state-warn');
+      else row.classList.add('fc-state-good');
+    });
+    root.querySelectorAll('.card').forEach(function(card){
+      var sub=card.querySelector('.card-sub'); if(!sub) return;
+      var m=sub.textContent.match(/([0-9]+(?:[,.][0-9]+)?)\\s*%/);
+      if(!m) return;
+      var p=parseFloat(m[1].replace(',','.'));
+      card.classList.remove('fc-detail-good','fc-detail-warn','fc-detail-bad');
+      card.classList.add(p>35?'fc-detail-bad':p>=30?'fc-detail-warn':'fc-detail-good');
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded',function(){
+    buildAdminHome();
+    colorFoodCost();
   });
 })();
 </script>
