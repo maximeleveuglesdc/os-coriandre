@@ -7428,5 +7428,600 @@ function buildHoraires(){
 document.addEventListener('DOMContentLoaded', function(){ setTimeout(buildHoraires, 350); });
 </script>
 
+
+<!-- ============================================================
+     SDC CORIANDRE V2 · COCKPIT / POS / ACHATS / ÉQUIPE
+     Simulation commerciale — données fictives, fonctions réelles
+     ============================================================ -->
+<style id="sdc-coriandre-v2-css">
+:root{
+  --v2-ink:#070b10;
+  --v2-navy:#0b1118;
+  --v2-panel:#101821;
+  --v2-panel2:#131e29;
+  --v2-line:rgba(180,205,226,.14);
+  --v2-line-strong:rgba(180,205,226,.25);
+  --v2-orange:#E8500A;
+  --v2-violet:#8B5CF6;
+  --v2-green:#3DD6AC;
+  --v2-red:#FF665F;
+  --v2-amber:#F5B841;
+  --v2-blue:#5AA9E6;
+  --v2-muted:#82909d;
+}
+.v2-section{
+  max-width:1180px!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  padding:18px 16px 92px!important;
+}
+.v2-shell{
+  position:relative;
+  border:1px solid var(--v2-line);
+  background:
+    linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px),
+    linear-gradient(180deg,#0c131b 0%,#090e14 100%);
+  background-size:28px 28px,28px 28px,auto;
+  overflow:hidden;
+}
+.v2-shell::before{
+  content:'';
+  position:absolute;inset:0 0 auto 0;height:2px;
+  background:linear-gradient(90deg,var(--v2-orange),var(--v2-violet),var(--v2-green));
+}
+.v2-briefbar{
+  min-height:48px;
+  padding:10px 13px;
+  border-bottom:1px solid var(--v2-line);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+  background:rgba(2,7,12,.72);
+}
+.v2-brief-left,.v2-brief-right{display:flex;align-items:center;gap:9px;flex-wrap:wrap;}
+.v2-code{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:9px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;
+  color:#d6e2ec;
+}
+.v2-pill{
+  display:inline-flex;align-items:center;gap:6px;
+  min-height:24px;padding:3px 8px;
+  border:1px solid var(--v2-line-strong);
+  background:rgba(255,255,255,.025);
+  color:#aebdca;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  border-radius:3px;
+}
+.v2-pill.orange{border-color:rgba(232,80,10,.46);color:#ff955e;background:rgba(232,80,10,.09);}
+.v2-pill.green{border-color:rgba(61,214,172,.4);color:var(--v2-green);background:rgba(61,214,172,.07);}
+.v2-pill.violet{border-color:rgba(139,92,246,.45);color:#b7a3ff;background:rgba(139,92,246,.08);}
+.v2-live-dot{width:6px;height:6px;border-radius:50%;background:var(--v2-green);box-shadow:0 0 0 4px rgba(61,214,172,.09);animation:v2pulse 1.8s infinite;}
+@keyframes v2pulse{50%{box-shadow:0 0 0 7px rgba(61,214,172,0)}}
+.v2-hero{
+  display:grid;grid-template-columns:minmax(0,1.35fr) minmax(290px,.65fr);
+  gap:0;border-bottom:1px solid var(--v2-line);
+}
+.v2-hero-main{padding:28px 24px 22px;}
+.v2-eyebrow{
+  color:var(--v2-orange);font-size:10px;font-weight:900;letter-spacing:.2em;text-transform:uppercase;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;margin-bottom:8px;
+}
+.v2-title{
+  font-family:'Manrope',system-ui,sans-serif;
+  font-size:clamp(28px,5vw,48px);line-height:.98;letter-spacing:-.045em;font-weight:800;color:#fff;
+  max-width:690px;
+}
+.v2-title em{font-style:normal;color:#9fb0bf;}
+.v2-lead{margin-top:14px;max-width:680px;color:#9babb8;font-size:12px;line-height:1.7;font-weight:650;}
+.v2-hero-side{border-left:1px solid var(--v2-line);padding:20px;background:rgba(255,255,255,.018);}
+.v2-side-label{
+  font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--v2-muted);
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;margin-bottom:12px;
+}
+.v2-sync{display:flex;align-items:flex-start;gap:11px;margin-bottom:14px;}
+.v2-sync-mark{
+  width:36px;height:36px;display:grid;place-items:center;border:1px solid rgba(139,92,246,.45);
+  background:rgba(139,92,246,.08);color:#b7a3ff;font-weight:900;font-size:11px;border-radius:4px;
+}
+.v2-sync-title{font-size:13px;font-weight:850;color:#fff;}
+.v2-sync-sub{font-size:10px;line-height:1.5;color:var(--v2-muted);margin-top:2px;}
+.v2-rule{
+  height:1px;background:var(--v2-line);margin:12px 0;
+}
+.v2-grid-kpi{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  border-bottom:1px solid var(--v2-line);
+}
+.v2-kpi{
+  min-height:112px;padding:17px 16px;border-right:1px solid var(--v2-line);
+  background:rgba(255,255,255,.012);
+}
+.v2-kpi:last-child{border-right:0;}
+.v2-kpi-code{font:800 8px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.13em;color:#657584;text-transform:uppercase;}
+.v2-kpi-val{font:850 27px/1 'Manrope',system-ui,sans-serif;letter-spacing:-.035em;color:#fff;margin-top:9px;font-variant-numeric:tabular-nums;}
+.v2-kpi-val.green{color:var(--v2-green)} .v2-kpi-val.amber{color:var(--v2-amber)} .v2-kpi-val.orange{color:#ff8a50}
+.v2-kpi-label{font-size:10px;line-height:1.4;color:#80909d;margin-top:7px;font-weight:700;}
+.v2-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);border-bottom:1px solid var(--v2-line);}
+.v2-panel{padding:19px;border-right:1px solid var(--v2-line);}
+.v2-panel:last-child{border-right:0;}
+.v2-panel-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:14px;}
+.v2-panel-title{font:850 12px/1.25 'Manrope',system-ui,sans-serif;color:#fff;letter-spacing:.04em;text-transform:uppercase;}
+.v2-panel-kicker{font:800 8px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;color:#6f8190;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px;}
+.v2-money-row{
+  display:grid;grid-template-columns:minmax(0,1fr) 90px 78px;align-items:center;gap:10px;
+  min-height:35px;border-bottom:1px solid rgba(180,205,226,.08);font-size:11px;
+}
+.v2-money-row:last-child{border-bottom:0;}
+.v2-money-row .n{color:#aebbc6;font-weight:650;}
+.v2-money-row .m{text-align:right;color:#fff;font-weight:850;font-variant-numeric:tabular-nums;}
+.v2-money-row .p{text-align:right;color:#738493;font-size:10px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;}
+.v2-money-row.result{margin-top:8px;border:1px solid rgba(61,214,172,.3);padding:0 10px;background:rgba(61,214,172,.055);}
+.v2-money-row.result .n,.v2-money-row.result .m,.v2-money-row.result .p{color:var(--v2-green);}
+.v2-alert{
+  display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:start;padding:11px 0;
+  border-bottom:1px solid rgba(180,205,226,.08);
+}
+.v2-alert:last-child{border-bottom:0;}
+.v2-alert-code{font:900 8px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:#fff;padding-top:3px;}
+.v2-alert-title{font-size:11.5px;font-weight:800;color:#fff;line-height:1.35;}
+.v2-alert-sub{font-size:10px;color:#748594;line-height:1.5;margin-top:2px;}
+.v2-sev{width:7px;height:7px;border-radius:1px;margin-top:4px;background:var(--v2-amber);}
+.v2-sev.red{background:var(--v2-red)} .v2-sev.green{background:var(--v2-green)} .v2-sev.violet{background:var(--v2-violet)}
+.v2-mini-chart{height:92px;display:flex;align-items:flex-end;gap:5px;padding-top:8px;}
+.v2-bar{flex:1;min-width:8px;background:linear-gradient(180deg,rgba(139,92,246,.85),rgba(90,169,230,.35));border-top:1px solid #c0b3ff;}
+.v2-bar.hot{background:linear-gradient(180deg,rgba(232,80,10,.95),rgba(232,80,10,.28));border-top-color:#ffb28c;}
+.v2-modules{display:grid;grid-template-columns:repeat(4,1fr);}
+.v2-module{
+  border:0;border-right:1px solid var(--v2-line);background:rgba(255,255,255,.012);
+  color:#fff;text-align:left;padding:16px;cursor:pointer;min-height:84px;
+}
+.v2-module:last-child{border-right:0;}
+.v2-module:hover{background:rgba(255,255,255,.035);}
+.v2-module-code{font:900 8px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--v2-orange);letter-spacing:.12em;}
+.v2-module-title{font-size:12px;font-weight:850;margin-top:7px;}
+.v2-module-sub{font-size:9.5px;color:#70818f;margin-top:3px;line-height:1.4;}
+.v2-demo-note{
+  margin-top:12px;padding:9px 11px;border-left:2px solid var(--v2-violet);
+  background:rgba(139,92,246,.055);color:#8f9eaa;font-size:9.5px;line-height:1.55;
+}
+.v2-toolbar{
+  display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;
+  padding:13px 0 14px;border-bottom:1px solid var(--v2-line);
+}
+.v2-tabs{display:flex;gap:5px;flex-wrap:wrap;}
+.v2-tab{
+  border:1px solid var(--v2-line);background:#0d151d;color:#81919e;padding:7px 10px;border-radius:3px;
+  font:850 9px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;
+}
+.v2-tab.active{border-color:rgba(232,80,10,.55);color:#fff;background:rgba(232,80,10,.1);}
+.v2-search{
+  min-width:240px;max-width:360px;flex:1;border:1px solid var(--v2-line);background:#091018;color:#fff;
+  padding:8px 10px;border-radius:3px;font-size:11px;outline:none;
+}
+.v2-search:focus{border-color:rgba(139,92,246,.55);}
+.v2-table-wrap{overflow:auto;border:1px solid var(--v2-line);}
+.v2-table{width:100%;border-collapse:collapse;min-width:760px;font-size:10.5px;}
+.v2-table th{
+  position:sticky;top:0;background:#0a1118;color:#667887;font:900 8px/1 ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing:.12em;text-transform:uppercase;text-align:left;padding:10px;border-bottom:1px solid var(--v2-line);
+}
+.v2-table td{padding:10px;border-bottom:1px solid rgba(180,205,226,.07);color:#aab8c4;vertical-align:middle;}
+.v2-table tr:hover td{background:rgba(255,255,255,.018);}
+.v2-table .strong{color:#fff;font-weight:800;}
+.v2-table .money{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#fff;font-variant-numeric:tabular-nums;}
+.v2-var-up{color:#ff8b72;font-weight:850}.v2-var-down{color:var(--v2-green);font-weight:850}.v2-var-flat{color:#6f8190;font-weight:850}
+.v2-stockbar{width:72px;height:5px;background:#17222c;overflow:hidden;}
+.v2-stockbar>i{display:block;height:100%;background:var(--v2-green);}
+.v2-stockbar>i.warn{background:var(--v2-amber)}.v2-stockbar>i.red{background:var(--v2-red)}
+.v2-action{
+  border:1px solid rgba(232,80,10,.48);background:rgba(232,80,10,.09);color:#ff9b68;
+  padding:8px 11px;border-radius:3px;font:850 9px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;
+}
+.v2-action.secondary{border-color:var(--v2-line-strong);background:#0c141c;color:#a5b4c0;}
+.v2-summary-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--v2-line);margin-bottom:13px;}
+.v2-summary{padding:13px;border-right:1px solid var(--v2-line);background:#0c141c;}
+.v2-summary:last-child{border-right:0;}
+.v2-summary .v{font:850 20px/1 'Manrope',system-ui;color:#fff;font-variant-numeric:tabular-nums;}
+.v2-summary .l{font-size:8.5px;color:#6f8190;text-transform:uppercase;letter-spacing:.08em;margin-top:5px;}
+.v2-team-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
+.v2-person{display:grid;grid-template-columns:36px minmax(0,1fr) auto;gap:10px;align-items:center;border:1px solid var(--v2-line);background:#0c141c;padding:11px;}
+.v2-avatar{width:36px;height:36px;border:1px solid var(--v2-line-strong);background:#111e29;color:#fff;display:grid;place-items:center;font:900 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;}
+.v2-person-name{font-size:11.5px;font-weight:850;color:#fff;}
+.v2-person-role{font-size:9.5px;color:#728493;margin-top:2px;}
+.v2-person-contact{font:750 8.5px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;color:#607281;margin-top:4px;}
+.v2-person-rate{text-align:right;font:850 9px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;color:#aebdca;}
+.v2-person-rate span{display:block;color:var(--v2-green);}
+.v2-pos-feed{margin-top:10px;border-top:1px solid var(--v2-line);}
+.v2-pos-event{display:grid;grid-template-columns:52px minmax(0,1fr) 64px;gap:10px;padding:8px 0;border-bottom:1px solid rgba(180,205,226,.07);font-size:9.5px;}
+.v2-pos-event .t{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#677988;}
+.v2-pos-event .d{color:#adbac5;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.v2-pos-event .a{text-align:right;color:#fff;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;}
+.v2-hidden{display:none!important;}
+#v2-demo-chip{white-space:nowrap;}
+@media(max-width:860px){
+  .v2-hero,.v2-layout{grid-template-columns:1fr;}
+  .v2-hero-side,.v2-panel:last-child{border-left:0;border-top:1px solid var(--v2-line);}
+  .v2-panel{border-right:0;}
+  .v2-grid-kpi{grid-template-columns:1fr 1fr;}
+  .v2-kpi:nth-child(2){border-right:0}.v2-kpi:nth-child(-n+2){border-bottom:1px solid var(--v2-line);}
+  .v2-modules{grid-template-columns:1fr 1fr;}
+  .v2-module:nth-child(2){border-right:0}.v2-module:nth-child(-n+2){border-bottom:1px solid var(--v2-line);}
+  .v2-summary-grid{grid-template-columns:1fr 1fr;}
+  .v2-summary:nth-child(2){border-right:0}.v2-summary:nth-child(-n+2){border-bottom:1px solid var(--v2-line);}
+  .v2-team-grid{grid-template-columns:1fr;}
+}
+@media(max-width:520px){
+  .v2-grid-kpi,.v2-summary-grid{grid-template-columns:1fr;}
+  .v2-kpi,.v2-summary{border-right:0;border-bottom:1px solid var(--v2-line)!important;}
+  .v2-modules{grid-template-columns:1fr;}
+  .v2-module{border-right:0;border-bottom:1px solid var(--v2-line)!important;}
+  .v2-title{font-size:31px;}
+  .v2-hero-main{padding:22px 16px 18px;}
+  .v2-team-grid{grid-template-columns:1fr;}
+}
+</style>
+
+<div class="section v2-section" id="sec-admin-cockpit">
+  <div class="v2-shell">
+    <div class="v2-briefbar">
+      <div class="v2-brief-left">
+        <span class="v2-code">SDC // CORIANDRE // OPS-01</span>
+        <span class="v2-pill violet">MODE DÉMONSTRATION</span>
+        <span class="v2-pill green"><i class="v2-live-dot"></i>SYSTÈME NOMINAL</span>
+      </div>
+      <div class="v2-brief-right">
+        <span class="v2-pill">RÉF. VENDREDI</span>
+        <span class="v2-pill orange">4 ACTIONS</span>
+      </div>
+    </div>
+
+    <div class="v2-hero">
+      <div class="v2-hero-main">
+        <div class="v2-eyebrow">POSTE DE COMMANDE · GESTIONNAIRE</div>
+        <div class="v2-title">La cuisine est en service.<br><em>Le système surveille le reste.</em></div>
+        <div class="v2-lead">Vue consolidée des ventes POS, du coût matière, de la main-d’œuvre, des stocks et des achats. Les données ci-dessous sont fictives, mais les liens entre les modules sont construits comme un environnement réel d’exploitation.</div>
+      </div>
+      <div class="v2-hero-side">
+        <div class="v2-side-label">INTÉGRATION POS</div>
+        <div class="v2-sync">
+          <div class="v2-sync-mark">M'D</div>
+          <div>
+            <div class="v2-sync-title">Maître'D · connexion simulée</div>
+            <div class="v2-sync-sub">Dernière synchro : il y a 2 min<br>176 transactions · 0 erreur de correspondance</div>
+          </div>
+        </div>
+        <div class="v2-rule"></div>
+        <div class="v2-side-label">DERNIERS ÉVÉNEMENTS POS</div>
+        <div id="v2-pos-feed" class="v2-pos-feed"></div>
+      </div>
+    </div>
+
+    <div class="v2-grid-kpi">
+      <div class="v2-kpi"><div class="v2-kpi-code">FIN-01 · VENTES MENSUELLES</div><div class="v2-kpi-val">151 601 $</div><div class="v2-kpi-label">Food 113 287 $ · boissons 38 314 $</div></div>
+      <div class="v2-kpi"><div class="v2-kpi-code">OPS-02 · PRIME COST</div><div class="v2-kpi-val green">59,4 %</div><div class="v2-kpi-label">Coût marchandises + main-d’œuvre chargée</div></div>
+      <div class="v2-kpi"><div class="v2-kpi-code">FC-03 · FOOD COST</div><div class="v2-kpi-val green">25,8 %</div><div class="v2-kpi-label">Nourriture seulement · cible 30 %</div></div>
+      <div class="v2-kpi"><div class="v2-kpi-code">FIN-04 · RÉSULTAT EXP.</div><div class="v2-kpi-val amber">5,8 %</div><div class="v2-kpi-label">8 850 $ · mois de référence</div></div>
+    </div>
+
+    <div class="v2-layout">
+      <div class="v2-panel">
+        <div class="v2-panel-head">
+          <div><div class="v2-panel-kicker">FIN-02 · P&L OPÉRATIONNEL</div><div class="v2-panel-title">Mois de référence</div></div>
+          <span class="v2-pill green">COHÉRENCE OK</span>
+        </div>
+        <div class="v2-money-row"><div class="n">Ventes nettes</div><div class="m">151 601 $</div><div class="p">100,0 %</div></div>
+        <div class="v2-money-row"><div class="n">Coût marchandises</div><div class="m">38 052 $</div><div class="p">25,1 %</div></div>
+        <div class="v2-money-row"><div class="n">Main-d’œuvre chargée</div><div class="m">51 999 $</div><div class="p">34,3 %</div></div>
+        <div class="v2-money-row"><div class="n">Occupation / loyer</div><div class="m">12 800 $</div><div class="p">8,4 %</div></div>
+        <div class="v2-money-row"><div class="n">Autres frais d’exploitation</div><div class="m">39 900 $</div><div class="p">26,3 %</div></div>
+        <div class="v2-money-row result"><div class="n">Résultat d’exploitation</div><div class="m">8 850 $</div><div class="p">5,8 %</div></div>
+        <div class="v2-demo-note">Hypothèse de démonstration : 720 couverts/semaine, 36,31 $ de ventes nourriture par couvert, 12,28 $ de boissons par couvert. Les taxes sont exclues des ventes opérationnelles.</div>
+      </div>
+
+      <div class="v2-panel">
+        <div class="v2-panel-head">
+          <div><div class="v2-panel-kicker">RADAR-04 · ACTIONS REQUISES</div><div class="v2-panel-title">Ce que SDC remonte</div></div>
+          <span class="v2-pill orange">4</span>
+        </div>
+        <div class="v2-alert"><i class="v2-sev red"></i><div><div class="v2-alert-title">A14 · Flétan hors cible à 40,7 %</div><div class="v2-alert-sub">Le coût du produit domine la recette. Réviser portion, fournisseur ou prix de vente.</div></div><div class="v2-alert-code">FC</div></div>
+        <div class="v2-alert"><i class="v2-sev violet"></i><div><div class="v2-alert-title">Ail · format d’achat inefficace</div><div class="v2-alert-sub">Le format détail coûte plusieurs fois le format vrac. Impact recette et commande visible dans Achats.</div></div><div class="v2-alert-code">BUY</div></div>
+        <div class="v2-alert"><i class="v2-sev"></i><div><div class="v2-alert-title">Inventaire · flétan -0,50 kg</div><div class="v2-alert-sub">Écart théorique / réel supérieur au seuil de contrôle.</div></div><div class="v2-alert-code">INV</div></div>
+        <div class="v2-alert"><i class="v2-sev green"></i><div><div class="v2-alert-title">Commande · 6 articles à compléter</div><div class="v2-alert-sub">Les niveaux MEP peuvent alimenter automatiquement la commande fournisseur.</div></div><div class="v2-alert-code">PO</div></div>
+      </div>
+    </div>
+
+    <div class="v2-layout">
+      <div class="v2-panel">
+        <div class="v2-panel-head">
+          <div><div class="v2-panel-kicker">POS-05 · VOLUME</div><div class="v2-panel-title">Ventes nettes · 14 derniers services</div></div>
+          <span class="v2-pill">Moy. 6 996 $</span>
+        </div>
+        <div class="v2-mini-chart" aria-label="Histogramme démonstration des ventes">
+          <i class="v2-bar" style="height:46%"></i><i class="v2-bar" style="height:54%"></i><i class="v2-bar" style="height:61%"></i><i class="v2-bar" style="height:58%"></i>
+          <i class="v2-bar hot" style="height:88%"></i><i class="v2-bar" style="height:69%"></i><i class="v2-bar" style="height:63%"></i><i class="v2-bar" style="height:72%"></i>
+          <i class="v2-bar" style="height:67%"></i><i class="v2-bar" style="height:78%"></i><i class="v2-bar hot" style="height:95%"></i><i class="v2-bar" style="height:74%"></i>
+          <i class="v2-bar" style="height:81%"></i><i class="v2-bar hot" style="height:91%"></i>
+        </div>
+      </div>
+      <div class="v2-panel">
+        <div class="v2-panel-head">
+          <div><div class="v2-panel-kicker">LAB-06 · MAIN-D’ŒUVRE</div><div class="v2-panel-title">Charge mensuelle</div></div>
+          <span class="v2-pill green">34,3 %</span>
+        </div>
+        <div class="v2-money-row"><div class="n">Heures équivalentes</div><div class="m">1 978 h</div><div class="p">MOIS</div></div>
+        <div class="v2-money-row"><div class="n">Coût chargé moyen</div><div class="m">26,29 $</div><div class="p">/ H</div></div>
+        <div class="v2-money-row"><div class="n">Équipe active</div><div class="m">15</div><div class="p">STAFF</div></div>
+        <div class="v2-money-row"><div class="n">Écart vs cible 34,0 %</div><div class="m" style="color:var(--v2-amber)">+0,3 pt</div><div class="p">À VOIR</div></div>
+      </div>
+    </div>
+
+    <div class="v2-modules">
+      <button class="v2-module" onclick="showSection('sec-admin-achats');setV2BuyTab('pricelist')"><div class="v2-module-code">BUY-01</div><div class="v2-module-title">Pricelist</div><div class="v2-module-sub">Prix, formats et variations</div></button>
+      <button class="v2-module" onclick="showSection('sec-admin-achats');setV2BuyTab('inventory')"><div class="v2-module-code">INV-02</div><div class="v2-module-title">Inventaire</div><div class="v2-module-sub">Théorique, réel, écarts</div></button>
+      <button class="v2-module" onclick="showSection('sec-admin-commande')"><div class="v2-module-code">PO-03</div><div class="v2-module-title">Commandes</div><div class="v2-module-sub">MEP → quantités → fournisseur</div></button>
+      <button class="v2-module" onclick="showSection('sec-admin-equipe')"><div class="v2-module-code">LAB-04</div><div class="v2-module-title">Équipe</div><div class="v2-module-sub">Staff, contacts et coûts</div></button>
+    </div>
+  </div>
+</div>
+
+<div class="section v2-section" id="sec-admin-achats">
+  <div class="v2-shell" style="padding:18px;">
+    <div class="v2-briefbar" style="margin:-18px -18px 0;">
+      <div class="v2-brief-left"><span class="v2-code">SDC // BUY-02</span><span class="v2-pill violet">DONNÉES DÉMO</span></div>
+      <div class="v2-brief-right"><button class="v2-action secondary" onclick="showSection('sec-admin-cockpit')">← Cockpit</button></div>
+    </div>
+
+    <div style="padding:22px 0 8px;">
+      <div class="v2-eyebrow">APPROVISIONNEMENT</div>
+      <div class="v2-title" style="font-size:34px;">Le prix entre une fois.<br><em>Il circule partout.</em></div>
+      <div class="v2-lead">Le pricelist alimente les recettes, l’inventaire et la commande. Les valeurs sont des données de démonstration structurées pour représenter un environnement HRI québécois crédible.</div>
+    </div>
+
+    <div class="v2-toolbar">
+      <div class="v2-tabs">
+        <button class="v2-tab active" id="v2-tab-pricelist" onclick="setV2BuyTab('pricelist')">PRICELIST</button>
+        <button class="v2-tab" id="v2-tab-inventory" onclick="setV2BuyTab('inventory')">INVENTAIRE</button>
+        <button class="v2-tab" id="v2-tab-order" onclick="setV2BuyTab('order')">COMMANDE</button>
+      </div>
+      <input id="v2-price-search" class="v2-search" type="search" placeholder="Rechercher article, code, catégorie…" oninput="buildV2PriceList(this.value)">
+    </div>
+
+    <div id="v2-buy-pricelist">
+      <div class="v2-summary-grid">
+        <div class="v2-summary"><div class="v">136</div><div class="l">Articles catalogue</div></div>
+        <div class="v2-summary"><div class="v">8</div><div class="l">Catégories</div></div>
+        <div class="v2-summary"><div class="v" style="color:var(--v2-amber)">11</div><div class="l">Prix en hausse</div></div>
+        <div class="v2-summary"><div class="v" style="color:var(--v2-green)">4</div><div class="l">Optimisations format</div></div>
+      </div>
+      <div class="v2-table-wrap">
+        <table class="v2-table">
+          <thead><tr><th>Code</th><th>Article</th><th>Format</th><th>Catégorie</th><th>Prix actuel</th><th>Ancien prix</th><th>Variation</th><th>Usage</th></tr></thead>
+          <tbody id="v2-price-body"></tbody>
+        </table>
+      </div>
+      <div class="v2-demo-note">Repères publics vérifiés utilisés pour calibrer certains ordres de grandeur : par exemple agneau haché, ail pelé et produits frais. Cette démo ne présente pas les prix comme des soumissions contractuelles d’un fournisseur.</div>
+    </div>
+
+    <div id="v2-buy-inventory" class="v2-hidden">
+      <div class="v2-summary-grid">
+        <div class="v2-summary"><div class="v">8 742 $</div><div class="l">Valeur stock démo</div></div>
+        <div class="v2-summary"><div class="v" style="color:var(--v2-red)">-58,34 $</div><div class="l">Écart comptage</div></div>
+        <div class="v2-summary"><div class="v" style="color:var(--v2-amber)">2</div><div class="l">Sous minimum</div></div>
+        <div class="v2-summary"><div class="v" style="color:var(--v2-green)">6</div><div class="l">Articles à commander</div></div>
+      </div>
+      <div class="v2-table-wrap">
+        <table class="v2-table">
+          <thead><tr><th>Article</th><th>Fournisseur</th><th>Théorique</th><th>Compté</th><th>Écart</th><th>Valeur écart</th><th>Niveau</th></tr></thead>
+          <tbody id="v2-inv-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="v2-buy-order" class="v2-hidden">
+      <div class="v2-summary-grid">
+        <div class="v2-summary"><div class="v">PO-0094</div><div class="l">Brouillon actif</div></div>
+        <div class="v2-summary"><div class="v">6</div><div class="l">Articles suggérés</div></div>
+        <div class="v2-summary"><div class="v">384,70 $</div><div class="l">Valeur estimée</div></div>
+        <div class="v2-summary"><div class="v" style="color:var(--v2-violet)">MEP</div><div class="l">Origine calcul</div></div>
+      </div>
+      <div class="v2-panel" style="border:1px solid var(--v2-line);">
+        <div class="v2-panel-head"><div><div class="v2-panel-kicker">PO-0094 · FOURNISSEUR PRINCIPAL</div><div class="v2-panel-title">Commande suggérée depuis les niveaux MEP</div></div><span class="v2-pill amber">BROUILLON</span></div>
+        <div class="v2-money-row"><div class="n">Tahini · seau 8 kg</div><div class="m">1</div><div class="p">89,00 $</div></div>
+        <div class="v2-money-row"><div class="n">Huile friture · 16 L</div><div class="m">2</div><div class="p">85,00 $</div></div>
+        <div class="v2-money-row"><div class="n">Œufs · caisse 15 dz</div><div class="m">1</div><div class="p">62,50 $</div></div>
+        <div class="v2-money-row"><div class="n">Pita · caisse 72 unités</div><div class="m">2</div><div class="p">56,80 $</div></div>
+        <div class="v2-money-row"><div class="n">Pois chiches · caisse 6 × 2,84 L</div><div class="m">1</div><div class="p">32,50 $</div></div>
+        <div class="v2-money-row"><div class="n">Ail pelé · format vrac</div><div class="m">1</div><div class="p">58,90 $</div></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;">
+          <button class="v2-action" onclick="v2GenerateExistingOrder()">Générer dans la commande OS</button>
+          <button class="v2-action secondary" onclick="showSection('sec-admin-commande')">Ouvrir le module commande</button>
+        </div>
+        <div class="v2-demo-note">Dans Coriandre, « envoyer » reste une simulation. Aucun courriel, EDI ou bon de commande réel n’est transmis à un fournisseur.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section v2-section" id="sec-admin-equipe">
+  <div class="v2-shell" style="padding:18px;">
+    <div class="v2-briefbar" style="margin:-18px -18px 0;">
+      <div class="v2-brief-left"><span class="v2-code">SDC // LAB-03</span><span class="v2-pill violet">STAFF FICTIF</span></div>
+      <div class="v2-brief-right"><button class="v2-action secondary" onclick="showSection('sec-admin-cockpit')">← Cockpit</button></div>
+    </div>
+    <div style="padding:22px 0 8px;">
+      <div class="v2-eyebrow">BRIGADE & SALLE</div>
+      <div class="v2-title" style="font-size:34px;">Les heures ont un poste.<br><em>Les postes ont un coût.</em></div>
+      <div class="v2-lead">Annuaire de démonstration, horaires et coût de main-d’œuvre. Les numéros 555-01xx et les adresses .example sont volontairement fictifs.</div>
+    </div>
+    <div class="v2-summary-grid">
+      <div class="v2-summary"><div class="v">15</div><div class="l">Employés actifs</div></div>
+      <div class="v2-summary"><div class="v">1 978 h</div><div class="l">Heures équiv. / mois</div></div>
+      <div class="v2-summary"><div class="v">51 999 $</div><div class="l">Coût chargé / mois</div></div>
+      <div class="v2-summary"><div class="v" style="color:var(--v2-amber)">34,3 %</div><div class="l">Main-d’œuvre / ventes</div></div>
+    </div>
+    <div class="v2-team-grid" id="v2-team-grid"></div>
+  </div>
+</div>
+
+<script id="sdc-coriandre-v2-js">
+(function(){
+  if (window.__CORIANDRE_V2__) return;
+  window.__CORIANDRE_V2__ = true;
+
+  /* Le cockpit devient la première vue gestionnaire. */
+  if (typeof NAV_ADMIN !== 'undefined') {
+    NAV_ADMIN.splice(0, 0, {id:'sec-admin-cockpit',icon:'⌁',label:'Cockpit'});
+    NAV_ADMIN.splice(4, 0, {id:'sec-admin-achats',icon:'▦',label:'Achats'});
+    NAV_ADMIN.splice(6, 0, {id:'sec-admin-equipe',icon:'◎',label:'Équipe'});
+  }
+
+  /* Recalibrage du volume pour rendre la brigade et les ventes cohérentes. */
+  if (typeof MENU_ENG !== 'undefined' && Array.isArray(MENU_ENG)) {
+    MENU_ENG.forEach(function(x){ x.mix = Math.round(x.mix * 2.18); });
+  }
+
+  function v2Money(n){ return Number(n).toLocaleString('fr-CA',{minimumFractionDigits:2,maximumFractionDigits:2}) + ' ' + String.fromCharCode(36); }
+  function v2Pct(n){ return (n>0?'+':'') + n.toFixed(1).replace('.',',') + ' %'; }
+  function v2Norm(s){ return String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
+
+  window.setV2BuyTab = function(tab){
+    ['pricelist','inventory','order'].forEach(function(k){
+      var pane=document.getElementById('v2-buy-'+k), btn=document.getElementById('v2-tab-'+k);
+      if(pane) pane.classList.toggle('v2-hidden',k!==tab);
+      if(btn) btn.classList.toggle('active',k===tab);
+    });
+    var s=document.getElementById('v2-price-search');
+    if(s) s.style.display = tab==='pricelist' ? '' : 'none';
+  };
+
+  window.buildV2PriceList = function(query){
+    var body=document.getElementById('v2-price-body'); if(!body || typeof GFS_CATALOGUE==='undefined') return;
+    var q=v2Norm(query), vars=[0,1.8,-1.2,3.4,.7,5.1,-2.2,2.6,-.6];
+    var items=GFS_CATALOGUE.filter(function(p){
+      return !q || v2Norm(p.code+' '+p.nom+' '+p.cat+' '+p.unite).indexOf(q)>=0;
+    });
+    body.innerHTML=items.map(function(p,idx){
+      var vi=vars[(parseInt(String(p.code).replace(/\D/g,''),10)||idx)%vars.length];
+      var old=p.prix/(1+vi/100);
+      var cls=vi>0.15?'v2-var-up':vi<-0.15?'v2-var-down':'v2-var-flat';
+      var usage=p.note||'Référence cuisine';
+      return '<tr><td class="strong">'+p.code+'</td><td class="strong">'+p.nom+'</td><td>'+p.unite+'</td><td>'+p.cat+'</td>'
+        +'<td class="money">'+v2Money(p.prix)+'</td><td class="money" style="color:#70818f">'+v2Money(old)+'</td>'
+        +'<td class="'+cls+'">'+v2Pct(vi)+'</td><td>'+usage+'</td></tr>';
+    }).join('');
+  };
+
+  var V2_INV=[
+    {nom:'Flétan frais',four:'Poissonnerie locale · démo',th:6.40,re:5.90,u:'kg',cout:68.06,min:5.5},
+    {nom:'Agneau haché',four:'Fournisseur viande · démo',th:12.40,re:11.80,u:'kg',cout:25.32,min:10},
+    {nom:'Huile de friture',four:'Fournisseur principal',th:21.60,re:19.80,u:'L',cout:2.66,min:18},
+    {nom:'Ail pelé',four:'Fournisseur principal',th:4.20,re:4.00,u:'kg',cout:8.81,min:3.5},
+    {nom:'Pois chiches',four:'Fournisseur principal',th:18.20,re:18.00,u:'kg eq.',cout:3.18,min:14},
+    {nom:'Tahini',four:'Fournisseur principal',th:7.30,re:7.40,u:'kg',cout:11.13,min:6},
+    {nom:'Œufs',four:'Fournisseur principal',th:94,re:92,u:'un.',cout:.347,min:90},
+    {nom:'Pita',four:'Fournisseur principal',th:88,re:84,u:'un.',cout:.394,min:80}
+  ];
+  function buildV2Inventory(){
+    var body=document.getElementById('v2-inv-body'); if(!body) return;
+    body.innerHTML=V2_INV.map(function(x){
+      var d=x.re-x.th, val=d*x.cout, ratio=Math.max(0,Math.min(100,x.re/(x.min*1.5)*100));
+      var level=x.re<x.min?'red':x.re<x.min*1.15?'warn':'';
+      var dcol=Math.abs(val)>15?'var(--v2-red)':Math.abs(val)>5?'var(--v2-amber)':'#90a0ad';
+      return '<tr><td class="strong">'+x.nom+'</td><td>'+x.four+'</td>'
+        +'<td class="money">'+String(x.th).replace('.',',')+' '+x.u+'</td><td class="money">'+String(x.re).replace('.',',')+' '+x.u+'</td>'
+        +'<td class="money" style="color:'+dcol+'">'+(d>0?'+':'')+d.toFixed(2).replace('.',',')+' '+x.u+'</td>'
+        +'<td class="money" style="color:'+dcol+'">'+(val>0?'+':'')+v2Money(val)+'</td>'
+        +'<td><div class="v2-stockbar"><i class="'+level+'" style="width:'+ratio+'%"></i></div></td></tr>';
+    }).join('');
+  }
+
+  var V2_STAFF=[
+    {n:'Sarah Beaulieu',r:'Direction générale',rate:'1 250 $/sem',h:'45 h',p:'514-555-0101',e:'sarah.beaulieu@coriandre.example'},
+    {n:'Julien Mercier',r:'Chef · passe & tickets',rate:'1 200 $/sem',h:'51 h',p:'514-555-0102',e:'julien.mercier@coriandre.example'},
+    {n:'Élise Tanguay',r:'Garde-manger · ouverture',rate:'23,50 $/h',h:'40 h',p:'514-555-0103',e:'elise.tanguay@coriandre.example'},
+    {n:'Sofia Almeida',r:'Garde-manger · soir',rate:'22,50 $/h',h:'27 h',p:'514-555-0104',e:'sofia.almeida@coriandre.example'},
+    {n:'Marco Dieudonné',r:'Friture · chaud',rate:'23,00 $/h',h:'33,5 h',p:'514-555-0105',e:'marco.dieudonne@coriandre.example'},
+    {n:'Thomas Rivard',r:'Grillardin',rate:'24,00 $/h',h:'29 h',p:'514-555-0106',e:'thomas.rivard@coriandre.example'},
+    {n:'Nadia Benali',r:'Pâtisserie · desserts',rate:'22,50 $/h',h:'27 h',p:'514-555-0107',e:'nadia.benali@coriandre.example'},
+    {n:'Kevin Bouchard',r:'Plonge · soir',rate:'19,00 $/h',h:'31 h',p:'514-555-0108',e:'kevin.bouchard@coriandre.example'},
+    {n:'J-S Caron',r:'Plonge · lunch',rate:'18,75 $/h',h:'16 h',p:'514-555-0109',e:'js.caron@coriandre.example'},
+    {n:'Camille Roy',r:'Supervision salle',rate:'25,00 $/h',h:'35 h',p:'514-555-0110',e:'camille.roy@coriandre.example'},
+    {n:'Malik Haddad',r:'Bar',rate:'16,50 $/h + tips',h:'30 h',p:'514-555-0111',e:'malik.haddad@coriandre.example'},
+    {n:'Léa Martin',r:'Service',rate:'14,25 $/h + tips',h:'26 h',p:'514-555-0112',e:'lea.martin@coriandre.example'},
+    {n:'William Caron',r:'Service',rate:'14,25 $/h + tips',h:'24 h',p:'514-555-0113',e:'william.caron@coriandre.example'},
+    {n:'Maya Fortin',r:'Service',rate:'14,25 $/h + tips',h:'22 h',p:'514-555-0114',e:'maya.fortin@coriandre.example'},
+    {n:'Olivier Blais',r:'Accueil · soutien salle',rate:'18,25 $/h',h:'20 h',p:'514-555-0115',e:'olivier.blais@coriandre.example'}
+  ];
+  function buildV2Team(){
+    var g=document.getElementById('v2-team-grid'); if(!g) return;
+    g.innerHTML=V2_STAFF.map(function(x){
+      var init=x.n.split(' ').map(function(s){return s[0]}).join('').slice(0,2).toUpperCase();
+      return '<div class="v2-person"><div class="v2-avatar">'+init+'</div><div><div class="v2-person-name">'+x.n+'</div><div class="v2-person-role">'+x.r+'</div>'
+        +'<div class="v2-person-contact">'+x.p+' · '+x.e+'</div></div><div class="v2-person-rate">'+x.rate+'<span>'+x.h+' / sem</span></div></div>';
+    }).join('');
+  }
+
+  function buildV2PosFeed(){
+    var f=document.getElementById('v2-pos-feed'); if(!f) return;
+    var rows=[], dollar=String.fromCharCode(36);
+    if(typeof MENU_ENG!=='undefined' && MENU_ENG.length){
+      [0,3,7,10,13].forEach(function(ix,j){
+        var x=MENU_ENG[ix%MENU_ENG.length];
+        rows.push({t:['21:42','21:39','21:36','21:31','21:28'][j],d:(x.id||'PLU')+' · '+x.nom,a:(x.prix||0).toFixed(2).replace('.',',')+' '+dollar});
+      });
+    } else {
+      rows=[{t:'21:42',d:'PLU A14 · Flétan poêlé',a:'34,00 '+dollar},{t:'21:39',d:'PLU A12 · Keftas agneau',a:'27,00 '+dollar}];
+    }
+    f.innerHTML=rows.map(function(x){return '<div class="v2-pos-event"><span class="t">'+x.t+'</span><span class="d">'+x.d+'</span><span class="a">'+x.a+'</span></div>';}).join('');
+  }
+
+  window.v2GenerateExistingOrder=function(){
+    if(typeof genererCommandeMEP==='function') genererCommandeMEP('admin');
+    if(typeof showSection==='function') showSection('sec-admin-commande');
+  };
+
+  function replaceExact(root, from, to){
+    if(!root) return;
+    var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);
+    var nodes=[]; while(w.nextNode()) nodes.push(w.currentNode);
+    nodes.forEach(function(n){ if(n.nodeValue.indexOf(from)>=0) n.nodeValue=n.nodeValue.split(from).join(to); });
+  }
+  function recalibrateLegacyDashboard(){
+    var d=document.getElementById('sec-admin-dashboard'); if(!d) return;
+    var nums=d.querySelectorAll('.stat-num');
+    if(nums.length>=8){
+      nums[5].textContent='26 143';
+      nums[6].textContent='6 745';
+      nums[7].textContent='36,31';
+    }
+    replaceExact(d,'Un point de food cost vaut 6 237','Un point de food cost vaut 13 594');
+    replaceExact(d,'330','720');
+    replaceExact(d,'656','1 431');
+    replaceExact(d,'8 898','19 398');
+    replaceExact(d,'623 740','1 359 446');
+    replaceExact(d,'161 033','350 737');
+  }
+  function addDemoChip(){
+    var right=document.querySelector('.topbar-right'); if(!right || document.getElementById('v2-demo-chip')) return;
+    var s=document.createElement('span'); s.id='v2-demo-chip'; s.className='v2-pill violet'; s.textContent='DÉMO · DONNÉES FICTIVES';
+    right.insertBefore(s,right.firstChild);
+  }
+
+  document.addEventListener('DOMContentLoaded',function(){
+    addDemoChip();
+    buildV2PriceList('');
+    buildV2Inventory();
+    buildV2Team();
+    buildV2PosFeed();
+    recalibrateLegacyDashboard();
+  });
+})();
+</script>
+
 </body>
 </html>
