@@ -888,7 +888,7 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
   <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:12px;">
       <div style="font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:8px;">Fiche A09 — chaque ligne fermée, chaque grammage reporté</div>
       <div class="info-row"><span class="info-label">A03 · Boules à grand-pa</span><span class="info-val" style="font-size:11px;color:var(--text-sub);">5 pièces par portion</span></div>
-      <div class="info-row"><span class="info-label">A03 · Accompagnements</span><span class="info-val" style="font-size:11px;color:var(--text-sub);">moutarde baseball 30 ml et sirop d'érable 30 ml, contenants 2 oz</span></div>
+      <div class="info-row"><span class="info-label">A03 · Accompagnements</span><span class="info-val" style="font-size:11px;color:var(--text-sub);">[SDC:DETAIL]</span></div>
       <div class="info-row"><span class="info-label">A04 · Beignets de flétan</span><span class="info-val" style="font-size:11px;color:var(--text-sub);">4 beignets de 25 g par portion</span></div>
       <div class="info-row"><span class="info-label">A06 · Burger</span><span class="info-val" style="font-size:11px;color:var(--text-sub);">pain brioché 85 g, grillade de Valleyfield 150 g (fiche 21), pickliz 55 g (fiche 05), cheddar 30 g, mayo épis, frites 180 g et sauce bravas 60 g (fiche 01)</span></div>
       <div class="info-row"><span class="info-label">A07 · Panna cotta</span><span class="info-val" style="font-size:11px;color:var(--text-sub);">chantilly 25 g (fiche 16), petits fruits 30 g, amandes effilées 8 g</span></div>
@@ -917,8 +917,8 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
     <div class="mapaq-crit" style="background:rgba(232,80,10,.10);border-color:rgba(232,80,10,.35);">
       <div class="mapaq-crit-title" style="color:var(--col-admin);">💰 Food cost — La Coriandre</div>
       <div class="mapaq-crit-body" style="color:var(--text-sub);">Chaque coût affiché ici est calculé au gramme
-      à partir des 136 articles de la pricelist et des 22 fiches du classeur. Aucun chiffre n'est saisi à la main :
-      changez un prix fournisseur, tout se recalcule.</div>
+      à partir des 136 articles de la pricelist et des 22 fiches du classeur. Les grammages et le détail par ingrédient sont masqués dans cette démo :
+      les indicateurs de démonstration restent consultables.</div>
     </div>
 
     <div class="grid3">
@@ -957,20 +957,20 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
     <div class="s-header">Le détail, ligne par ligne</div>
     <div class="info-box">Ouvrez une assiette : chaque composante affiche son coût et son article d'origine.
     C'est ce niveau de détail qui permet de discuter d'un prix avec un fournisseur.</div>
-<div class="card"><div class="card-header" onclick="toggleCard(this)"><div><div class="card-title">A04 Beignets de flétan (4), beurre noisette</div><div class="card-sub">4,19 $ de coût · 16,00 $ au menu · 26,2 % · marge 11,81 $</div></div><span class="chevron">▾</span></div><div class="card-body"><div class="info-row"><span class="info-label">Beignets de 25 g x 4 (fiche 11) <span style="color:var(--muted);font-size:10px;">R11</span></span><span class="info-val" style="font-size:11px;">3,625 $</span></div><div class="info-row"><span class="info-label">Beurre noisette 20 g <span style="color:var(--muted);font-size:10px;">G49</span></span><span class="info-val" style="font-size:11px;">0,294 $</span></div><div class="info-row" style="border-top:1px solid var(--border);margin-top:6px;padding-top:8px;"><span class="info-label"><strong>Coût théorique</strong></span><span class="info-val"><strong>3,92 $</strong></span></div><div class="info-row"><span class="info-label">Pertes, casse, repas d'employés (7,0 %)</span><span class="info-val">0,274 $</span></div><div class="info-row"><span class="info-label"><strong>Coût réel</strong></span><span class="info-val"><strong>4,19 $</strong></span></div><div style="font-size:11px;color:var(--text-sub);margin-top:8px;line-height:1.7;">Poids mort · Conserver — marge de 11,81 $ par assiette</div></div></div>
-<div class="card"><div class="card-header" onclick="toggleCard(this)"><div><div class="card-title">A03 Petites boules à grand-pa (5)</div><div class="card-sub">3,25 $ de coût · 13,00 $ au menu · 25,0 % · marge 9,75 $</div></div><span class="chevron">▾</span></div><div class="card-body"><div class="info-row"><span class="info-label">Boules panées 5 pieces (fiche 10) <span style="color:var(--muted);font-size:10px;">R10</span></span><span class="info-val" style="font-size:11px;">2,322 $</span></div><div class="info-row"><span class="info-label">Moutarde baseball au pickle 30 ml <span style="color:var(--muted);font-size:10px;">G121</span></span><span class="info-val" style="font-size:11px;">0,187 $</span></div><div class="info-row"><span class="info-label">Sirop d'érable 30 ml <span style="color:var(--muted);font-size:10px;">G120</span></span><span class="info-val" style="font-size:11px;">0,472 $</span></div><div class="info-row"><span class="info-label">Contenants portion 2 oz <span style="color:var(--muted);font-size:10px;">G124</span></span><span class="info-val" style="font-size:11px;">0,060 $</span></div><div class="info-row" style="border-top:1px solid var(--border);margin-top:6px;padding-top:8px;"><span class="info-label"><strong>Coût théorique</strong></span><span class="info-val"><strong>3,04 $</strong></span></div><div class="info-row"><span class="info-label">Pertes, casse, repas d'employés (7,0 %)</span><span class="info-val">0,213 $</span></div><div class="info-row"><span class="info-label"><strong>Coût réel</strong></span><span class="info-val"><strong>3,25 $</strong></span></div><div style="font-size:11px;color:var(--text-sub);margin-top:8px;line-height:1.7;">Cheval de bataille · Conserver — marge de 9,75 $ par assiette</div></div></div>
-<div class="card"><div class="card-header" onclick="toggleCard(this)"><div><div class="card-title">A11 Beignets d'aubergine et courgette (3), tzatziki</div><div class="card-sub">2,57 $ de coût · 12,00 $ au menu · 21,4 % · marge 9,43 $</div></div><span class="chevron">▾</span></div><div class="card-body"><div class="info-row"><span class="info-label">Beignets 3 pieces (fiche 20) <span style="color:var(--muted);font-size:10px;">R20</span></span><span class="info-val" style="font-size:11px;">1,963 $</span></div><div class="info-row"><span class="info-label">Tzatziki 60 g (fiche 03) <span style="color:var(--muted);font-size:10px;">R03</span></span><span class="info-val" style="font-size:11px;">0,404 $</span></div><div class="info-row"><span class="info-label">Huile de friture absorbée 12 g <span style="color:var(--muted);font-size:10px;">G10</span></span><span class="info-val" style="font-size:11px;">0,035 $</span></div><div class="info-row" style="border-top:1px solid var(--border);margin-top:6px;padding-top:8px;"><span class="info-label"><strong>Coût théorique</strong></span><span class="info-val"><strong>2,40 $</strong></span></div><div class="info-row"><span class="info-label">Pertes, casse, repas d'employés (7,0 %)</span><span class="info-val">0,168 $</span></div><div class="info-row"><span class="info-label"><strong>Coût réel</strong></span><span class="info-val"><strong>2,57 $</strong></span></div><div style="font-size:11px;color:var(--text-sub);margin-top:8px;line-height:1.7;">Poids mort · Conserver — marge de 9,43 $ par assiette</div></div></div>
-<div class="card"><div class="card-header" onclick="toggleCard(this)"><div><div class="card-title">A10 Salmorejo, jambon et œuf</div><div class="card-sub">1,60 $ de coût · 11,00 $ au menu · 14,6 % · marge 9,40 $</div></div><span class="chevron">▾</span></div><div class="card-body"><div class="info-row"><span class="info-label">Salmorejo 250 g (fiche 08) <span style="color:var(--muted);font-size:10px;">R08</span></span><span class="info-val" style="font-size:11px;">0,954 $</span></div><div class="info-row"><span class="info-label">Jambon cuit 25 g <span style="color:var(--muted);font-size:10px;">G43</span></span><span class="info-val" style="font-size:11px;">0,275 $</span></div><div class="info-row"><span class="info-label">Œuf dur 1/2 <span style="color:var(--muted);font-size:10px;">G17</span></span><span class="info-val" style="font-size:11px;">0,174 $</span></div><div class="info-row"><span class="info-label">Huile d'olive extra vierge 8 g <span style="color:var(--muted);font-size:10px;">G91</span></span><span class="info-val" style="font-size:11px;">0,094 $</span></div><div class="info-row" style="border-top:1px solid var(--border);margin-top:6px;padding-top:8px;"><span class="info-label"><strong>Coût théorique</strong></span><span class="info-val"><strong>1,50 $</strong></span></div><div class="info-row"><span class="info-label">Pertes, casse, repas d'employés (7,0 %)</span><span class="info-val">0,105 $</span></div><div class="info-row"><span class="info-label"><strong>Coût réel</strong></span><span class="info-val"><strong>1,60 $</strong></span></div><div style="font-size:11px;color:var(--text-sub);margin-top:8px;line-height:1.7;">Poids mort · Conserver — marge de 9,40 $ par assiette</div></div></div>
-<div class="card"><div class="card-header" onclick="toggleCard(this)"><div><div class="card-title">A01 Houmous, pita grillé</div><div class="card-sub">1,78 $ de coût · 11,00 $ au menu · 16,2 % · marge 9,22 $</div></div><span class="chevron">▾</span></div><div class="card-body"><div class="info-row"><span class="info-label">Houmous 150 g (fiche 06) <span style="color:var(--muted);font-size:10px;">R06</span></span><span class="info-val" style="font-size:11px;">0,594 $</span></div><div class="info-row"><span class="info-label">Zaatar 4 g <span style="color:var(--muted);font-size:10px;">G09</span></span><span class="info-val" style="font-size:11px;">0,138 $</span></div><div class="info-row"><span class="info-label">Huile d'olive extra vierge 12 g <span style="color:var(--muted);font-size:10px;">G91</span></span><span class="info-val" style="font-size:11px;">0,142 $</span></div><div class="info-row"><span class="info-label">Pita grille 2 <span style="color:var(--muted);font-size:10px;">G18</span></span><span class="info-val" style="font-size:11px;">0,789 $</span></div><div class="info-row" style="border-top:1px solid var(--border);margin-top:6px;padding-top:8px;"><span class="info-label"><strong>Coût théorique</strong></span><span class="info-val"><strong>1,66 $</strong></span></div><div class="info-row"><span class="info-label">Pertes, casse, repas d'employés (7,0 %)</span><span class="info-val">0,116 $</span></div><div class="info-row"><span class="info-label"><strong>Coût réel</strong></span><span class="info-val"><strong>1,78 $</strong></span></div><div style="font-size:11px;color:var(--text-sub);margin-top:8px;line-height:1.7;">Cheval de bataille · Conserver — marge de 9,22 $ par assiette</div></div></div>
-<div class="card"><div class="card-header" onclick="toggleCard(this)"><div><div class="card-title">A02 Bananes plantain frites, sel & curry</div><div class="card-sub">0,92 $ de coût · 9,00 $ au menu · 10,2 % · marge 8,08 $</div></div><span class="chevron">▾</span></div><div class="card-body"><div class="info-row"><span class="info-label">Plantain 230 g bruts pour 156 g parés <span style="color:var(--muted);font-size:10px;">G68</span></span><span class="info-val" style="font-size:11px;">0,516 $</span></div><div class="info-row"><span class="info-label">Fécule de maïs 2 g (double friture) <span style="color:var(--muted);font-size:10px;">G32B</span></span><span class="info-val" style="font-size:11px;">0,007 $</span></div><div class="info-row"><span class="info-label">Mélange sel & curry 4 g (fiche 02) <span style="color:var(--muted);font-size:10px;">R02</span></span><span class="info-val" style="font-size:11px;">0,035 $</span></div><div class="info-row"><span class="info-label">Huile de friture absorbée 15 g <span style="color:var(--muted);font-size:10px;">G10</span></span><span class="info-val" style="font-size:11px;">0,043 $</span></div><div class="info-row"><span class="info-label">Papier brun 1 feuille <span style="color:var(--muted);font-size:10px;">G25</span></span><span class="info-val" style="font-size:11px;">0,037 $</span></div><div class="info-row"><span class="info-label">Mayo épis — mayonnaise 26 g <span style="color:var(--muted);font-size:10px;">G95</span></span><span class="info-val" style="font-size:11px;">0,194 $</span></div><div class="info-row"><span class="info-label">Mayo épis — épis haïtien 4 g (fiche 04) <span style="color:var(--muted);font-size:10px;">R04</span></span><span class="info-val" style="font-size:11px;">0,025 $</span></div><div class="info-row" style="border-top:1px solid var(--border);margin-top:6px;padding-top:8px;"><span class="info-label"><strong>Coût théorique</strong></span><span class="info-val"><strong>0,86 $</strong></span></div><div class="info-row"><span class="info-label">Pertes, casse, repas d'employés (7,0 %)</span><span class="info-val">0,060 $</span></div><div class="info-row"><span class="info-label"><strong>Coût réel</strong></span><span class="info-val"><strong>0,92 $</strong></span></div><div style="font-size:11px;color:var(--text-sub);margin-top:8px;line-height:1.7;">Cheval de bataille · Conserver — marge de 8,08 $ par assiette</div></div></div>
-<div class="card"><div class="card-header" onclick="toggleCard(this)"><div><div class="card-title">A14 Flétan poêlé, salmorejo, chimichurri</div><div class="card-sub">14,66 $ de coût · 36,00 $ au menu · 40,7 % · marge 21,34 $</div></div><span class="chevron">▾</span></div><div class="card-body"><div class="info-row"><span class="info-label">Flétan portion 180 g <span style="color:var(--muted);font-size:10px;">G46</span></span><span class="info-val" style="font-size:11px;">12,251 $</span></div><div class="info-row"><span class="info-label">Salmorejo 120 g (fiche 08) <span style="color:var(--muted);font-size:10px;">R08</span></span><span class="info-val" style="font-size:11px;">0,458 $</span></div><div class="info-row"><span class="info-label">Chimichurri 25 g (fiche 18) <span style="color:var(--muted);font-size:10px;">R18</span></span><span class="info-val" style="font-size:11px;">0,561 $</span></div><div class="info-row"><span class="info-label">Pommes de terre grelots 150 g <span style="color:var(--muted);font-size:10px;">G129</span></span><span class="info-val" style="font-size:11px;">0,206 $</span></div><div class="info-row"><span class="info-label">Beurre 15 g <span style="color:var(--muted);font-size:10px;">G49</span></span><span class="info-val" style="font-size:11px;">0,221 $</span></div><div class="info-row"><span class="info-label">Sel kasher de finition 0,5 g <span style="color:var(--muted);font-size:10px;">G07</span></span><span class="info-val" style="font-size:11px;">0,001 $</span></div><div class="info-row" style="border-top:1px solid var(--border);margin-top:6px;padding-top:8px;"><span class="info-label"><strong>Coût théorique</strong></span><span class="info-val"><strong>13,70 $</strong></span></div><div class="info-row"><span class="info-label">Pertes, casse, repas d'employés (7,0 %)</span><span class="info-val">0,959 $</span></div><div class="info-row"><span class="info-label"><strong>Coût réel</strong></span><span class="info-val"><strong>14,66 $</strong></span></div><div style="font-size:11px;color:var(--text-sub);margin-top:8px;line-height:1.7;">Étoile · Monter à 49,00 $ ou revoir la portion</div></div></div>
-<div class="card"><div class="card-header" onclick="toggleCard(this)"><div><div class="card-title">A15 Pâtes crémeuses à la grillade de Valleyfield</div><div class="card-sub">4,63 $ de coût · 24,00 $ au menu · 19,3 % · marge 19,37 $</div></div><span class="chevron">▾</span></div><div class="card-body"><div class="info-row"><span class="info-label">Linguines sèches 120 g <span style="color:var(--muted);font-size:10px;">G134</span></span><span class="info-val" style="font-size:11px;">0,423 $</span></div><div class="info-row"><span class="info-label">Grillade portionnée 150 g (fiche 21) <span style="color:var(--muted);font-size:10px;">R21</span></span><span class="info-val" style="font-size:11px;">1,657 $</span></div><div class="info-row"><span class="info-label">Sauce crémeuse 180 g (fiche 22) <span style="color:var(--muted);font-size:10px;">R22</span></span><span class="info-val" style="font-size:11px;">1,808 $</span></div><div class="info-row"><span class="info-label">Parmesan râpé 15 g <span style="color:var(--muted);font-size:10px;">G133</span></span><span class="info-val" style="font-size:11px;">0,350 $</span></div><div class="info-row"><span class="info-label">Persil plat 2 g <span style="color:var(--muted);font-size:10px;">G73</span></span><span class="info-val" style="font-size:11px;">0,073 $</span></div><div class="info-row"><span class="info-label">Poivre noir concassé 0,5 g <span style="color:var(--muted);font-size:10px;">G08</span></span><span class="info-val" style="font-size:11px;">0,018 $</span></div><div class="info-row" style="border-top:1px solid var(--border);margin-top:6px;padding-top:8px;"><span class="info-label"><strong>Coût théorique</strong></span><span class="info-val"><strong>4,33 $</strong></span></div><div class="info-row"><span class="info-label">Pertes, casse, repas d'employés (7,0 %)</span><span class="info-val">0,303 $</span></div><div class="info-row"><span class="info-label"><strong>Coût réel</strong></span><span class="info-val"><strong>4,63 $</strong></span></div><div style="font-size:11px;color:var(--text-sub);margin-top:8px;line-height:1.7;">Étoile · Conserver — marge de 19,37 $ par assiette</div></div></div>
-<div class="card"><div class="card-header" onclick="toggleCard(this)"><div><div class="card-title">A12 Keftas d'agneau (3), chimichurri, bannique</div><div class="card-sub">8,63 $ de coût · 27,00 $ au menu · 32,0 % · marge 18,37 $</div></div><span class="chevron">▾</span></div><div class="card-body"><div class="info-row"><span class="info-label">Keftas 270 g d'appareil (fiche 13) <span style="color:var(--muted);font-size:10px;">R13</span></span><span class="info-val" style="font-size:11px;">6,679 $</span></div><div class="info-row"><span class="info-label">Chimichurri 30 g (fiche 18) <span style="color:var(--muted);font-size:10px;">R18</span></span><span class="info-val" style="font-size:11px;">0,674 $</span></div><div class="info-row"><span class="info-label">Bannique 2 galettes (fiche 19) <span style="color:var(--muted);font-size:10px;">R19</span></span><span class="info-val" style="font-size:11px;">0,252 $</span></div><div class="info-row"><span class="info-label">Mesclun 40 g <span style="color:var(--muted);font-size:10px;">G128</span></span><span class="info-val" style="font-size:11px;">0,367 $</span></div><div class="info-row"><span class="info-label">Huile d'olive extra vierge 8 g <span style="color:var(--muted);font-size:10px;">G91</span></span><span class="info-val" style="font-size:11px;">0,094 $</span></div><div class="info-row"><span class="info-label">Sel kasher de finition 0,5 g <span style="color:var(--muted);font-size:10px;">G07</span></span><span class="info-val" style="font-size:11px;">0,001 $</span></div><div class="info-row" style="border-top:1px solid var(--border);margin-top:6px;padding-top:8px;"><span class="info-label"><strong>Coût théorique</strong></span><span class="info-val"><strong>8,07 $</strong></span></div><div class="info-row"><span class="info-label">Pertes, casse, repas d'employés (7,0 %)</span><span class="info-val">0,565 $</span></div><div class="info-row"><span class="info-label"><strong>Coût réel</strong></span><span class="info-val"><strong>8,63 $</strong></span></div><div style="font-size:11px;color:var(--text-sub);margin-top:8px;line-height:1.7;">Étoile · Monter à 29,00 $ ou revoir la portion</div></div></div>
-<div class="card"><div class="card-header" onclick="toggleCard(this)"><div><div class="card-title">A06 Burger grillade de Valleyfield, pickliz</div><div class="card-sub">4,33 $ de coût · 21,00 $ au menu · 20,6 % · marge 16,67 $</div></div><span class="chevron">▾</span></div><div class="card-body"><div class="info-row"><span class="info-label">Pain brioché 85 g <span style="color:var(--muted);font-size:10px;">G105</span></span><span class="info-val" style="font-size:11px;">0,729 $</span></div><div class="info-row"><span class="info-label">Grillade portionnée 150 g (fiche 21) <span style="color:var(--muted);font-size:10px;">R21</span></span><span class="info-val" style="font-size:11px;">1,657 $</span></div><div class="info-row"><span class="info-label">Pickliz égoutté 55 g (fiche 05) <span style="color:var(--muted);font-size:10px;">R05</span></span><span class="info-val" style="font-size:11px;">0,110 $</span></div><div class="info-row"><span class="info-label">Cheddar râpé 30 g <span style="color:var(--muted);font-size:10px;">G50</span></span><span class="info-val" style="font-size:11px;">0,345 $</span></div><div class="info-row"><span class="info-label">Mesclun 15 g <span style="color:var(--muted);font-size:10px;">G128</span></span><span class="info-val" style="font-size:11px;">0,138 $</span></div><div class="info-row"><span class="info-label">Tomate 20 g <span style="color:var(--muted);font-size:10px;">G65</span></span><span class="info-val" style="font-size:11px;">0,053 $</span></div><div class="info-row"><span class="info-label">Mayo épis — mayonnaise 18 g <span style="color:var(--muted);font-size:10px;">G95</span></span><span class="info-val" style="font-size:11px;">0,134 $</span></div><div class="info-row"><span class="info-label">Mayo épis — épis haïtien 3 g (fiche 04) <span style="color:var(--muted);font-size:10px;">R04</span></span><span class="info-val" style="font-size:11px;">0,018 $</span></div><div class="info-row"><span class="info-label">Tabasco 1 g <span style="color:var(--muted);font-size:10px;">G14</span></span><span class="info-val" style="font-size:11px;">0,069 $</span></div><div class="info-row"><span class="info-label">Frites 180 g <span style="color:var(--muted);font-size:10px;">G127</span></span><span class="info-val" style="font-size:11px;">0,645 $</span></div><div class="info-row"><span class="info-label">Sauce bravas 60 g (fiche 01) <span style="color:var(--muted);font-size:10px;">R01</span></span><span class="info-val" style="font-size:11px;">0,096 $</span></div><div class="info-row"><span class="info-label">Huile de friture absorbée 18 g <span style="color:var(--muted);font-size:10px;">G10</span></span><span class="info-val" style="font-size:11px;">0,052 $</span></div><div class="info-row" style="border-top:1px solid var(--border);margin-top:6px;padding-top:8px;"><span class="info-label"><strong>Coût théorique</strong></span><span class="info-val"><strong>4,05 $</strong></span></div><div class="info-row"><span class="info-label">Pertes, casse, repas d'employés (7,0 %)</span><span class="info-val">0,283 $</span></div><div class="info-row"><span class="info-label"><strong>Coût réel</strong></span><span class="info-val"><strong>4,33 $</strong></span></div><div style="font-size:11px;color:var(--text-sub);margin-top:8px;line-height:1.7;">Étoile · Conserver — marge de 16,67 $ par assiette</div></div></div>
-<div class="card"><div class="card-header" onclick="toggleCard(this)"><div><div class="card-title">A05 Bánh mì giò lụa</div><div class="card-sub">2,90 $ de coût · 14,00 $ au menu · 20,7 % · marge 11,10 $</div></div><span class="chevron">▾</span></div><div class="card-body"><div class="info-row"><span class="info-label">Sandwich complet (fiche 12) <span style="color:var(--muted);font-size:10px;">R12</span></span><span class="info-val" style="font-size:11px;">2,707 $</span></div><div class="info-row" style="border-top:1px solid var(--border);margin-top:6px;padding-top:8px;"><span class="info-label"><strong>Coût théorique</strong></span><span class="info-val"><strong>2,71 $</strong></span></div><div class="info-row"><span class="info-label">Pertes, casse, repas d'employés (7,0 %)</span><span class="info-val">0,190 $</span></div><div class="info-row"><span class="info-label"><strong>Coût réel</strong></span><span class="info-val"><strong>2,90 $</strong></span></div><div style="font-size:11px;color:var(--text-sub);margin-top:8px;line-height:1.7;">Cheval de bataille · Conserver — marge de 11,10 $ par assiette</div></div></div>
-<div class="card"><div class="card-header" onclick="toggleCard(this)"><div><div class="card-title">A13 Crème brûlée au yuzu</div><div class="card-sub">0,89 $ de coût · 10,00 $ au menu · 8,9 % · marge 9,11 $</div></div><span class="chevron">▾</span></div><div class="card-body"><div class="info-row"><span class="info-label">Appareil 100 ml (fiche 17) <span style="color:var(--muted);font-size:10px;">R17</span></span><span class="info-val" style="font-size:11px;">0,577 $</span></div><div class="info-row"><span class="info-label">Sucre à brûler 8 g <span style="color:var(--muted);font-size:10px;">G03</span></span><span class="info-val" style="font-size:11px;">0,011 $</span></div><div class="info-row"><span class="info-label">Petits fruits 25 g <span style="color:var(--muted);font-size:10px;">G122</span></span><span class="info-val" style="font-size:11px;">0,244 $</span></div><div class="info-row" style="border-top:1px solid var(--border);margin-top:6px;padding-top:8px;"><span class="info-label"><strong>Coût théorique</strong></span><span class="info-val"><strong>0,83 $</strong></span></div><div class="info-row"><span class="info-label">Pertes, casse, repas d'employés (7,0 %)</span><span class="info-val">0,058 $</span></div><div class="info-row"><span class="info-label"><strong>Coût réel</strong></span><span class="info-val"><strong>0,89 $</strong></span></div><div style="font-size:11px;color:var(--text-sub);margin-top:8px;line-height:1.7;">Poids mort · Conserver — marge de 9,11 $ par assiette</div></div></div>
-<div class="card"><div class="card-header" onclick="toggleCard(this)"><div><div class="card-title">A08 Gâteau chocolat noir 70 %</div><div class="card-sub">3,17 $ de coût · 11,00 $ au menu · 28,9 % · marge 7,83 $</div></div><span class="chevron">▾</span></div><div class="card-body"><div class="info-row"><span class="info-label">Portion de 120 g (fiche 14) <span style="color:var(--muted);font-size:10px;">R14</span></span><span class="info-val" style="font-size:11px;">2,536 $</span></div><div class="info-row"><span class="info-label">Chantilly 25 g (fiche 16) <span style="color:var(--muted);font-size:10px;">R16</span></span><span class="info-val" style="font-size:11px;">0,241 $</span></div><div class="info-row"><span class="info-label">Amandes effilées grillees 10 g <span style="color:var(--muted);font-size:10px;">G123</span></span><span class="info-val" style="font-size:11px;">0,190 $</span></div><div class="info-row" style="border-top:1px solid var(--border);margin-top:6px;padding-top:8px;"><span class="info-label"><strong>Coût théorique</strong></span><span class="info-val"><strong>2,97 $</strong></span></div><div class="info-row"><span class="info-label">Pertes, casse, repas d'employés (7,0 %)</span><span class="info-val">0,208 $</span></div><div class="info-row"><span class="info-label"><strong>Coût réel</strong></span><span class="info-val"><strong>3,17 $</strong></span></div><div style="font-size:11px;color:var(--text-sub);margin-top:8px;line-height:1.7;">Cheval de bataille · Conserver — marge de 7,83 $ par assiette</div></div></div>
-<div class="card"><div class="card-header" onclick="toggleCard(this)"><div><div class="card-title">A07 Panna cotta au yogourt de buffala</div><div class="card-sub">2,64 $ de coût · 10,00 $ au menu · 26,4 % · marge 7,36 $</div></div><span class="chevron">▾</span></div><div class="card-body"><div class="info-row"><span class="info-label">Panna cotta 90 g (fiche 15) <span style="color:var(--muted);font-size:10px;">R15</span></span><span class="info-val" style="font-size:11px;">1,591 $</span></div><div class="info-row"><span class="info-label">Chantilly 25 g (fiche 16) <span style="color:var(--muted);font-size:10px;">R16</span></span><span class="info-val" style="font-size:11px;">0,241 $</span></div><div class="info-row"><span class="info-label">Petits fruits 30 g <span style="color:var(--muted);font-size:10px;">G122</span></span><span class="info-val" style="font-size:11px;">0,292 $</span></div><div class="info-row"><span class="info-label">Amandes effilées 8 g <span style="color:var(--muted);font-size:10px;">G123</span></span><span class="info-val" style="font-size:11px;">0,152 $</span></div><div class="info-row"><span class="info-label">Verrine de service <span style="color:var(--muted);font-size:10px;">G125</span></span><span class="info-val" style="font-size:11px;">0,192 $</span></div><div class="info-row" style="border-top:1px solid var(--border);margin-top:6px;padding-top:8px;"><span class="info-label"><strong>Coût théorique</strong></span><span class="info-val"><strong>2,47 $</strong></span></div><div class="info-row"><span class="info-label">Pertes, casse, repas d'employés (7,0 %)</span><span class="info-val">0,173 $</span></div><div class="info-row"><span class="info-label"><strong>Coût réel</strong></span><span class="info-val"><strong>2,64 $</strong></span></div><div style="font-size:11px;color:var(--text-sub);margin-top:8px;line-height:1.7;">Cheval de bataille · Conserver — marge de 7,36 $ par assiette</div></div></div>
+<div class="card"><div class="card-header" onclick="toggleCard(this)"><div><div class="card-title">A04 Beignets de flétan (4), beurre noisette</div><div class="card-sub">4,19 $ de coût · 16,00 $ au menu · 26,2 % · marge 11,81 $</div></div><span class="chevron">▾</span></div><div class="card-body"><div class="info-row"><span class="info-label">Beignets de [SDC:QTE] x 4 (fiche 11) <span style="color:var(--muted);font-size:10px;">R11</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Beurre noisette [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G49</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row" style="border-top:1px solid var(--border);margin-top:6px;padding-top:8px;"><span class="info-label"><strong>Coût théorique</strong></span><span class="info-val"><strong>3,92 $</strong></span></div><div class="info-row"><span class="info-label">Pertes, casse, repas d'employés (7,0 %)</span><span class="info-val">0,274 $</span></div><div class="info-row"><span class="info-label"><strong>Coût réel</strong></span><span class="info-val"><strong>4,19 $</strong></span></div><div style="font-size:11px;color:var(--text-sub);margin-top:8px;line-height:1.7;">Poids mort · Conserver — marge de 11,81 $ par assiette</div></div></div>
+<div class="card"><div class="card-header" onclick="toggleCard(this)"><div><div class="card-title">A03 Petites boules à grand-pa (5)</div><div class="card-sub">3,25 $ de coût · 13,00 $ au menu · 25,0 % · marge 9,75 $</div></div><span class="chevron">▾</span></div><div class="card-body"><div class="info-row"><span class="info-label">Boules panées [SDC:QTE] (fiche 10) <span style="color:var(--muted);font-size:10px;">R10</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Moutarde baseball au pickle [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G121</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Sirop d'érable [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G120</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Contenants portion [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G124</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row" style="border-top:1px solid var(--border);margin-top:6px;padding-top:8px;"><span class="info-label"><strong>Coût théorique</strong></span><span class="info-val"><strong>3,04 $</strong></span></div><div class="info-row"><span class="info-label">Pertes, casse, repas d'employés (7,0 %)</span><span class="info-val">0,213 $</span></div><div class="info-row"><span class="info-label"><strong>Coût réel</strong></span><span class="info-val"><strong>3,25 $</strong></span></div><div style="font-size:11px;color:var(--text-sub);margin-top:8px;line-height:1.7;">Cheval de bataille · Conserver — marge de 9,75 $ par assiette</div></div></div>
+<div class="card"><div class="card-header" onclick="toggleCard(this)"><div><div class="card-title">A11 Beignets d'aubergine et courgette (3), tzatziki</div><div class="card-sub">2,57 $ de coût · 12,00 $ au menu · 21,4 % · marge 9,43 $</div></div><span class="chevron">▾</span></div><div class="card-body"><div class="info-row"><span class="info-label">Beignets [SDC:QTE] (fiche 20) <span style="color:var(--muted);font-size:10px;">R20</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Tzatziki [SDC:QTE] (fiche 03) <span style="color:var(--muted);font-size:10px;">R03</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Huile de friture absorbée [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G10</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row" style="border-top:1px solid var(--border);margin-top:6px;padding-top:8px;"><span class="info-label"><strong>Coût théorique</strong></span><span class="info-val"><strong>2,40 $</strong></span></div><div class="info-row"><span class="info-label">Pertes, casse, repas d'employés (7,0 %)</span><span class="info-val">0,168 $</span></div><div class="info-row"><span class="info-label"><strong>Coût réel</strong></span><span class="info-val"><strong>2,57 $</strong></span></div><div style="font-size:11px;color:var(--text-sub);margin-top:8px;line-height:1.7;">Poids mort · Conserver — marge de 9,43 $ par assiette</div></div></div>
+<div class="card"><div class="card-header" onclick="toggleCard(this)"><div><div class="card-title">A10 Salmorejo, jambon et œuf</div><div class="card-sub">1,60 $ de coût · 11,00 $ au menu · 14,6 % · marge 9,40 $</div></div><span class="chevron">▾</span></div><div class="card-body"><div class="info-row"><span class="info-label">Salmorejo [SDC:QTE] (fiche 08) <span style="color:var(--muted);font-size:10px;">R08</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Jambon cuit [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G43</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Œuf dur 1/2 <span style="color:var(--muted);font-size:10px;">G17</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Huile d'olive extra vierge [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G91</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row" style="border-top:1px solid var(--border);margin-top:6px;padding-top:8px;"><span class="info-label"><strong>Coût théorique</strong></span><span class="info-val"><strong>1,50 $</strong></span></div><div class="info-row"><span class="info-label">Pertes, casse, repas d'employés (7,0 %)</span><span class="info-val">0,105 $</span></div><div class="info-row"><span class="info-label"><strong>Coût réel</strong></span><span class="info-val"><strong>1,60 $</strong></span></div><div style="font-size:11px;color:var(--text-sub);margin-top:8px;line-height:1.7;">Poids mort · Conserver — marge de 9,40 $ par assiette</div></div></div>
+<div class="card"><div class="card-header" onclick="toggleCard(this)"><div><div class="card-title">A01 Houmous, pita grillé</div><div class="card-sub">1,78 $ de coût · 11,00 $ au menu · 16,2 % · marge 9,22 $</div></div><span class="chevron">▾</span></div><div class="card-body"><div class="info-row"><span class="info-label">Houmous [SDC:QTE] (fiche 06) <span style="color:var(--muted);font-size:10px;">R06</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Zaatar [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G09</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Huile d'olive extra vierge [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G91</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Pita grille 2 <span style="color:var(--muted);font-size:10px;">G18</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row" style="border-top:1px solid var(--border);margin-top:6px;padding-top:8px;"><span class="info-label"><strong>Coût théorique</strong></span><span class="info-val"><strong>1,66 $</strong></span></div><div class="info-row"><span class="info-label">Pertes, casse, repas d'employés (7,0 %)</span><span class="info-val">0,116 $</span></div><div class="info-row"><span class="info-label"><strong>Coût réel</strong></span><span class="info-val"><strong>1,78 $</strong></span></div><div style="font-size:11px;color:var(--text-sub);margin-top:8px;line-height:1.7;">Cheval de bataille · Conserver — marge de 9,22 $ par assiette</div></div></div>
+<div class="card"><div class="card-header" onclick="toggleCard(this)"><div><div class="card-title">A02 Bananes plantain frites, sel & curry</div><div class="card-sub">0,92 $ de coût · 9,00 $ au menu · 10,2 % · marge 8,08 $</div></div><span class="chevron">▾</span></div><div class="card-body"><div class="info-row"><span class="info-label">Plantain [SDC:QTE] bruts pour [SDC:QTE] parés <span style="color:var(--muted);font-size:10px;">G68</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Fécule de maïs [SDC:QTE] (double friture) <span style="color:var(--muted);font-size:10px;">G32B</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Mélange sel & curry [SDC:QTE] (fiche 02) <span style="color:var(--muted);font-size:10px;">R02</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Huile de friture absorbée [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G10</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Papier brun 1 feuille <span style="color:var(--muted);font-size:10px;">G25</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Mayo épis — mayonnaise [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G95</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Mayo épis — épis haïtien [SDC:QTE] (fiche 04) <span style="color:var(--muted);font-size:10px;">R04</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row" style="border-top:1px solid var(--border);margin-top:6px;padding-top:8px;"><span class="info-label"><strong>Coût théorique</strong></span><span class="info-val"><strong>0,86 $</strong></span></div><div class="info-row"><span class="info-label">Pertes, casse, repas d'employés (7,0 %)</span><span class="info-val">0,060 $</span></div><div class="info-row"><span class="info-label"><strong>Coût réel</strong></span><span class="info-val"><strong>0,92 $</strong></span></div><div style="font-size:11px;color:var(--text-sub);margin-top:8px;line-height:1.7;">Cheval de bataille · Conserver — marge de 8,08 $ par assiette</div></div></div>
+<div class="card"><div class="card-header" onclick="toggleCard(this)"><div><div class="card-title">A14 Flétan poêlé, salmorejo, chimichurri</div><div class="card-sub">14,66 $ de coût · 36,00 $ au menu · 40,7 % · marge 21,34 $</div></div><span class="chevron">▾</span></div><div class="card-body"><div class="info-row"><span class="info-label">Flétan portion [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G46</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Salmorejo [SDC:QTE] (fiche 08) <span style="color:var(--muted);font-size:10px;">R08</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Chimichurri [SDC:QTE] (fiche 18) <span style="color:var(--muted);font-size:10px;">R18</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Pommes de terre grelots [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G129</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Beurre [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G49</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Sel kasher de finition [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G07</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row" style="border-top:1px solid var(--border);margin-top:6px;padding-top:8px;"><span class="info-label"><strong>Coût théorique</strong></span><span class="info-val"><strong>13,70 $</strong></span></div><div class="info-row"><span class="info-label">Pertes, casse, repas d'employés (7,0 %)</span><span class="info-val">0,959 $</span></div><div class="info-row"><span class="info-label"><strong>Coût réel</strong></span><span class="info-val"><strong>14,66 $</strong></span></div><div style="font-size:11px;color:var(--text-sub);margin-top:8px;line-height:1.7;">Étoile · Monter à 49,00 $ ou revoir la portion</div></div></div>
+<div class="card"><div class="card-header" onclick="toggleCard(this)"><div><div class="card-title">A15 Pâtes crémeuses à la grillade de Valleyfield</div><div class="card-sub">4,63 $ de coût · 24,00 $ au menu · 19,3 % · marge 19,37 $</div></div><span class="chevron">▾</span></div><div class="card-body"><div class="info-row"><span class="info-label">Linguines sèches [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G134</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Grillade portionnée [SDC:QTE] (fiche 21) <span style="color:var(--muted);font-size:10px;">R21</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Sauce crémeuse [SDC:QTE] (fiche 22) <span style="color:var(--muted);font-size:10px;">R22</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Parmesan râpé [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G133</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Persil plat [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G73</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Poivre noir concassé [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G08</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row" style="border-top:1px solid var(--border);margin-top:6px;padding-top:8px;"><span class="info-label"><strong>Coût théorique</strong></span><span class="info-val"><strong>4,33 $</strong></span></div><div class="info-row"><span class="info-label">Pertes, casse, repas d'employés (7,0 %)</span><span class="info-val">0,303 $</span></div><div class="info-row"><span class="info-label"><strong>Coût réel</strong></span><span class="info-val"><strong>4,63 $</strong></span></div><div style="font-size:11px;color:var(--text-sub);margin-top:8px;line-height:1.7;">Étoile · Conserver — marge de 19,37 $ par assiette</div></div></div>
+<div class="card"><div class="card-header" onclick="toggleCard(this)"><div><div class="card-title">A12 Keftas d'agneau (3), chimichurri, bannique</div><div class="card-sub">8,63 $ de coût · 27,00 $ au menu · 32,0 % · marge 18,37 $</div></div><span class="chevron">▾</span></div><div class="card-body"><div class="info-row"><span class="info-label">Keftas [SDC:QTE] d'appareil (fiche 13) <span style="color:var(--muted);font-size:10px;">R13</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Chimichurri [SDC:QTE] (fiche 18) <span style="color:var(--muted);font-size:10px;">R18</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Bannique 2 galettes (fiche 19) <span style="color:var(--muted);font-size:10px;">R19</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Mesclun [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G128</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Huile d'olive extra vierge [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G91</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Sel kasher de finition [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G07</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row" style="border-top:1px solid var(--border);margin-top:6px;padding-top:8px;"><span class="info-label"><strong>Coût théorique</strong></span><span class="info-val"><strong>8,07 $</strong></span></div><div class="info-row"><span class="info-label">Pertes, casse, repas d'employés (7,0 %)</span><span class="info-val">0,565 $</span></div><div class="info-row"><span class="info-label"><strong>Coût réel</strong></span><span class="info-val"><strong>8,63 $</strong></span></div><div style="font-size:11px;color:var(--text-sub);margin-top:8px;line-height:1.7;">Étoile · Monter à 29,00 $ ou revoir la portion</div></div></div>
+<div class="card"><div class="card-header" onclick="toggleCard(this)"><div><div class="card-title">A06 Burger grillade de Valleyfield, pickliz</div><div class="card-sub">4,33 $ de coût · 21,00 $ au menu · 20,6 % · marge 16,67 $</div></div><span class="chevron">▾</span></div><div class="card-body"><div class="info-row"><span class="info-label">Pain brioché [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G105</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Grillade portionnée [SDC:QTE] (fiche 21) <span style="color:var(--muted);font-size:10px;">R21</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Pickliz égoutté [SDC:QTE] (fiche 05) <span style="color:var(--muted);font-size:10px;">R05</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Cheddar râpé [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G50</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Mesclun [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G128</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Tomate [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G65</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Mayo épis — mayonnaise [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G95</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Mayo épis — épis haïtien [SDC:QTE] (fiche 04) <span style="color:var(--muted);font-size:10px;">R04</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Tabasco [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G14</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Frites [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G127</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Sauce bravas [SDC:QTE] (fiche 01) <span style="color:var(--muted);font-size:10px;">R01</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Huile de friture absorbée [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G10</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row" style="border-top:1px solid var(--border);margin-top:6px;padding-top:8px;"><span class="info-label"><strong>Coût théorique</strong></span><span class="info-val"><strong>4,05 $</strong></span></div><div class="info-row"><span class="info-label">Pertes, casse, repas d'employés (7,0 %)</span><span class="info-val">0,283 $</span></div><div class="info-row"><span class="info-label"><strong>Coût réel</strong></span><span class="info-val"><strong>4,33 $</strong></span></div><div style="font-size:11px;color:var(--text-sub);margin-top:8px;line-height:1.7;">Étoile · Conserver — marge de 16,67 $ par assiette</div></div></div>
+<div class="card"><div class="card-header" onclick="toggleCard(this)"><div><div class="card-title">A05 Bánh mì giò lụa</div><div class="card-sub">2,90 $ de coût · 14,00 $ au menu · 20,7 % · marge 11,10 $</div></div><span class="chevron">▾</span></div><div class="card-body"><div class="info-row"><span class="info-label">Sandwich complet (fiche 12) <span style="color:var(--muted);font-size:10px;">R12</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row" style="border-top:1px solid var(--border);margin-top:6px;padding-top:8px;"><span class="info-label"><strong>Coût théorique</strong></span><span class="info-val"><strong>2,71 $</strong></span></div><div class="info-row"><span class="info-label">Pertes, casse, repas d'employés (7,0 %)</span><span class="info-val">0,190 $</span></div><div class="info-row"><span class="info-label"><strong>Coût réel</strong></span><span class="info-val"><strong>2,90 $</strong></span></div><div style="font-size:11px;color:var(--text-sub);margin-top:8px;line-height:1.7;">Cheval de bataille · Conserver — marge de 11,10 $ par assiette</div></div></div>
+<div class="card"><div class="card-header" onclick="toggleCard(this)"><div><div class="card-title">A13 Crème brûlée au yuzu</div><div class="card-sub">0,89 $ de coût · 10,00 $ au menu · 8,9 % · marge 9,11 $</div></div><span class="chevron">▾</span></div><div class="card-body"><div class="info-row"><span class="info-label">Appareil [SDC:QTE] (fiche 17) <span style="color:var(--muted);font-size:10px;">R17</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Sucre à brûler [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G03</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Petits fruits [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G122</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row" style="border-top:1px solid var(--border);margin-top:6px;padding-top:8px;"><span class="info-label"><strong>Coût théorique</strong></span><span class="info-val"><strong>0,83 $</strong></span></div><div class="info-row"><span class="info-label">Pertes, casse, repas d'employés (7,0 %)</span><span class="info-val">0,058 $</span></div><div class="info-row"><span class="info-label"><strong>Coût réel</strong></span><span class="info-val"><strong>0,89 $</strong></span></div><div style="font-size:11px;color:var(--text-sub);margin-top:8px;line-height:1.7;">Poids mort · Conserver — marge de 9,11 $ par assiette</div></div></div>
+<div class="card"><div class="card-header" onclick="toggleCard(this)"><div><div class="card-title">A08 Gâteau chocolat noir 70 %</div><div class="card-sub">3,17 $ de coût · 11,00 $ au menu · 28,9 % · marge 7,83 $</div></div><span class="chevron">▾</span></div><div class="card-body"><div class="info-row"><span class="info-label">Portion de [SDC:QTE] (fiche 14) <span style="color:var(--muted);font-size:10px;">R14</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Chantilly [SDC:QTE] (fiche 16) <span style="color:var(--muted);font-size:10px;">R16</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Amandes effilées grillees [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G123</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row" style="border-top:1px solid var(--border);margin-top:6px;padding-top:8px;"><span class="info-label"><strong>Coût théorique</strong></span><span class="info-val"><strong>2,97 $</strong></span></div><div class="info-row"><span class="info-label">Pertes, casse, repas d'employés (7,0 %)</span><span class="info-val">0,208 $</span></div><div class="info-row"><span class="info-label"><strong>Coût réel</strong></span><span class="info-val"><strong>3,17 $</strong></span></div><div style="font-size:11px;color:var(--text-sub);margin-top:8px;line-height:1.7;">Cheval de bataille · Conserver — marge de 7,83 $ par assiette</div></div></div>
+<div class="card"><div class="card-header" onclick="toggleCard(this)"><div><div class="card-title">A07 Panna cotta au yogourt de buffala</div><div class="card-sub">2,64 $ de coût · 10,00 $ au menu · 26,4 % · marge 7,36 $</div></div><span class="chevron">▾</span></div><div class="card-body"><div class="info-row"><span class="info-label">Panna cotta [SDC:QTE] (fiche 15) <span style="color:var(--muted);font-size:10px;">R15</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Chantilly [SDC:QTE] (fiche 16) <span style="color:var(--muted);font-size:10px;">R16</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Petits fruits [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G122</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Amandes effilées [SDC:QTE] <span style="color:var(--muted);font-size:10px;">G123</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row"><span class="info-label">Verrine de service <span style="color:var(--muted);font-size:10px;">G125</span></span><span class="info-val" style="font-size:11px;">[SDC:COUT]</span></div><div class="info-row" style="border-top:1px solid var(--border);margin-top:6px;padding-top:8px;"><span class="info-label"><strong>Coût théorique</strong></span><span class="info-val"><strong>2,47 $</strong></span></div><div class="info-row"><span class="info-label">Pertes, casse, repas d'employés (7,0 %)</span><span class="info-val">0,173 $</span></div><div class="info-row"><span class="info-label"><strong>Coût réel</strong></span><span class="info-val"><strong>2,64 $</strong></span></div><div style="font-size:11px;color:var(--text-sub);margin-top:8px;line-height:1.7;">Cheval de bataille · Conserver — marge de 7,36 $ par assiette</div></div></div>
 
     <div class="s-header">⚠ L'assiette hors cible</div>
     <div class="alerte">A14 Flétan poêlé, 40,7 % de food cost. Le flétan est à 68,06 $/kg.</div>
@@ -978,9 +978,9 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
     <div style="display:flex;justify-content:space-between;font-size:9px;font-weight:900;letter-spacing:.1em;
     text-transform:uppercase;color:var(--muted);padding:0 0 4px;"><span style="flex:1;">Scénario</span>
     <span style="min-width:52px;">Coût</span><span style="min-width:52px;">Menu</span><span style="min-width:44px;text-align:right;">FC</span></div>
-<div class="fc-row"><span class="fc-plat">Statu quo<br><span style="font-size:10px;color:var(--muted);font-weight:600;">Flétan 180 g, prix 36,00 $</span></span><span class="fc-cout">14,66 $</span><span class="fc-prix">36,00 $</span><span class="fc-pct bad">40,7 %</span></div><div class="fc-row"><span class="fc-plat">Portion 140 g, prix inchangé<br><span style="font-size:10px;color:var(--muted);font-weight:600;">Même produit, grammage revu, prix maintenu à 36,00 $</span></span><span class="fc-cout">11,74 $</span><span class="fc-prix">36,00 $</span><span class="fc-pct warn">32,6 %</span></div><div class="fc-row"><span class="fc-plat">Prix seul<br><span style="font-size:10px;color:var(--muted);font-weight:600;">Portion inchangée, prix porté à la cible</span></span><span class="fc-cout">14,66 $</span><span class="fc-prix">49,00 $</span><span class="fc-pct good">29,9 %</span></div><div class="fc-row"><span class="fc-plat">Morue bleue 180 g<br><span style="font-size:10px;color:var(--muted);font-weight:600;">Substitution du poisson, 12,11 $/kg au lieu de 68,06 $/kg</span></span><span class="fc-cout">3,88 $</span><span class="fc-prix">29,00 $</span><span class="fc-pct good">13,4 %</span></div>
+<div class="fc-row"><span class="fc-plat">Statu quo<br><span style="font-size:10px;color:var(--muted);font-weight:600;">Flétan [SDC:QTE], prix 36,00 $</span></span><span class="fc-cout">14,66 $</span><span class="fc-prix">36,00 $</span><span class="fc-pct bad">40,7 %</span></div><div class="fc-row"><span class="fc-plat">Portion [SDC:QTE], prix inchangé<br><span style="font-size:10px;color:var(--muted);font-weight:600;">Même produit, grammage revu, prix maintenu à 36,00 $</span></span><span class="fc-cout">11,74 $</span><span class="fc-prix">36,00 $</span><span class="fc-pct warn">32,6 %</span></div><div class="fc-row"><span class="fc-plat">Prix seul<br><span style="font-size:10px;color:var(--muted);font-weight:600;">Portion inchangée, prix porté à la cible</span></span><span class="fc-cout">14,66 $</span><span class="fc-prix">49,00 $</span><span class="fc-pct good">29,9 %</span></div><div class="fc-row"><span class="fc-plat">Morue bleue [SDC:QTE]<br><span style="font-size:10px;color:var(--muted);font-weight:600;">Substitution du poisson, 12,11 $/kg au lieu de 68,06 $/kg</span></span><span class="fc-cout">3,88 $</span><span class="fc-prix">29,00 $</span><span class="fc-pct good">13,4 %</span></div>
     </div></div>
-    <div class="success-box"><strong>Recommandation SDC.</strong> Passer la portion de 180 g à 140 g sans toucher au prix.
+    <div class="success-box"><strong>Recommandation SDC.</strong> Passer la portion de [SDC:QTE] à [SDC:QTE] sans toucher au prix.
     Le flétan reste au menu, le food cost descend de 40,7 % à 32,6 %, la marge monte de 2,91 $ par assiette
     et le client ne voit aucune hausse. Monter le prix seul demanderait 49 $ l'assiette, ce qui la sort du marché.
     Changer de poisson règle le coût mais change le plat : c'est une décision de chef, pas une décision de chiffrier.</div>
@@ -1139,12 +1139,12 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
         <ul class="check-list" id="cl-t-production">
           <li onclick="tc(this,'cl-t-production',0)"><div class="check-box"></div><span class="clt"><span class="prio p1">P1</span><span class="clt-main">Grillade de Valleyfield — cuire</span> <span class="clt-detail">— fiche 21 · feu vif · belle coloration des deux côtés · 71 °C à cœur</span><span class="who who-marco">Marco</span></span></li>
           <li onclick="tc(this,'cl-t-production',1)"><div class="check-box"></div><span class="clt"><span class="prio p1">P1</span><span class="clt-main">Grillade — assaisonner</span> <span class="clt-detail">— fiche 21 · mélange maison frotté sur les tranches encore chaudes</span><span class="who who-marco">Marco</span></span></li>
-          <li onclick="tc(this,'cl-t-production',2)"><div class="check-box"></div><span class="clt"><span class="prio p1">P1</span><span class="clt-main">Grillade — portionner</span> <span class="clt-detail">— fiche 21 · après refroidissement conforme (MAPAQ R02) · 150 g étiquetés NOM · DATE · HEURE · complété = les portions de la semaine sont prêtes</span><span class="who who-marco">Marco</span></span></li>
-          <li onclick="tc(this,'cl-t-production',3)"><div class="check-box"></div><span class="clt"><span class="prio p1">P1</span><span class="clt-main">Pickliz — égoutter le service</span> <span class="clt-detail">— fiche 05 · ~55 g par burger · sans presser, garder le croquant</span><span class="who who-elise">Élise</span></span></li>
-          <li onclick="tc(this,'cl-t-production',4)"><div class="check-box"></div><span class="clt"><span class="prio p2">P2</span><span class="clt-main">Houmous — petit lot 830 g</span> <span class="clt-detail">— fiche 07 · à lancer si le bac est sous le tiers</span><span class="who who-elise">Élise</span></span></li>
-          <li onclick="tc(this,'cl-t-production',5)"><div class="check-box"></div><span class="clt"><span class="prio p2">P2</span><span class="clt-main">Keftas — façonner 1 kg</span> <span class="clt-detail">— fiche 13 · repos frigo 30 min avant façonnage</span><span class="who who-marco">Marco</span></span></li>
-          <li onclick="tc(this,'cl-t-production',6)"><div class="check-box"></div><span class="clt"><span class="prio p2">P2</span><span class="clt-main">Panna cotta — couler 30</span> <span class="clt-detail">— fiche 15 · ~90 g par contenant · prise au froid avant 17 h</span><span class="who who-nadia">Nadia</span></span></li>
-          <li onclick="tc(this,'cl-t-production',7)"><div class="check-box"></div><span class="clt"><span class="prio p2">P2</span><span class="clt-main">Gâteau — cuisson · portionnage</span> <span class="clt-detail">— fiche 14 · 92-95 °C à cœur · refroidir complet avant découpe · parts de 120 g</span><span class="who who-nadia">Nadia</span></span></li>
+          <li onclick="tc(this,'cl-t-production',2)"><div class="check-box"></div><span class="clt"><span class="prio p1">P1</span><span class="clt-main">Grillade — portionner</span> <span class="clt-detail">— fiche 21 · après refroidissement conforme (MAPAQ R02) · [SDC:QTE] étiquetés NOM · DATE · HEURE · complété = les portions de la semaine sont prêtes</span><span class="who who-marco">Marco</span></span></li>
+          <li onclick="tc(this,'cl-t-production',3)"><div class="check-box"></div><span class="clt"><span class="prio p1">P1</span><span class="clt-main">Pickliz — égoutter le service</span> <span class="clt-detail">— fiche 05 · [SDC:QTE] par burger · sans presser, garder le croquant</span><span class="who who-elise">Élise</span></span></li>
+          <li onclick="tc(this,'cl-t-production',4)"><div class="check-box"></div><span class="clt"><span class="prio p2">P2</span><span class="clt-main">Houmous — petit lot [SDC:QTE]</span> <span class="clt-detail">— fiche 07 · à lancer si le bac est sous le tiers</span><span class="who who-elise">Élise</span></span></li>
+          <li onclick="tc(this,'cl-t-production',5)"><div class="check-box"></div><span class="clt"><span class="prio p2">P2</span><span class="clt-main">Keftas — façonner [SDC:QTE]</span> <span class="clt-detail">— fiche 13 · repos frigo 30 min avant façonnage</span><span class="who who-marco">Marco</span></span></li>
+          <li onclick="tc(this,'cl-t-production',6)"><div class="check-box"></div><span class="clt"><span class="prio p2">P2</span><span class="clt-main">Panna cotta — couler 30</span> <span class="clt-detail">— fiche 15 · [SDC:QTE] par contenant · prise au froid avant 17 h</span><span class="who who-nadia">Nadia</span></span></li>
+          <li onclick="tc(this,'cl-t-production',7)"><div class="check-box"></div><span class="clt"><span class="prio p2">P2</span><span class="clt-main">Gâteau — cuisson · portionnage</span> <span class="clt-detail">— fiche 14 · 92-95 °C à cœur · refroidir complet avant découpe · parts de [SDC:QTE]</span><span class="who who-nadia">Nadia</span></span></li>
           <li onclick="tc(this,'cl-t-production',8)"><div class="check-box"></div><span class="clt"><span class="prio p3">P3</span><span class="clt-main">Chantilly — charger le siphon</span> <span class="clt-detail">— fiche 16 · 2 charges N2O · repos au froid 30 min</span><span class="who who-nadia">Nadia</span></span></li>
         </ul>
       </div>
@@ -1338,7 +1338,7 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
           <li id="a09-r14_rendement" style="display:block;cursor:default;">
             <div style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;" onclick="a09Toggle('r14_rendement')">
               <div class="check-box"></div>
-              <span class="clt" style="flex:1;"><span class="prio p2">P2</span><span class="clt-main">Gâteau — rendement réel constaté (base 120 portions)</span> <span class="a09-status" id="a09-st-r14_rendement">À trancher</span></span>
+              <span class="clt" style="flex:1;"><span class="prio p2">P2</span><span class="clt-main">Gâteau — rendement réel constaté (base [SDC:QTE])</span> <span class="a09-status" id="a09-st-r14_rendement">À trancher</span></span>
             </div>
             <div class="a09-done-box" id="a09-done-r14_rendement" style="display:none;"></div>
             <div class="a09-form" id="a09-form-r14_rendement">
@@ -1374,7 +1374,7 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
             </div>
             <div class="a09-done-box" id="a09-done-r12_pickles" style="display:none;"></div>
             <div class="a09-form" id="a09-form-r12_pickles">
-              <label>Choix retenu</label><select id="a09-val-r12_pickles"><option value="">— choisir —</option><option>Produire pour 100 portions</option><option>Diviser la recette par 2 (50 portions)</option></select>
+              <label>Choix retenu</label><select id="a09-val-r12_pickles"><option value="">— choisir —</option><option>Produire pour [SDC:QTE]</option><option>Diviser la recette par 2 ([SDC:QTE])</option></select>
               <label>Décidé par</label><input id="a09-par-r12_pickles" value="Julien Mercier">
               <label>Note (optionnel)</label><input id="a09-note-r12_pickles" placeholder="Précision, contexte…">
               <div class="a09-actions">
@@ -1390,7 +1390,7 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
             </div>
             <div class="a09-done-box" id="a09-done-r16_siphon" style="display:none;"></div>
             <div class="a09-form" id="a09-form-r16_siphon">
-              <label>Choix retenu</label><select id="a09-val-r16_siphon"><option value="">— choisir —</option><option>Siphon de 1,5 L</option><option>2 charges dans un siphon de 1 L</option></select>
+              <label>Choix retenu</label><select id="a09-val-r16_siphon"><option value="">— choisir —</option><option>Siphon de [SDC:QTE]</option><option>2 charges dans un siphon de [SDC:QTE]</option></select>
               <label>Décidé par</label><input id="a09-par-r16_siphon" value="Julien Mercier">
               <label>Note (optionnel)</label><input id="a09-note-r16_siphon" placeholder="Précision, contexte…">
               <div class="a09-actions">
@@ -1483,6 +1483,7 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
 
   <!-- ===== CUISINIER : RECETTES ===== -->
   <div class="section" id="sec-cuisinier-recettes">
+<div class="sdc-recipe-note">Démo publique · grammages et étapes volontairement masqués. Ces fiches ne sont pas destinées à la production.</div>
     <div style="position:sticky;top:52px;z-index:90;background:var(--noir);padding:10px 0 6px;">
       <div style="position:relative;">
         <span style="position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:14px;pointer-events:none;">&#x1F50D;</span>
@@ -1504,6 +1505,7 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
 
   <!-- ===== CUISINIER : ASSEMBLAGE ===== -->
   <div class="section" id="sec-cuisinier-assemblage">
+<div class="sdc-recipe-note">Démo publique · grammages et étapes volontairement masqués. Ces fiches ne sont pas destinées à la production.</div>
     <div class="s-header">Assemblage &amp; montage — Classeur 2</div>
     <div class="info-box">A01-A08 · fiches service + A09 points à valider · Toucher une fiche pour composants et montage.</div>
     <div id="plats-list"><!-- Généré JS --></div>
@@ -1526,11 +1528,11 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
         <div class="chevron up"></div>
       </div>
       <div class="card-body open" style="padding-top:12px;">
-        <div class="info-row"><span class="info-label">Houmous — bac 1/6 · fiche 06</span><span class="info-val"><span class="tag tag-green">2 kg</span></span></div>
-        <div class="info-row"><span class="info-label">Tzatziki — bac 1/9 · fiche 03</span><span class="info-val"><span class="tag tag-green">1 kg</span></span></div>
-        <div class="info-row"><span class="info-label">Pickliz égoutté — bac 1/9 · fiche 05</span><span class="info-val"><span class="tag tag-green">2,5 kg</span></span></div>
+        <div class="info-row"><span class="info-label">Houmous — bac 1/6 · fiche 06</span><span class="info-val"><span class="tag tag-green">[SDC:QTE]</span></span></div>
+        <div class="info-row"><span class="info-label">Tzatziki — bac 1/9 · fiche 03</span><span class="info-val"><span class="tag tag-green">[SDC:QTE]</span></span></div>
+        <div class="info-row"><span class="info-label">Pickliz égoutté — bac 1/9 · fiche 05</span><span class="info-val"><span class="tag tag-green">[SDC:QTE]</span></span></div>
         <div class="info-row"><span class="info-label">Bánh mì — concombre · coriandre · piment · fiche 12</span><span class="info-val"><span class="tag tag-green">Taillés</span></span></div>
-        <div class="info-row"><span class="info-label">Salmorejo — pichets de service · fiche 08</span><span class="info-val"><span class="tag tag-yellow">2 × 2 L</span></span></div>
+        <div class="info-row"><span class="info-label">Salmorejo — pichets de service · fiche 08</span><span class="info-val"><span class="tag tag-yellow">[SDC:QTE]</span></span></div>
       </div>
     </div>
 
@@ -1540,11 +1542,11 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
         <div class="chevron up"></div>
       </div>
       <div class="card-body open" style="padding-top:12px;">
-        <div class="info-row"><span class="info-label">Sauce bravas — bain-marie · fiche 01</span><span class="info-val"><span class="tag tag-green">3 L</span></span></div>
-        <div class="info-row"><span class="info-label">Grillade portionnée — 150 g · fiche 21</span><span class="info-val"><span class="tag tag-green">12 barquettes</span></span></div>
-        <div class="info-row"><span class="info-label">Boules à grand-pa — congelées · fiche 10</span><span class="info-val"><span class="tag tag-green">60 pièces</span></span></div>
-        <div class="info-row"><span class="info-label">Beignets de flétan — réfrigérés · fiche 11</span><span class="info-val"><span class="tag tag-yellow">40 pièces</span></span></div>
-        <div class="info-row"><span class="info-label">Keftas façonnés — fiche 13</span><span class="info-val"><span class="tag tag-green">1 kg</span></span></div>
+        <div class="info-row"><span class="info-label">Sauce bravas — bain-marie · fiche 01</span><span class="info-val"><span class="tag tag-green">[SDC:QTE]</span></span></div>
+        <div class="info-row"><span class="info-label">Grillade portionnée — [SDC:QTE] · fiche 21</span><span class="info-val"><span class="tag tag-green">12 barquettes</span></span></div>
+        <div class="info-row"><span class="info-label">Boules à grand-pa — congelées · fiche 10</span><span class="info-val"><span class="tag tag-green">[SDC:QTE]</span></span></div>
+        <div class="info-row"><span class="info-label">Beignets de flétan — réfrigérés · fiche 11</span><span class="info-val"><span class="tag tag-yellow">[SDC:QTE]</span></span></div>
+        <div class="info-row"><span class="info-label">Keftas façonnés — fiche 13</span><span class="info-val"><span class="tag tag-green">[SDC:QTE]</span></span></div>
       </div>
     </div>
 
@@ -1555,7 +1557,7 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
       </div>
       <div class="card-body open" style="padding-top:12px;">
         <div class="info-row"><span class="info-label">Panna cotta — contenants de service · fiche 15</span><span class="info-val"><span class="tag tag-green">18</span></span></div>
-        <div class="info-row"><span class="info-label">Gâteau chocolat — parts de 120 g · fiche 14</span><span class="info-val"><span class="tag tag-green">24 parts</span></span></div>
+        <div class="info-row"><span class="info-label">Gâteau chocolat — parts de [SDC:QTE] · fiche 14</span><span class="info-val"><span class="tag tag-green">24 parts</span></span></div>
         <div class="info-row"><span class="info-label">Chantilly — siphon chargé, au froid · fiche 16</span><span class="info-val"><span class="tag tag-green">Prêt</span></span></div>
       </div>
     </div>
@@ -2573,53 +2575,53 @@ const RECETTES = [
     "nom": "Sauce Bravas",
     "dlc": "APD · 2h/6h",
     "cons": "0–4°C · couvert · daté · réchauffage 74°C une seule fois — MAPAQ M01",
-    "rendement": "5 kg · prévoir bouillon extra pour ajuster",
+    "rendement": "[SDC:QTE]",
     "allergenes": "Blé (farine)",
-    "notes": "Consistance cible : sauce poutine ferme — nappe fermement sans couler. Chinois étamine obligatoire. Ail sans coloration, épices torréfiées 20–30 s max.",
+    "notes": "[SDC:DETAIL]",
     "ingredients": [
       {
         "n": "Huile d'olive",
-        "q": "310 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Ail (gousses pelées)",
-        "q": "22–23 gousses (-110 g)"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Paprika doux (non fumé)",
-        "q": "55 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Paprika fumé",
-        "q": "10 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Piment de Cayenne",
-        "q": "10 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Safran (pistils)",
-        "q": "5 pistils"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Farine tout usage",
-        "q": "170 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Bouillon de légumes chaud",
-        "q": "4,3–4,5 kg (+ extra)"
+        "q": "[SDC:QTE]"
       }
     ],
     "etapes": [
-      "Chauffer l'huile d'olive dans une marmite.",
-      "Faire revenir l'ail doucement sans coloration.",
-      "Ajouter paprikas, Cayenne et safran ; mélanger 20 à 30 secondes.",
-      "Incorporer la farine (roux) et cuire 2 à 3 minutes.",
-      "Verser le bouillon chaud progressivement en fouettant — sauce lisse.",
-      "Mijoter 20 à 30 minutes.",
-      "Mixer jusqu'à texture homogène.",
-      "Passer au chinois étamine — texture parfaitement lisse.",
-      "Ajuster avec du bouillon chaud : poids final 5 kg."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -2627,27 +2629,27 @@ const RECETTES = [
     "nom": "Mélange sel & curry",
     "dlc": "Sec · stable",
     "cons": "T° ambiante · contenant hermétique · abri humidité/lumière — MAPAQ M02",
-    "rendement": "550 g · finition des plantains (fiche 09)",
+    "rendement": "[SDC:QTE]",
     "allergenes": "Vérifier le curry commercial (moutarde fréquente)",
-    "notes": "Ratio de référence 5 sel · 5 curry · 1 coriandre. Assaisonner à la sortie de friteuse sur produit chaud. Saupoudreuse ou cuillère propre — jamais les doigts.",
+    "notes": "[SDC:DETAIL]",
     "ingredients": [
       {
         "n": "Sel",
-        "q": "250 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Curry en poudre",
-        "q": "250 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Coriandre en poudre",
-        "q": "50 g"
+        "q": "[SDC:QTE]"
       }
     ],
     "etapes": [
-      "Peser les trois éléments séparément.",
-      "Mélanger intimement jusqu'à couleur parfaitement homogène.",
-      "Conserver hermétique, étiqueté et daté, à l'abri de l'humidité et de la lumière."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -2655,42 +2657,42 @@ const RECETTES = [
     "nom": "Tzatziki",
     "dlc": "0–4°C",
     "cons": "0–4°C · couvert · étiqueté · daté · repos 1 h min au froid — MAPAQ M03",
-    "rendement": "-1 kg",
+    "rendement": "[SDC:QTE]",
     "allergenes": "Lait",
-    "notes": "Aucune cuisson : hygiène mains/matériel = seul contrôle. Concombre essoré à fond. Repos obligatoire au réfrigérateur, jamais à l'ambiante.",
+    "notes": "[SDC:DETAIL]",
     "ingredients": [
       {
         "n": "Crème sûre",
-        "q": "750 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Concombre anglais (pelé, épépiné)",
-        "q": "1½"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Huile essentielle de citron (alimentaire)",
-        "q": "3 gouttes"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Sel",
-        "q": "4 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Ail (râpé finement)",
-        "q": "3 gousses"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Menthe fraîche (ciselée)",
-        "q": "3 g"
+        "q": "[SDC:QTE]"
       }
     ],
     "etapes": [
-      "Peler et épépiner les concombres.",
-      "Râper puis essorer très soigneusement (maximum d'eau éliminé).",
-      "Mélanger crème sûre, concombre, ail, menthe, sel et HE de citron.",
-      "Mélanger jusqu'à préparation homogène.",
-      "Réfrigérer minimum 1 heure avant le service.",
-      "Rectifier l'assaisonnement au besoin (ustensile propre, jamais de double trempage)."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -2699,88 +2701,88 @@ const RECETTES = [
     "dlc": "7 jours MAX",
     "dlcAlert": true,
     "cons": "0–4°C obligatoire · jamais T° ambiante — ail dans l'huile (botulisme) — MAPAQ M04",
-    "rendement": "-4,3 kg · poids nets après parage",
+    "rendement": "[SDC:QTE]",
     "allergenes": "—",
-    "notes": "Gants obligatoires pour les habaneros. Utilisation dans les 7 jours (mélange ail-huile frais, Santé Canada). Prélever avec un ustensile propre uniquement.",
+    "notes": "[SDC:DETAIL]",
     "ingredients": [
       {
         "n": "Poivron vert",
-        "q": "450 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Poivron rouge",
-        "q": "450 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Poivron jaune",
-        "q": "450 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Poivron orange",
-        "q": "450 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Oignons verts",
-        "q": "135 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Thym frais (feuilles)",
-        "q": "15 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Piment habanero",
-        "q": "30 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Persil frisé frais",
-        "q": "135 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Coriandre fraîche",
-        "q": "30 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Échalotes françaises",
-        "q": "300 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Oignons",
-        "q": "900 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Céleri",
-        "q": "300 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Ail",
-        "q": "45 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Jus de lime frais",
-        "q": "90 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Huile d'olive",
-        "q": "500 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Sel fin",
-        "q": "40 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Poivre noir moulu",
-        "q": "8 g"
+        "q": "[SDC:QTE]"
       }
     ],
     "etapes": [
-      "Laver et parer légumes et herbes (quantités = poids nets).",
-      "Couper grossièrement poivrons, oignons, échalotes, céleri, oignons verts.",
-      "Effeuiller le thym ; équeuter les habaneros (graines retirées si moins piquant désiré).",
-      "Diviser en 2 à 4 lots selon le mélangeur.",
-      "Répartir huile d'olive et jus de lime équitablement entre les lots.",
-      "Mixer chaque lot en pâte épaisse, fine et homogène.",
-      "Réunir les lots et mélanger pour uniformiser.",
-      "Vérifier l'assaisonnement, mesurer le rendement. Réfrigérer immédiatement."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -2788,9 +2790,9 @@ const RECETTES = [
     "nom": "Pickliz haïtien",
     "dlc": "24–48 h marinade",
     "cons": "≤4°C · immergé dans la marinade · APD tant que pH non validé ≤ 4,6 — MAPAQ M05",
-    "rendement": "-4,6 kg / batch · -70-80 burgers",
+    "rendement": "[SDC:QTE]",
     "allergenes": "Vérifier cubes Maggi",
-    "notes": "Gants obligatoires (piments). Marinade min 24 h, optimal -48 h. Chou émincé très finement. Service et grammages : fiche A06. pH-mètre calibré si conservation prolongée.",
+    "notes": "[SDC:DETAIL]",
     "ingredients": [
       {
         "n": "— LÉGUMES —",
@@ -2798,19 +2800,19 @@ const RECETTES = [
       },
       {
         "n": "Chou vert (finement émincé)",
-        "q": "2 500 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Carottes (râpées)",
-        "q": "500 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Oignons (finement émincés)",
-        "q": "350 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Piments Scotch Bonnet ou habanero",
-        "q": "40 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "— MARINADE —",
@@ -2818,45 +2820,45 @@ const RECETTES = [
       },
       {
         "n": "Vinaigre blanc 5 %",
-        "q": "1 000 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Jus de lime frais",
-        "q": "150 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Sel fin",
-        "q": "30 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Sucre",
-        "q": "40 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Cubes Maggi",
-        "q": "4"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Poivre noir concassé",
-        "q": "5 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Clous de girofle entiers",
-        "q": "4"
+        "q": "[SDC:QTE]"
       }
     ],
     "etapes": [
-      "Laver et parer tous les légumes.",
-      "Émincer le chou très finement (texture salade de chou pour burger).",
-      "Râper les carottes, émincer finement les oignons.",
-      "Équeuter et hacher très finement les piments — GANTS obligatoires.",
-      "Réunir chou, carottes, oignons, piments ; mélanger uniformément.",
-      "Dissoudre vinaigre, lime, sel, sucre et cubes Maggi émiettés.",
-      "Ajouter poivre concassé et clous de girofle.",
-      "Verser la marinade sur les légumes, mélanger soigneusement.",
-      "Presser légèrement — légumes en contact avec la marinade.",
-      "Fermer et réfrigérer immédiatement à 4 °C ou moins.",
-      "Mariner minimum 24 h — optimal après -48 h."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -2864,56 +2866,56 @@ const RECETTES = [
     "nom": "Houmous — production",
     "dlc": "APD · 2h/6h",
     "cons": "0–4°C · contenants peu profonds couverts datés · division du batch NON optionnelle — MAPAQ M06",
-    "rendement": "-10 kg · -67 portions de 150 g",
+    "rendement": "[SDC:QTE]",
     "allergenes": "Sésame (tahini)",
-    "notes": "Pois chiches extrêmement tendres avant mixage (bicarbonate obligatoire). Glaçons progressifs — texture lisse et crémeuse. Petit lot de référence : fiche 07. Dressage : fiche A01.",
+    "notes": "[SDC:DETAIL]",
     "ingredients": [
       {
-        "n": "Pois chiches en conserve 540 ml",
-        "q": "24 conserves"
+        "n": "Pois chiches en conserve [SDC:QTE]",
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Bicarbonate de soude",
-        "q": "60 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Ail dégermé",
-        "q": "24 gousses"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Tahini",
-        "q": "720 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Jus de citron (12 gros citrons)",
-        "q": "600–650 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Huile essentielle de citron (alimentaire)",
-        "q": "24 gouttes"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Sel fin",
-        "q": "60 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Glaçons",
-        "q": "48 à 72"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Aquafaba réservée",
-        "q": "1,92 kg"
+        "q": "[SDC:QTE]"
       }
     ],
     "etapes": [
-      "Égoutter les pois chiches, réserver -1,9 kg d'aquafaba.",
-      "Cuire recouverts d'eau avec le bicarbonate -30 min à frémissement — extrêmement tendres.",
-      "Ajouter les 24 gousses d'ail les 10 dernières minutes.",
-      "Égoutter puis mixer en lots avec une partie de l'aquafaba -1 min.",
-      "Ajouter le tahini, mixer 1 min.",
-      "Ajouter jus de citron, sel et HE de citron.",
-      "Glaçons progressivement — texture très lisse, légère, crémeuse. Ajuster à l'aquafaba.",
-      "Réfrigérer rapidement en contenants peu profonds couverts (règle 2 h / 6 h)."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -2921,57 +2923,57 @@ const RECETTES = [
     "nom": "Houmous — petit lot",
     "dlc": "APD · 2h/6h",
     "cons": "Mêmes exigences que la production (M06) · étiqueté « référence » · PEPS — MAPAQ M07",
-    "rendement": "-830 g · -5 portions · 1/12 de la fiche 06",
+    "rendement": "[SDC:QTE]",
     "allergenes": "Sésame (tahini)",
-    "notes": "Référence de goût et texture AVANT lancement des 10 kg. Rectification à cette étape uniquement : sel et jus de citron. Ustensile propre à chaque goûte.",
+    "notes": "[SDC:DETAIL]",
     "ingredients": [
       {
-        "n": "Pois chiches en conserve 540 ml",
-        "q": "2 conserves"
+        "n": "Pois chiches en conserve [SDC:QTE]",
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Bicarbonate de soude",
-        "q": "5 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Ail dégermé",
-        "q": "2 gousses"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Tahini",
-        "q": "60 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Jus de citron",
-        "q": "1 gros citron"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Huile essentielle de citron",
-        "q": "2 gouttes"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Sel fin",
-        "q": "5 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Glaçons",
-        "q": "4 à 6"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Aquafaba réservée",
-        "q": "160 g"
+        "q": "[SDC:QTE]"
       }
     ],
     "etapes": [
-      "Égoutter, réserver 160 g d'aquafaba.",
-      "Recouvrir d'eau, bicarbonate, cuire feu moyen -30 min.",
-      "Ail les 10 dernières minutes.",
-      "Mixer au robot avec l'aquafaba -1 min.",
-      "Tahini, mixer 1 min.",
-      "Jus de citron, sel, HE de citron.",
-      "Glaçons un à un — houmous lisse et crémeux.",
-      "Goûter et rectifier : sel ou citron.",
-      "Réfrigérer avant le service."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -2979,42 +2981,42 @@ const RECETTES = [
     "nom": "Salmorejo",
     "dlc": "0–4°C strict",
     "cons": "0–4°C en tout temps · PEPS strict · produit cru servi froid — MAPAQ M08",
-    "rendement": "-20 kg · méthode production",
+    "rendement": "[SDC:QTE]",
     "allergenes": "Blé (pain)",
-    "notes": "Aucune cuisson : lavage des tomates + assainissement équipement = contrôles critiques. Huile en filet (émulsion). Chinois étamine obligatoire. Réfrigérer chaque lot fini sans attendre.",
+    "notes": "[SDC:DETAIL]",
     "ingredients": [
       {
         "n": "Tomates bien mûres",
-        "q": "20 kg"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Huile d'olive vierge",
-        "q": "1,1 kg"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Vinaigre de Xérès",
-        "q": "600 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Pain blanc sec",
-        "q": "1 kg"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Ail (selon intensité)",
-        "q": "20–40 gousses"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Sel et poivre",
-        "q": "Au goût"
+        "q": "[SDC:QTE]"
       }
     ],
     "etapes": [
-      "Mixer les tomates avec l'ail et le vinaigre de Xérès.",
-      "Ajouter le pain sec en morceaux, laisser hydrater quelques minutes.",
-      "Mixer (robot coupe / Vitamix) jusqu'à texture parfaitement lisse.",
-      "Monter avec l'huile d'olive en filet, comme une émulsion.",
-      "Ajuster l'assaisonnement.",
-      "Passer au chinois étamine — texture très fine."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -3022,24 +3024,24 @@ const RECETTES = [
     "nom": "Bananes plantain frites",
     "dlc": "Minute",
     "cons": "Service immédiat · aucun maintien en zone de danger · huile 175°C contrôlée — MAPAQ M09",
-    "rendement": "À la commande",
+    "rendement": "[SDC:QTE]",
     "allergenes": "—",
-    "notes": "Mandoline japonaise avec chariot-poussoir. Tranches très minces et régulières = croustillant. Assaisonnement fiche 02 sur produit chaud. Service : fiche A02.",
+    "notes": "[SDC:DETAIL]",
     "ingredients": [
       {
         "n": "Bananes plantain",
-        "q": "Selon le service"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Huile de friture",
-        "q": "350 °F (175 °C)"
+        "q": "[SDC:QTE]"
       }
     ],
     "etapes": [
-      "Chauffer l'huile à 350 °F (175 °C).",
-      "Trancher à la mandoline japonaise — très mince et régulier.",
-      "Plonger les tranches une à une (elles restent droites).",
-      "Retirer à l'araignée ou à la pince dès coloration."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -3048,9 +3050,9 @@ const RECETTES = [
     "dlc": "-18°C · congelé",
     "dlcAlert": true,
     "cons": "Congelées crues à cœur · cuisson DIRECT congelé 170°C → 74°C · décongélation interdite — MAPAQ M10 (fiche la plus critique)",
-    "rendement": "400 pièces · 30 g d'appareil/pièce avant panure",
+    "rendement": "[SDC:QTE]",
     "allergenes": "Blé · Œufs · Lait · vérifier Worcestershire (poisson)",
-    "notes": "Aka Bitterballen. Anti-éclatement : viandes asséchées · appareil très ferme · refroidissement complet · boulettes sans fissures. Double panure chapelure/panko. Service : fiche A03.",
+    "notes": "[SDC:DETAIL]",
     "ingredients": [
       {
         "n": "— APPAREIL —",
@@ -3058,43 +3060,43 @@ const RECETTES = [
       },
       {
         "n": "Viandes cuites variées (rôti de porc, smoked meat, poulet, jambon, roast beef…)",
-        "q": "4,8 kg"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Fromage râpé (cheddar, Edam, Hollande ou mélange)",
-        "q": "4,8 kg"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Beurre",
-        "q": "240 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Farine",
-        "q": "400 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Lait",
-        "q": "1,5 kg"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Bouillon de bœuf",
-        "q": "1,35 kg"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Oignon",
-        "q": "180 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Persil frais",
-        "q": "90 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Sauce Worcestershire",
-        "q": "100 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Sel",
-        "q": "Si nécessaire"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "— PANURE —",
@@ -3102,43 +3104,43 @@ const RECETTES = [
       },
       {
         "n": "Farine",
-        "q": "-1 kg"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Œufs",
-        "q": "-30"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Eau",
-        "q": "-450 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Chapelure fine",
-        "q": "-1,5 kg"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Panko",
-        "q": "-1,5 kg"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Huile de friture",
-        "q": "170 °C"
+        "q": "[SDC:QTE]"
       }
     ],
     "etapes": [
-      "Viandes : couper puis hacher chaque type séparément, grille moyenne.",
-      "Faire revenir chaque viande séparément — coloration légère, éliminer l'humidité.",
-      "Oignon haché revenu séparément jusqu'à évaporation de son eau.",
-      "Base : beurre fondu sans coloration + farine, cuire 2-3 min.",
-      "Lait et bouillon progressivement en fouettant — préparation très épaisse et ferme.",
-      "Assemblage : oignon, persil, Worcestershire, puis viandes revenues.",
-      "Fromage râpé — masse homogène. Goûter AVANT de saler.",
-      "Refroidir en couches minces — règle 2 h / 6 h. Appareil complètement froid et ferme.",
-      "Portionner à 30 g/pièce, boulettes compactes sans fissures — cible 400 pièces.",
-      "PANURE : farine → œufs battus + eau → chapelure fine, re-œuf, finir au panko.",
-      "Réfrigérer les boulettes panées avant congélation.",
-      "CONGÉLATION : sur plaques sans contact, congeler à cœur, ensacher, identifier, dater.",
-      "SERVICE : frire DIRECT congelé à 170 °C, panier non surchargé, 74 °C à cœur, égoutter sur grille."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -3146,58 +3148,58 @@ const RECETTES = [
     "nom": "Beignets de flétan",
     "dlc": "APD · 2h/6h",
     "cons": "Réception ≤4°C · pochage 63°C · pâte au froid · friture service 74°C à cœur — MAPAQ M11",
-    "rendement": "200 pièces de 25 g · 5 kg de pâte",
+    "rendement": "[SDC:QTE]",
     "allergenes": "Poisson · Blé · Lait",
-    "notes": "Deux températures à ne jamais confondre : 63 °C pochage du poisson cru · 74 °C friture du beignet réfrigéré. Arêtes : double contrôle. Service beurre noisette : fiche A04.",
+    "notes": "[SDC:DETAIL]",
     "ingredients": [
       {
         "n": "Flétan cuit et émietté",
-        "q": "1,8 kg"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Farine",
-        "q": "1,43 kg"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Levure chimique",
-        "q": "50 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Eau ou lait",
-        "q": "1,07 kg"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Ail (haché finement)",
-        "q": "14 gousses"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Ratatouille (très bien égouttée)",
-        "q": "715 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Sel · Poivre",
-        "q": "Au besoin"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Piment",
-        "q": "Au goût"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Huile de friture",
-        "q": "180 °C"
+        "q": "[SDC:QTE]"
       }
     ],
     "etapes": [
-      "Pocher le flétan -5 min à frémissement — 63 °C interne minimum.",
-      "Égoutter, refroidir, émietter finement. Retirer TOUTES les arêtes (vérification systématique).",
-      "Pâte : farine, levure, ail, sel, poivre, piment.",
-      "Eau ou lait progressivement — pâte homogène.",
-      "Incorporer le flétan émietté.",
-      "Ratatouille très bien égouttée — mélange minimal.",
-      "Repos 30 minutes AU RÉFRIGÉRATEUR.",
-      "Portions de 25 g exactement — 200 beignets = 5 kg.",
-      "Frire à 180 °C, 3-4 min — dorés, 74 °C à cœur.",
-      "Égoutter sur une grille."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -3205,9 +3207,9 @@ const RECETTES = [
     "nom": "Bánh mì giò lụa",
     "dlc": "Quelques jours",
     "cons": "0–4°C en tout temps · charcuteries tranchées datées · PEPS (Thermoguide) — MAPAQ M12",
-    "rendement": "50 portions · baguettes 100–120 g",
+    "rendement": "[SDC:QTE]",
     "allergenes": "Blé · Œufs (mayo) · Soya (Maggi) · vérifier giò lụa et pâté",
-    "notes": "Pickles : 2,5 kg de légumes ≈ 100 sandwichs à 20-25 g égouttés — diviser par 2 pour 50 (à confirmer, fiche A09). Montage : fiche A05. Trancheuse assainie entre produits.",
+    "notes": "[SDC:DETAIL]",
     "ingredients": [
       {
         "n": "— GIÒ LỤA ET PAIN —",
@@ -3215,39 +3217,39 @@ const RECETTES = [
       },
       {
         "n": "Giò lụa (tranché 2–3 mm)",
-        "q": "2,5 kg"
+        "q": "[SDC:QTE]"
       },
       {
-        "n": "Petites baguettes (-100–120 g)",
-        "q": "50"
+        "n": "Petites baguettes ([SDC:QTE])",
+        "q": "[SDC:QTE]"
       },
       {
-        "n": "— PICKLES (≈100 portions) —",
+        "n": "— PICKLES ([SDC:QTE]) —",
         "q": ""
       },
       {
         "n": "Carottes",
-        "q": "1,25 kg"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Daikon",
-        "q": "1,25 kg"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Vinaigre de riz",
-        "q": "750 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Eau",
-        "q": "750 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Sucre",
-        "q": "200 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Sel",
-        "q": "30 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "— GARNITURE —",
@@ -3255,35 +3257,35 @@ const RECETTES = [
       },
       {
         "n": "Mayonnaise",
-        "q": "750 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Pâté de foie de porc",
-        "q": "500 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Concombres moyens",
-        "q": "5"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Coriandre",
-        "q": "5 bouquets"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Piments frais",
-        "q": "150–200 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Sauce Maggi ou soya",
-        "q": "300–350 g"
+        "q": "[SDC:QTE]"
       }
     ],
     "etapes": [
-      "Pickles : tailler carottes et daikon en julienne.",
-      "Dissoudre sucre et sel dans l'eau, ajouter le vinaigre de riz.",
-      "Verser sur les légumes.",
-      "Réfrigérer minimum 2 h, idéalement une nuit.",
-      "Égoutter très soigneusement avant le service."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -3292,51 +3294,51 @@ const RECETTES = [
     "dlc": "1–2 jours CRU",
     "dlcAlert": true,
     "cons": "0–4°C · viande hachée crue 1-2 jours max · cuisson 68°C min (viser 71°C) — MAPAQ M13",
-    "rendement": "Base de 1 kg · boulettes, cylindres ou brochettes",
+    "rendement": "[SDC:QTE]",
     "allergenes": "—",
-    "notes": "Mélange minimal — sans trop travailler la viande. Repos 30 min-1 h au froid avant façonnage. Centre rosé sans contrôle sonde : jamais acceptable. Cru/cuit : ustensiles distincts.",
+    "notes": "[SDC:DETAIL]",
     "ingredients": [
       {
         "n": "Agneau haché",
-        "q": "1 kg"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Menthe fraîche (hachée)",
-        "q": "30 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Coriandre fraîche (hachée)",
-        "q": "15 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Persil frais (haché)",
-        "q": "30 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Échalote française",
-        "q": "2¼"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Ail",
-        "q": "4 à 5 gousses"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Cumin moulu",
-        "q": "10 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Coriandre moulue",
-        "q": "5 g"
+        "q": "[SDC:QTE]"
       }
     ],
     "etapes": [
-      "Hacher finement menthe, coriandre, persil, échalote et ail.",
-      "Mélanger avec l'agneau haché.",
-      "Ajouter cumin et coriandre moulue.",
-      "Mélanger juste assez — préparation homogène sans trop travailler.",
-      "Réfrigérer 30 min à 1 h avant façonnage.",
-      "Façonner : boulettes, cylindres ou petites brochettes.",
-      "Cuire à 68 °C interne minimum (viande hachée sauf volaille), sonde 15 s."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -3344,49 +3346,49 @@ const RECETTES = [
     "nom": "Gâteau chocolat noir 70 % · amande · vanille",
     "dlc": "APD · 2h/6h",
     "cons": "0–4°C · couvert · daté · cuisson cible 92-95°C à cœur — MAPAQ M14",
-    "rendement": "120 portions de 120 g · 2 insertions 21×13×4 po",
+    "rendement": "[SDC:QTE]",
     "allergenes": "Œufs · Amandes (noix) · Lait · vérifier chocolat (soya)",
-    "notes": "100 œufs : cassage en zone dédiée, coquilles jetées immédiatement. Repos 4 h min (idéalement une nuit) avant découpe. À VALIDER (A09) : volume d'appareil vs contenance des insertions.",
+    "notes": "[SDC:DETAIL]",
     "ingredients": [
       {
         "n": "Sucre",
-        "q": "4 kg"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Gros œufs",
-        "q": "100 (-3 kg sans coquilles)"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Poudre d'amandes",
-        "q": "4 kg"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Poudre à pâte",
-        "q": "275 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Chocolat noir 70 %",
-        "q": "4 kg"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Beurre doux",
-        "q": "4,5 kg"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Extrait de vanille pur",
-        "q": "105 g"
+        "q": "[SDC:QTE]"
       }
     ],
     "etapes": [
-      "Préchauffer le four à 325 °F (160 °C).",
-      "Fondre doucement chocolat + beurre. Réserver tiède.",
-      "Fouetter œufs et sucre jusqu'à homogénéisation (sans monter).",
-      "Ajouter la vanille.",
-      "Incorporer poudre d'amandes et poudre à pâte.",
-      "Ajouter le chocolat-beurre fondu — masse uniforme.",
-      "Répartir dans 2 insertions 21×13×4 po sur -2 po de hauteur.",
-      "Cuire 35-45 min — centre pris mais encore moelleux · 92-95 °C à cœur.",
-      "Refroidir (règle 2 h / 6 h), repos couvert au froid 4 h min."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -3394,39 +3396,39 @@ const RECETTES = [
     "nom": "Panna cotta au yogourt de buffala",
     "dlc": "0–4°C",
     "cons": "0–4°C · contenants couverts datés · lot de 30 · prise au froid uniquement — MAPAQ M15",
-    "rendement": "30 personnes · -90 g par contenant (-2,75 kg)",
+    "rendement": "[SDC:QTE]",
     "allergenes": "Lait",
-    "notes": "SAFRAN RETIRÉ — ne pas en ajouter. Yogourt incorporé hors feu sur mélange tiédi, jamais bouillant. Service : fiche A07. Tout contenant revenu de salle est jeté.",
+    "notes": "[SDC:DETAIL]",
     "ingredients": [
       {
         "n": "Sucre",
-        "q": "250 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Crème 35 %",
-        "q": "940 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Essence de vanille",
-        "q": "Équivalent 5 gousses"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Feuilles de gélatine",
-        "q": "10 (réhydratées 2 min eau froide, essorées)"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Yogourt de buffala",
-        "q": "1 560 g"
+        "q": "[SDC:QTE]"
       }
     ],
     "etapes": [
-      "Chauffer la crème avec le sucre et la vanille.",
-      "Retirer du feu une fois chaud.",
-      "Ajouter la gélatine réhydratée essorée — dissolution complète.",
-      "Laisser légèrement tiédir.",
-      "Incorporer le yogourt de buffala — préparation homogène.",
-      "Couler dans les contenants de service.",
-      "Réfrigérer immédiatement jusqu'à prise complète."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -3434,39 +3436,39 @@ const RECETTES = [
     "nom": "Chantilly vanille (siphon)",
     "dlc": "0–4°C",
     "cons": "Chaîne du froid ininterrompue · siphon chargé daté au frigo · purge avant ouverture — MAPAQ M16",
-    "rendement": "-1,1 kg · siphon 1,5 L ou 2 charges de 1 L",
+    "rendement": "[SDC:QTE]",
     "allergenes": "Lait",
-    "notes": "2 cartouches N2O alimentaire par charge. Chinois étamine obligatoire (protection valve). Distribution tête en bas à la verticale. Capacité siphon à confirmer (A09). Démontage complet après service.",
+    "notes": "[SDC:DETAIL]",
     "ingredients": [
       {
         "n": "Crème à fouetter",
-        "q": "1 kg"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Sucre",
-        "q": "80 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Essence de vanille",
-        "q": "20 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Cartouches N2O (alimentaire)",
-        "q": "2 par charge"
+        "q": "[SDC:QTE]"
       }
     ],
     "etapes": [
-      "Réfrigérer crème (et siphon) minimum 2 h avant.",
-      "Crème + sucre + vanille en cul-de-poule froid.",
-      "Fouetter légèrement — juste dissoudre le sucre, sans monter.",
-      "Vérifier la capacité : 1,5 L, ou 2 charges successives en 1 L (2e moitié au froid).",
-      "Passer au chinois étamine directement dans le siphon.",
-      "Fermer hermétiquement sous la ligne de remplissage max.",
-      "1re cartouche N2O — secouer 8-10 fois tête en bas.",
-      "2e cartouche — secouer de nouveau 8-10 fois.",
-      "Réfrigérer le siphon chargé 30 min min (idéalement 1 h).",
-      "Service : secouer 2-3 fois, tête en bas à la verticale, presser doucement.",
-      "Entre les services : siphon chargé au réfrigérateur."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -3474,41 +3476,41 @@ const RECETTES = [
     "nom": "Crème brûlée au yuzu",
     "dlc": "0-4°C",
     "cons": "0-4°C · couvert · daté · mets à base d'œufs (APD) · refroidir selon la règle 2h/6h après cuisson — référentiels R01-R03",
-    "rendement": "Base : 24 jaunes · -2,5 L d'appareil · portions à confirmer",
+    "rendement": "[SDC:QTE]",
     "allergenes": "Œufs · Lait",
-    "notes": "HORS CLASSEUR — ajout du 31 juillet 2026, à intégrer au classeur 1 à la prochaine révision. ⚠ Dictée : « 1 L lait 3,25 % + 1 L lait » mais la méthode dit « la crème et le lait » — confirmer 1 L de crème avec Julien. Servir après 24 h.",
+    "notes": "[SDC:DETAIL]",
     "ingredients": [
       {
         "n": "Jaunes d'œufs",
-        "q": "24"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Lait 3,25 %",
-        "q": "1 L"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Crème (à confirmer — dicté « lait »)",
-        "q": "1 L"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Sucre",
-        "q": "250 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Huile essentielle de yuzu (alimentaire)",
-        "q": "Au goût — à confirmer"
+        "q": "[SDC:QTE]"
       }
     ],
     "etapes": [
-      "Au mélangeur : blanchir les jaunes avec le sucre.",
-      "Ajouter la crème et le lait à basse vitesse.",
-      "Ajouter l'huile essentielle de yuzu.",
-      "Reposer au frigo 2 heures.",
-      "Verser dans des ramequins · cuire au bain-marie à 325 °F.",
-      "Vérifier après 35 minutes : légère vague au centre, côtés fermes.",
-      "Prolonger de 10 minutes si non cuit.",
-      "Sortir les ramequins et réfrigérer (règle 2h/6h).",
-      "Servir après 24 heures."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -3516,56 +3518,56 @@ const RECETTES = [
     "nom": "Chimichurri",
     "dlc": "7 jours",
     "cons": "Réfrigération immédiate · 0-4°C · 1 semaine au frais · surplus congelable en fin de semaine — étiquette : NOM · DATE · EMPLOYÉ",
-    "rendement": "Lot de 4 L",
+    "rendement": "[SDC:QTE]",
     "allergenes": "—",
-    "notes": "HORS CLASSEUR — ajout du 31 juillet 2026, à intégrer au classeur 1 à la prochaine révision. Texture rustique au pulse — jamais en purée. HE de coriandre diluée dans l'huile AVANT l'assemblage. Piment, sel et poivre à ajuster aux standards de l'établissement.",
+    "notes": "[SDC:DETAIL]",
     "ingredients": [
       {
         "n": "Persil plat frais (feuilles équeutées)",
-        "q": "1 200 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Ail (gousses pelées)",
-        "q": "60 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Vinaigre de vin rouge",
-        "q": "315 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Huile d'olive",
-        "q": "765 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Origan séché",
-        "q": "15 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Huile essentielle de feuilles de coriandre (alimentaire)",
-        "q": "10 à 12 gouttes"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Flocons de piment fort",
-        "q": "10 g · à ajuster"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Sel",
-        "q": "30 g · à ajuster"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Poivre noir",
-        "q": "10 g · à ajuster"
+        "q": "[SDC:QTE]"
       }
     ],
     "etapes": [
-      "Diluer l'HE de coriandre directement dans les 765 g d'huile d'olive. Réserver.",
-      "Placer l'ail et le persil frais dans le bol du robot.",
-      "Hacher par à-coups (pulse) — texture rustique, JAMAIS en purée.",
-      "Ajouter le vinaigre de vin rouge, l'origan, le piment, le sel et le poivre.",
-      "Verser l'huile parfumée · mélanger brièvement à vitesse minimale ou à la spatule.",
-      "Étiqueter (papier vert ou blanc) : NOM DU PRODUIT · DATE DE PRODUCTION · EMPLOYÉ.",
-      "Réfrigérer immédiatement.",
-      "Durée de vie : 1 semaine au frais · surplus congelable."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -3573,32 +3575,32 @@ const RECETTES = [
     "nom": "Bannique frite",
     "dlc": "À confirmer",
     "cons": "Cuisson à cœur 90 °C · égoutter sur grille avant service · conservation et DLC à confirmer avec le chef (non spécifiées)",
-    "rendement": "50 portions · galettes 10-12 cm × 1,5 cm",
+    "rendement": "[SDC:QTE]",
     "allergenes": "Blé (farine préparée) · vérifier l'étiquette Brodie XXX",
-    "notes": "HORS CLASSEUR — ajout du 31 juillet 2026, à intégrer au classeur 1 à la prochaine révision. NE PAS PÉTRIR — la texture tendre dépend d'une manipulation minimale. Prévoir un extra de graisse végétale selon l'absorption et la surface de cuisson.",
+    "notes": "[SDC:DETAIL]",
     "ingredients": [
       {
         "n": "Farine préparée pour gâteaux (type Brodie XXX)",
-        "q": "4,17 L"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Eau froide",
-        "q": "2,08 L"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Graisse végétale (shortening) — cuisson",
-        "q": "500 ml (+ extra au besoin)"
+        "q": "[SDC:QTE]"
       }
     ],
     "etapes": [
-      "Déposer la farine dans le bol du mélangeur (crochet) ou un grand bac alimentaire.",
-      "Former un puits · incorporer l'eau progressivement — juste assez pour une pâte homogène. NE PAS PÉTRIR.",
-      "Ajuster : un peu d'eau ou de farine au besoin — pâte souple, non collante.",
-      "Diviser en 50 portions égales · façonner des galettes de 10-12 cm × 1,5 cm en manipulant le moins possible.",
-      "Chauffer plaque ou grande poêle à feu moyen — 170-180 °C en surface.",
-      "Environ 10 ml de graisse végétale par galette · cuire par petites quantités, sans surcharger.",
-      "Cuire environ 2 minutes par côté — belle coloration dorée · 90 °C à cœur.",
-      "Égoutter sur grille ou papier absorbant avant le service."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -3606,61 +3608,61 @@ const RECETTES = [
     "nom": "Beignets d'aubergine et de courgette",
     "dlc": "Minute",
     "cons": "Servir immédiatement · préparation crue aux œufs = APD : au froid avant cuisson · cuisson complète (entièrement cuits) — référentiels R01-R03",
-    "rendement": "-50 beignets · portions de 30-45 ml à la cuillère",
+    "rendement": "[SDC:QTE]",
     "allergenes": "Blé (farine) · Œufs",
-    "notes": "HORS CLASSEUR — recette de Julien, ajout du 31 juillet 2026, à intégrer au classeur 1 à la prochaine révision. Farine à ajuster selon l'humidité des légumes — la préparation doit tenir à la cuillère. 4-5 beignets à la fois, jamais surcharger la surface.",
+    "notes": "[SDC:DETAIL]",
     "ingredients": [
       {
         "n": "Chair d'aubergine et/ou de courgette",
-        "q": "-2,5 kg"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Farine tout usage non blanchie",
-        "q": "625 g (+ selon humidité)"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Oignons verts (émincés)",
-        "q": "16"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Petits oignons (râpés grossièrement)",
-        "q": "8"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Aneth frais (haché)",
-        "q": "250 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Persil plat frais (haché)",
-        "q": "250 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Menthe fraîche (ciselée)",
-        "q": "80-100 feuilles"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Œufs",
-        "q": "8"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Sel de mer",
-        "q": "25 g · au goût"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Huile de canola — cuisson",
-        "q": "500 ml (+ au besoin)"
+        "q": "[SDC:QTE]"
       }
     ],
     "etapes": [
-      "Mélanger chair, farine, oignons verts, oignon râpé, aneth, persil, menthe et œufs. Saler · préparation homogène.",
-      "Trop humide ? Incorporer un peu de farine — la préparation doit tenir à la cuillère.",
-      "Chauffer plaque ou poêle à 170-180 °C avec une mince couche d'huile.",
-      "Déposer des portions de 30-45 ml à la cuillère, légèrement espacées.",
-      "Cuire 4-5 beignets à la fois · -2 minutes par côté — bien dorés, entièrement cuits. Retourner à la spatule.",
-      "Ajouter de l'huile entre les fournées — cuisson uniforme.",
-      "Égoutter sur grille ou papier absorbant.",
-      "Répéter jusqu'à épuisement de la préparation.",
-      "Servir immédiatement."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -3668,50 +3670,50 @@ const RECETTES = [
     "nom": "Grillade de Valleyfield",
     "dlc": "3 jours",
     "cons": "0–4 °C · couvert · daté · réchauffage au service 74 °C — MAPAQ R02",
-    "rendement": "10 kg de porc → portions de 150 g pour la semaine",
+    "rendement": "[SDC:QTE]",
     "allergenes": "— · vérifier les épices commerciales (moutarde possible)",
-    "notes": "La recette signature héritée de l'ancien resto — base des pâtes crémeuses maison (style carbonara à la grillade et à la crème). La tâche « faire la grillade » n'est complétée que lorsque les portions de la semaine sont prêtes, étiquetées, au froid : cuire, assaisonner, portionner — point par point, pas à moitié.",
+    "notes": "[SDC:DETAIL]",
     "ingredients": [
       {
         "n": "Échine ou épaule de porc, tranches ~1 cm",
-        "q": "10 kg"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Sel fin",
-        "q": "90 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Poivre noir moulu",
-        "q": "15 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Paprika doux",
-        "q": "30 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Poudre d'oignon",
-        "q": "25 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Poudre d'ail",
-        "q": "25 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Cassonade",
-        "q": "40 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Huile canola (cuisson)",
-        "q": "100 g"
+        "q": "[SDC:QTE]"
       }
     ],
     "etapes": [
-      "Trancher le porc en tranches régulières d'environ 1 cm (ou utiliser les tranches du fournisseur).",
-      "CUIRE : griller à feu vif (plancha ou gril) jusqu'à belle coloration des deux côtés — 71 °C à cœur.",
-      "ASSAISONNER : mélanger sel, poivre, paprika, poudre d'oignon, poudre d'ail et cassonade; frotter les tranches encore chaudes pour que le mélange adhère.",
-      "REFROIDIR : 60→21 °C en moins de 2 h, puis ≤ 4 °C en moins de 6 h total (MAPAQ R02). Jamais couvert hermétique tant que c'est chaud.",
-      "PORTIONNER : 150 g par contenant, étiquette NOM · DATE · HEURE. La tâche est complétée seulement quand les portions de la semaine sont prêtes.",
-      "Au service : réchauffer à la commande (74 °C, une seule fois) — base des pâtes crémeuses à la grillade."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -3719,45 +3721,45 @@ const RECETTES = [
     "nom": "Sauce crémeuse maison",
     "dlc": "APD · 24 h",
     "cons": "0–4°C · couvert · daté · réchauffage doux, jamais rebouilli — MAPAQ M01",
-    "rendement": "4 kg · base des pâtes crémeuses à la grillade (fiche 21)",
+    "rendement": "[SDC:QTE]",
     "allergenes": "Lait",
-    "notes": "La sauce de la maison, héritée de l'ancien resto : crème, parmesan, ail, poivre. Style carbonara à la crème, sans œuf. Ne jamais faire bouillir après l'ajout du parmesan, la sauce tranche. Consistance cible : nappe le dos de la cuillère.",
+    "notes": "[SDC:DETAIL]",
     "ingredients": [
       {
         "n": "Crème 35 %",
-        "q": "3 kg"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Parmesan râpé",
-        "q": "600 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Beurre",
-        "q": "150 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Ail (nets)",
-        "q": "40 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Bouillon de légumes",
-        "q": "250 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Poivre noir concassé",
-        "q": "8 g"
+        "q": "[SDC:QTE]"
       },
       {
         "n": "Sel fin",
-        "q": "15 g"
+        "q": "[SDC:QTE]"
       }
     ],
     "etapes": [
-      "Suer l'ail dans le beurre sans coloration.",
-      "Déglacer au bouillon de légumes, réduire de moitié.",
-      "Ajouter la crème, réduire doucement jusqu'à consistance nappante.",
-      "Hors du feu, incorporer le parmesan en pluie, en fouettant.",
-      "Rectifier sel et poivre. Refroidir en bacs de 1 L, datés."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   }
 ];
@@ -3769,40 +3771,40 @@ const PLATS = [
     "sub": "Dressage par portion · fiches 06/07",
     "icon": "🥣",
     "temp": "Froid · 0-4°C",
-    "temps": "Dressage minute",
+    "temps": "[SDC:DETAIL]",
     "mep": [
       {
         "item": "Houmous",
-        "detail": "150 g par assiette · fiche technique 06 (ou 07)",
+        "detail": "[SDC:DETAIL]",
         "ref": "R06",
         "critical": false
       },
       {
         "item": "Zaatar",
-        "detail": "Sur environ la moitié de la surface seulement",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": false
       },
       {
         "item": "Huile d'olive",
-        "detail": "Filet généreux en finition",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": false
       }
     ],
     "cuisson": [
-      "Aucune cuisson — produit prêt-à-manger, mains lavées / ustensiles propres (M06)"
+      "[SDC:ETAPE]"
     ],
     "montage": [
-      "Prélever 150 g de houmous froid, étaler dans l'assiette.",
-      "Saupoudrer le zaatar sur la moitié de la surface seulement.",
-      "Laisser l'autre moitié nature — le contraste fait partie du dressage.",
-      "Terminer par un filet généreux d'huile d'olive."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ],
     "checks": [
-      "Grammage de référence : 150 g par entrée",
-      "Zaatar sur la moitié uniquement — jamais toute la surface",
-      "Dressage identique fiche 06 ou fiche 07"
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -3811,41 +3813,41 @@ const PLATS = [
     "sub": "Assaisonnement au service · fiches 09 + 02",
     "icon": "🍌",
     "temp": "Friteuse 350°F (175°C)",
-    "temps": "Minute",
+    "temps": "[SDC:DETAIL]",
     "mep": [
       {
         "item": "Tranches de plantain",
-        "detail": "Fiche technique 09 · selon le service",
+        "detail": "[SDC:DETAIL]",
         "ref": "R09",
         "critical": false
       },
       {
         "item": "Mélange sel & curry",
-        "detail": "Fiche technique 02 · saupoudreuse propre",
+        "detail": "[SDC:DETAIL]",
         "ref": "R02",
         "critical": false
       },
       {
         "item": "Papier brun",
-        "detail": "À usage unique, sur tôle — obligatoire avant assaisonnement",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": true
       }
     ],
     "cuisson": [
-      "Friture 350 °F (175 °C) · contrôler entre les fournées",
-      "Service immédiat — aucun maintien en zone de danger"
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ],
     "montage": [
-      "Retirer de la friteuse à l'araignée ou à la pince dès coloration.",
-      "Déposer sur tôle garnie de papier brun.",
-      "Saupoudrer immédiatement du mélange sel & curry — produit encore chaud.",
-      "Dresser et envoyer sans attente — le croustillant se perd vite."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ],
     "checks": [
-      "Assaisonner à chaud, dès la sortie de friteuse",
-      "Papier brun obligatoire avant l'assaisonnement",
-      "Envoi immédiat après dressage"
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -3854,42 +3856,42 @@ const PLATS = [
     "sub": "Service friture · fiche 10 · Bitterballen",
     "icon": "🧆",
     "temp": "Friteuse 170°C · 74°C à cœur",
-    "temps": "Direct congelé",
+    "temps": "[SDC:DETAIL]",
     "mep": [
       {
         "item": "Boulettes panées congelées",
-        "detail": "Fiche technique 10 · -18°C · jamais décongelées",
+        "detail": "[SDC:DETAIL]",
         "ref": "R10",
         "critical": true
       },
       {
         "item": "Moutarde baseball au pickle",
-        "detail": "Accompagnement · format contenant À FIXER (A09)",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": false
       },
       {
         "item": "Sirop d'érable",
-        "detail": "Accompagnement · format contenant À FIXER (A09)",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": false
       }
     ],
     "cuisson": [
-      "Frire DIRECT congelé à 170 °C — panier non surchargé",
-      "Panure uniformément dorée · centre à 74 °C (contrôle sonde obligatoire)",
-      "Égoutter sur une grille — jamais sur papier au fond de l'assiette"
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ],
     "montage": [
-      "Frire les boulettes directement congelées à 170 °C.",
-      "Contrôler 74 °C à cœur à la sonde.",
-      "Égoutter sur grille.",
-      "Dresser et servir immédiatement avec moutarde baseball et sirop d'érable."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ],
     "checks": [
-      "74 °C à cœur avant l'envoi — contrôle sonde obligatoire",
-      "Service immédiat : le fromage doit être encore coulant",
-      "Nombre de pièces par portion : À FIXER — fiche A09"
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -3898,37 +3900,37 @@ const PLATS = [
     "sub": "Service beurre noisette · fiche 11",
     "icon": "🐟",
     "temp": "Friteuse 180°C · 74°C à cœur",
-    "temps": "3-4 min",
+    "temps": "[SDC:DETAIL]",
     "mep": [
       {
-        "item": "Beignets de flétan 25 g",
-        "detail": "Fiche technique 11 · pâte réfrigérée",
+        "item": "Beignets de flétan [SDC:QTE]",
+        "detail": "[SDC:DETAIL]",
         "ref": "R11",
         "critical": true
       },
       {
         "item": "Beurre noisette",
-        "detail": "En drizzle au moment de l'envoi · jamais à l'avance · jamais conservé tiède",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": true
       }
     ],
     "cuisson": [
-      "Friture 180 °C · 3 à 4 minutes",
-      "74 °C à cœur avant envoi (poisson déjà cuit puis réfrigéré = réchauffage)",
-      "Rappel : pochage initial du flétan 63 °C (fiche 11)"
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ],
     "montage": [
-      "Frire à 180 °C, 3-4 min — bien dorés, 74 °C à cœur.",
-      "Vérifier la température à la sonde avant l'envoi.",
-      "Égoutter sur grille.",
-      "Dresser les beignets encore chauds.",
-      "Terminer par un drizzle de beurre noisette au moment de l'envoi."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ],
     "checks": [
-      "74 °C à cœur — contrôle sonde avant envoi",
-      "Beurre noisette au dernier moment",
-      "Nombre de beignets par portion : À FIXER — fiche A09"
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -3937,71 +3939,71 @@ const PLATS = [
     "sub": "Montage sandwich · fiche 12",
     "icon": "🥖",
     "temp": "Froid · baguette grillée",
-    "temps": "Montage à l'unité",
+    "temps": "[SDC:DETAIL]",
     "mep": [
       {
         "item": "Pâté de foie",
-        "detail": "10 g",
+        "detail": "[SDC:DETAIL]",
         "ref": "R12",
         "critical": false
       },
       {
         "item": "Mayonnaise",
-        "detail": "15 g",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": false
       },
       {
         "item": "Giò lụa",
-        "detail": "50 g · tranché 2-3 mm",
+        "detail": "[SDC:DETAIL]",
         "ref": "R12",
         "critical": false
       },
       {
         "item": "Concombre",
-        "detail": "15-20 g",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": false
       },
       {
         "item": "Pickles carottes-daikon",
-        "detail": "20-25 g · égouttés TRÈS soigneusement",
+        "detail": "[SDC:DETAIL]",
         "ref": "R12",
         "critical": true
       },
       {
         "item": "Coriandre",
-        "detail": "2-3 g",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": false
       },
       {
         "item": "Piment",
-        "detail": "3-4 g · selon niveau de piquant",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": false
       },
       {
         "item": "Sauce Maggi ou soya",
-        "detail": "6-7 g",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": false
       }
     ],
     "cuisson": [
-      "Griller légèrement la baguette juste avant le montage — croûte croustillante",
-      "Aucune cuisson après assemblage : mains lavées / gants (M12)"
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ],
     "montage": [
-      "Griller la baguette.",
-      "Égoutter très soigneusement les pickles.",
-      "Monter DANS L'ORDRE : pâté → mayo → giò lụa → concombre → pickles → coriandre → piment → Maggi.",
-      "Refermer et envoyer."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ],
     "checks": [
-      "Ordre de montage intégral — conditionne la tenue du sandwich",
-      "Pickles mouillés = baguette détrempée",
-      "Baguette grillée juste avant montage"
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -4010,65 +4012,65 @@ const PLATS = [
     "sub": "Montage burger · fiches 21 + 05 + 01 + 04",
     "icon": "🍔",
     "temp": "Froid · égoutté minute",
-    "temps": "Au service",
+    "temps": "[SDC:DETAIL]",
     "mep": [
       {
         "item": "Pain brioché",
-        "detail": "85 g, grillé face intérieure",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": false
       },
       {
         "item": "Grillade de Valleyfield",
-        "detail": "150 g portionnés · fiche technique 21",
+        "detail": "[SDC:DETAIL]",
         "ref": "R21",
         "critical": true
       },
       {
         "item": "Pickliz haïtien égoutté",
-        "detail": "55 g par burger · fiche technique 05",
+        "detail": "[SDC:DETAIL]",
         "ref": "R05",
         "critical": false
       },
       {
         "item": "Cheddar râpé",
-        "detail": "30 g",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": false
       },
       {
         "item": "Mayo épis",
-        "detail": "18 g de mayonnaise montée avec 3 g d'épis haïtien · fiche 04",
+        "detail": "[SDC:DETAIL]",
         "ref": "R04",
         "critical": false
       },
       {
         "item": "Mesclun et tomate",
-        "detail": "15 g de mesclun, 20 g de tomate",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": false
       },
       {
         "item": "Frites et sauce bravas",
-        "detail": "180 g de frites, 60 g de sauce bravas · fiche technique 01",
+        "detail": "[SDC:DETAIL]",
         "ref": "R01",
         "critical": false
       }
     ],
     "cuisson": [
-      "Rendement : un batch de 4,6 kg ≈ 70-80 burgers selon égouttage"
+      "[SDC:ETAPE]"
     ],
     "montage": [
-      "Griller la face intérieure du pain.",
-      "Mayo épis sur les deux faces.",
-      "Grillade chaude, cheddar dessus, laisser fondre.",
-      "Pickliz égoutté sans presser, puis mesclun et tomate.",
-      "Refermer. Frites à côté, sauce bravas en ramequin."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ],
     "checks": [
-      "Grillade 150 g pesée",
-      "Pickliz 55 g égoutté, jamais dégoulinant",
-      "Sauce bravas servie à part, jamais sur les frites à l'avance"
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -4077,33 +4079,33 @@ const PLATS = [
     "sub": "Service en contenant · fiche 15",
     "icon": "🍮",
     "temp": "Froid · 0-4°C",
-    "temps": "Prise complète",
+    "temps": "[SDC:DETAIL]",
     "mep": [
       {
         "item": "Panna cotta",
-        "detail": "1 contenant de service · -90 g (2,75 kg / 30)",
+        "detail": "[SDC:DETAIL]",
         "ref": "R15",
         "critical": false
       },
       {
         "item": "Garniture finale",
-        "detail": "Chantilly (fiche 16), fruits, croquant — À FIXER (A09)",
+        "detail": "[SDC:DETAIL]",
         "ref": "R16",
         "critical": false
       }
     ],
     "cuisson": [
-      "Prise complète au froid obligatoire avant tout envoi"
+      "[SDC:ETAPE]"
     ],
     "montage": [
-      "Couler la préparation directement dans les contenants de service.",
-      "Réfrigérer jusqu'à prise complète.",
-      "Servir dans le contenant, bien froid."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ],
     "checks": [
-      "Prise complète obligatoire avant l'envoi",
-      "AUCUN safran — retiré de la recette",
-      "Remplissage régulier — visuel uniforme en salle"
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -4112,39 +4114,39 @@ const PLATS = [
     "sub": "Portionnement et service · fiche 14",
     "icon": "🍫",
     "temp": "Découpe à froid",
-    "temps": "Repos 4 h min",
+    "temps": "[SDC:DETAIL]",
     "mep": [
       {
         "item": "Insertion de gâteau",
-        "detail": "Fiche technique 14 · repos couvert 4 h min (idéalement une nuit)",
+        "detail": "[SDC:DETAIL]",
         "ref": "R14",
         "critical": true
       },
       {
         "item": "Portions",
-        "detail": "120 g nets · -60 par insertion · 120 par production",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": false
       },
       {
         "item": "Garniture finale",
-        "detail": "Chantilly (fiche 16), sauce, fruits — À FIXER (A09)",
+        "detail": "[SDC:DETAIL]",
         "ref": "R16",
         "critical": false
       }
     ],
     "cuisson": [
-      "Découpe à froid uniquement — le repos conditionne la netteté des parts"
+      "[SDC:ETAPE]"
     ],
     "montage": [
-      "Repos de l'insertion au réfrigérateur, couverte, 4 h min.",
-      "Portionner à froid en parts de 120 g — découpe nette.",
-      "Dresser les parts à l'assiette."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ],
     "checks": [
-      "Portions de 120 g : peser en début de service pour caler le geste",
-      "Centre légèrement humide mais pas liquide",
-      "Garniture finale : À FIXER — fiche A09"
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -4153,80 +4155,80 @@ const PLATS = [
     "sub": "Historique des décisions · fiche fermée",
     "icon": "📋",
     "temp": "—",
-    "temps": "À trancher",
+    "temps": "[SDC:DETAIL]",
     "mep": [
       {
         "item": "A03 · Boules à grand-pa",
-        "detail": "5 pièces par portion",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": false
       },
       {
         "item": "A03 · Accompagnements",
-        "detail": "moutarde baseball 30 ml et sirop d'érable 30 ml, contenants 2 oz",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": false
       },
       {
         "item": "A04 · Beignets de flétan",
-        "detail": "4 beignets de 25 g par portion",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": false
       },
       {
         "item": "A06 · Burger",
-        "detail": "pain brioché 85 g, grillade 150 g, pickliz 55 g, cheddar 30 g, mayo épis, frites et bravas",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": false
       },
       {
         "item": "A07 · Panna cotta",
-        "detail": "chantilly 25 g, petits fruits 30 g, amandes effilées 8 g",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": false
       },
       {
         "item": "A08 · Gâteau chocolat",
-        "detail": "chantilly 25 g, amandes effilées grillées 10 g",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": false
       },
       {
         "item": "Fiche 14 · Gâteau",
-        "detail": "120 portions de 120 g confirmées",
+        "detail": "[SDC:DETAIL]",
         "ref": "R14",
         "critical": false
       },
       {
         "item": "Fiche 10 · Boules",
-        "detail": "400 pièces confirmées",
+        "detail": "[SDC:DETAIL]",
         "ref": "R10",
         "critical": false
       },
       {
         "item": "Fiche 12 · Pickles",
-        "detail": "lot pour 100 portions, 50 % imputé aux 50 bánh mì",
+        "detail": "[SDC:DETAIL]",
         "ref": "R12",
         "critical": false
       },
       {
         "item": "Fiche 16 · Chantilly",
-        "detail": "siphon 1,5 L, 2 cartouches, rendement 1,1 kg",
+        "detail": "[SDC:DETAIL]",
         "ref": "R16",
         "critical": false
       }
     ],
     "cuisson": [],
     "montage": [
-      "Chaque ligne a été tranchée avec le chef et pesée au premier service.",
-      "Les grammages retenus sont reportés dans les fiches d'assemblage concernées.",
-      "Cette fiche devient l'historique des décisions de service.",
-      "Toute modification future repart d'ici et se répercute dans le food cost."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ],
     "checks": [
-      "Toutes les lignes fermées",
-      "Grammages reportés dans les fiches A01 à A15",
-      "Food cost recalculé sur les valeurs arrêtées"
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -4235,46 +4237,46 @@ const PLATS = [
     "sub": "Dressage par portion · fiche 08",
     "icon": "🍅",
     "temp": "Froid · 0-4°C",
-    "temps": "Dressage minute",
+    "temps": "[SDC:DETAIL]",
     "mep": [
       {
         "item": "Salmorejo",
-        "detail": "250 g par assiette · fiche technique 08",
+        "detail": "[SDC:DETAIL]",
         "ref": "R08",
         "critical": false
       },
       {
         "item": "Jambon cuit",
-        "detail": "25 g taillé en lardons",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": false
       },
       {
         "item": "Œuf dur",
-        "detail": "1/2 œuf par assiette · cuit 9 min, refroidi, daté",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": true
       },
       {
         "item": "Huile d'olive extra vierge",
-        "detail": "8 g en finition",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": false
       }
     ],
     "cuisson": [
-      "Aucune cuisson au service. Les œufs durs sont produits en MEP, refroidis à 4 °C en moins de 2 h (M01)."
+      "[SDC:ETAPE]"
     ],
     "montage": [
-      "Verser 250 g de salmorejo bien froid dans l'assiette creuse.",
-      "Répartir le jambon en lardons.",
-      "Poser le demi-œuf, face coupée vers le haut.",
-      "Terminer par un filet d'huile d'olive extra vierge."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ],
     "checks": [
-      "Grammage de référence : 250 g",
-      "Service à 4 °C maximum",
-      "Œufs durs datés, jamais gardés plus de 3 jours"
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -4283,34 +4285,34 @@ const PLATS = [
     "sub": "Service friture · fiches 20 + 03",
     "icon": "🍆",
     "temp": "Chaud · 74°C à cœur",
-    "temps": "3-4 min de friture",
+    "temps": "[SDC:DETAIL]",
     "mep": [
       {
         "item": "Appareil à beignets",
-        "detail": "3 beignets par portion · fiche technique 20",
+        "detail": "[SDC:DETAIL]",
         "ref": "R20",
         "critical": false
       },
       {
         "item": "Tzatziki",
-        "detail": "60 g en accompagnement · fiche technique 03",
+        "detail": "[SDC:DETAIL]",
         "ref": "R03",
         "critical": false
       }
     ],
     "cuisson": [
-      "Friture 180 °C, 3-4 min. Contrôler 74 °C à cœur à la sonde."
+      "[SDC:ETAPE]"
     ],
     "montage": [
-      "Portionner à la cuillère, 3 beignets par assiette.",
-      "Égoutter sur grille, jamais sur papier au fond de l'assiette.",
-      "Dresser le tzatziki à côté, en ramequin ou en quenelle.",
-      "Envoyer immédiatement."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ],
     "checks": [
-      "3 beignets par portion",
-      "74 °C à cœur vérifié à la sonde",
-      "Tzatziki 60 g, servi froid"
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -4319,53 +4321,53 @@ const PLATS = [
     "sub": "Grill · fiches 13 + 18 + 19",
     "icon": "🍢",
     "temp": "Chaud · 71°C à cœur",
-    "temps": "6-8 min au grill",
+    "temps": "[SDC:DETAIL]",
     "mep": [
       {
         "item": "Keftas d'agneau",
-        "detail": "3 pièces de 90 g · 270 g d'appareil · fiche technique 13",
+        "detail": "[SDC:DETAIL]",
         "ref": "R13",
         "critical": true
       },
       {
         "item": "Chimichurri",
-        "detail": "30 g en finition · fiche technique 18",
+        "detail": "[SDC:DETAIL]",
         "ref": "R18",
         "critical": false
       },
       {
         "item": "Bannique frite",
-        "detail": "2 galettes · fiche technique 19",
+        "detail": "[SDC:DETAIL]",
         "ref": "R19",
         "critical": false
       },
       {
         "item": "Mesclun",
-        "detail": "40 g, monté à l'huile d'olive au moment de l'envoi",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": false
       },
       {
         "item": "Sel kasher",
-        "detail": "Finition au passe, 0,5 g",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": false
       }
     ],
     "cuisson": [
-      "Grill bien chaud, marquer les faces. 71 °C à cœur à la sonde. Agneau haché : jamais servi saignant."
+      "[SDC:ETAPE]"
     ],
     "montage": [
-      "Dresser les 3 keftas.",
-      "Napper de chimichurri au moment de l'envoi, jamais à l'avance.",
-      "Poser les 2 galettes de bannique encore tièdes.",
-      "Monter le mesclun à côté.",
-      "Fleur de sel au passe."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ],
     "checks": [
-      "3 pièces de 90 g pesées",
-      "71 °C à cœur, agneau haché",
-      "Chimichurri ajouté à l'envoi seulement"
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -4374,41 +4376,41 @@ const PLATS = [
     "sub": "Service au chalumeau · fiche 17",
     "icon": "🍮",
     "temp": "Froid · 0-4°C, croûte tiède",
-    "temps": "Caramélisation minute",
+    "temps": "[SDC:DETAIL]",
     "mep": [
       {
         "item": "Appareil à crème brûlée",
-        "detail": "100 ml par portion · fiche technique 17",
+        "detail": "[SDC:DETAIL]",
         "ref": "R17",
         "critical": false
       },
       {
         "item": "Sucre à brûler",
-        "detail": "8 g, couche fine et régulière",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": false
       },
       {
         "item": "Petits fruits",
-        "detail": "25 g en accompagnement",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": false
       }
     ],
     "cuisson": [
-      "Cuisson au bain-marie en MEP. Au service, caramélisation au chalumeau uniquement."
+      "[SDC:ETAPE]"
     ],
     "montage": [
-      "Sortir le ramequin bien froid.",
-      "Sucre en couche fine et régulière, jamais en tas.",
-      "Chalumeau jusqu'à caramel ambré.",
-      "Laisser reposer 30 secondes, la croûte doit craquer.",
-      "Dresser les petits fruits à côté."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ],
     "checks": [
-      "Sucre 8 g, couche fine",
-      "Croûte croquante, appareil encore froid",
-      "Jamais caramélisé à l'avance"
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -4417,53 +4419,53 @@ const PLATS = [
     "sub": "Poêle · fiches 08 + 18",
     "icon": "🐟",
     "temp": "Chaud · 63°C à cœur",
-    "temps": "6-7 min",
+    "temps": "[SDC:DETAIL]",
     "mep": [
       {
         "item": "Flétan portionné",
-        "detail": "180 g par assiette · pesé et daté en MEP",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": true
       },
       {
         "item": "Salmorejo",
-        "detail": "120 g en fond d'assiette · fiche technique 08",
+        "detail": "[SDC:DETAIL]",
         "ref": "R08",
         "critical": false
       },
       {
         "item": "Chimichurri",
-        "detail": "25 g en finition · fiche technique 18",
+        "detail": "[SDC:DETAIL]",
         "ref": "R18",
         "critical": false
       },
       {
         "item": "Pommes de terre grelots",
-        "detail": "150 g, cuites et rissolées",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": false
       },
       {
         "item": "Beurre",
-        "detail": "15 g pour l'arrosage",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": false
       }
     ],
     "cuisson": [
-      "Poêle très chaude, peau ou face présentation en premier. Arroser au beurre. 63 °C à cœur à la sonde.",
-      "Le flétan est le produit le plus cher de la carte : aucune pièce ne part sans avoir été pesée."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ],
     "montage": [
-      "Fond de salmorejo froid dans l'assiette creuse.",
-      "Poser le flétan dessus, face colorée vers le haut.",
-      "Grelots rissolés à côté.",
-      "Trait de chimichurri au moment de l'envoi."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ],
     "checks": [
-      "Portion pesée à 180 g, sans exception",
-      "63 °C à cœur",
-      "Assiette sous suivi food cost renforcé"
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   },
   {
@@ -4472,53 +4474,53 @@ const PLATS = [
     "sub": "Sauté minute · fiches 21 + 22",
     "icon": "🍝",
     "temp": "Chaud · 74°C au service",
-    "temps": "Le temps des pâtes",
+    "temps": "[SDC:DETAIL]",
     "mep": [
       {
         "item": "Linguines",
-        "detail": "120 g secs par portion",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": false
       },
       {
         "item": "Grillade de Valleyfield",
-        "detail": "150 g portionnés · fiche technique 21",
+        "detail": "[SDC:DETAIL]",
         "ref": "R21",
         "critical": true
       },
       {
         "item": "Sauce crémeuse maison",
-        "detail": "180 g · fiche technique 22",
+        "detail": "[SDC:DETAIL]",
         "ref": "R22",
         "critical": false
       },
       {
         "item": "Parmesan râpé",
-        "detail": "15 g en finition",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": false
       },
       {
         "item": "Persil plat",
-        "detail": "2 g ciselé",
+        "detail": "[SDC:DETAIL]",
         "ref": "",
         "critical": false
       }
     ],
     "cuisson": [
-      "Pâtes al dente, eau bien salée. Grillade retaillée et réchauffée à la poêle, 74 °C.",
-      "Sauce réchauffée doucement, jamais rebouillie."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ],
     "montage": [
-      "Faire sauter la grillade retaillée.",
-      "Ajouter la sauce, détendre avec un peu d'eau de cuisson.",
-      "Lier les pâtes hors du feu.",
-      "Dresser en hauteur, parmesan et persil au dessus."
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ],
     "checks": [
-      "150 g de grillade pesés",
-      "Sauce jamais rebouillie",
-      "Le plat signature : dressage identique à chaque envoi"
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]",
+      "[SDC:ETAPE]"
     ]
   }
 ];
@@ -6388,17 +6390,7 @@ function osFindEntite(q, liste, nomKey, idKey) {
   });
   return bs >= 4 ? best : null;
 }
-const OS_TEMPS_RECETTES = {
-  R01: 'Réchauffage **74 °C** (ou 63 °C tenu 3 min) — une seule fois · maintien ≥ 60 °C',
-  R09: 'Friture **350 °F (175 °C)** — service immédiat',
-  R10: 'Friture **170 °C** direct congelé → **74 °C à cœur** (sonde obligatoire)',
-  R11: 'Pochage **63 °C** interne · friture au service **180 °C → 74 °C à cœur**',
-  R13: '**68 °C minimum** à cœur — viser 71 °C · sonde 15 secondes',
-  R14: 'Four 325 °F · cible **92-95 °C à cœur** · min légal 68 °C (œufs)',
-  R17: 'Bain-marie **325 °F** · 35 min + 10 si besoin — légère vague au centre',
-  R19: 'Surface **170-180 °C** · 2 min/côté · **90 °C interne**',
-  R20: 'Plaque **170-180 °C** · -2 min/côté — entièrement cuits'
-};
+const OS_TEMPS_RECETTES = {"R01": "[SDC:DETAIL]", "R09": "[SDC:DETAIL]", "R10": "[SDC:DETAIL]", "R11": "[SDC:DETAIL]", "R13": "[SDC:DETAIL]", "R14": "[SDC:DETAIL]", "R17": "[SDC:DETAIL]", "R19": "[SDC:DETAIL]", "R20": "[SDC:DETAIL]"};
 function osBlocRecette(r, corps) {
   let h = '<div class="ia-row"><strong>' + r.id + ' · ' + r.nom + '</strong></div>' + corps;
   h += '<div>' + iaLink('📖 Ouvrir la fiche', "closeIA();openRecette('" + r.id + "')");
@@ -6629,9 +6621,108 @@ const _origSelectRole = selectRole;
 
 
 // ===== SPRINT 1 : A09 v2 =====
-const A09_POINTS = [{"k": "a03_pieces", "fiche": "A03", "cr": "", "label": "Boules à grand-pa — pièces par portion", "unite": "pièces", "typ": "nombre", "crit": 1}, {"k": "a03_contenants", "fiche": "A03", "cr": "", "label": "Accompagnements — format des contenants (moutarde, sirop)", "unite": "", "typ": "texte", "crit": 1}, {"k": "a04_beignets", "fiche": "A04", "cr": "", "label": "Beignets de flétan — pièces par portion", "unite": "pièces", "typ": "nombre", "crit": 1}, {"k": "a06_burger", "fiche": "A06", "cr": "", "label": "Burger — pain, protéine et sauces (composition complète)", "unite": "", "typ": "texte", "crit": 1}, {"k": "a07_garniture", "fiche": "A07", "cr": "", "label": "Panna cotta — garniture finale (chantilly, fruits, croquant)", "unite": "", "typ": "texte", "crit": 1}, {"k": "a08_garniture", "fiche": "A08", "cr": "", "label": "Gâteau — garniture finale (chantilly, sauce, fruits)", "unite": "", "typ": "texte", "crit": 1}, {"k": "r14_rendement", "fiche": "A08", "cr": "R14", "label": "Gâteau — rendement réel constaté (base 120 portions)", "unite": "portions", "typ": "nombre", "crit": 0}, {"k": "r10_rendement", "fiche": "A03", "cr": "R10", "label": "Boules — rendement réel après assèchement (base 400)", "unite": "pièces", "typ": "nombre", "crit": 0}, {"k": "r12_pickles", "fiche": "A05", "cr": "R12", "label": "Pickles bánh mì — volume de production", "unite": "", "typ": "choix", "crit": 0, "choix": ["Produire pour 100 portions", "Diviser la recette par 2 (50 portions)"]}, {"k": "r16_siphon", "fiche": "A07", "cr": "R16", "label": "Chantilly — capacité du siphon", "unite": "", "typ": "choix", "crit": 0, "choix": ["Siphon de 1,5 L", "2 charges dans un siphon de 1 L"]}];
-function a09Load() { try { return JSON.parse(localStorage.getItem('coriandre_a09') || '{}'); } catch (e) { return {}; } }
-function a09Save(d) { localStorage.setItem('coriandre_a09', JSON.stringify(d)); }
+const A09_POINTS = [
+  {
+    "k": "a03_pieces",
+    "fiche": "A03",
+    "cr": "",
+    "label": "Boules à grand-pa — pièces par portion",
+    "unite": "pièces",
+    "typ": "nombre",
+    "crit": 1
+  },
+  {
+    "k": "a03_contenants",
+    "fiche": "A03",
+    "cr": "",
+    "label": "Accompagnements — format des contenants (moutarde, sirop)",
+    "unite": "",
+    "typ": "texte",
+    "crit": 1
+  },
+  {
+    "k": "a04_beignets",
+    "fiche": "A04",
+    "cr": "",
+    "label": "Beignets de flétan — pièces par portion",
+    "unite": "pièces",
+    "typ": "nombre",
+    "crit": 1
+  },
+  {
+    "k": "a06_burger",
+    "fiche": "A06",
+    "cr": "",
+    "label": "Burger — pain, protéine et sauces (composition complète)",
+    "unite": "",
+    "typ": "texte",
+    "crit": 1
+  },
+  {
+    "k": "a07_garniture",
+    "fiche": "A07",
+    "cr": "",
+    "label": "Panna cotta — garniture finale (chantilly, fruits, croquant)",
+    "unite": "",
+    "typ": "texte",
+    "crit": 1
+  },
+  {
+    "k": "a08_garniture",
+    "fiche": "A08",
+    "cr": "",
+    "label": "Gâteau — garniture finale (chantilly, sauce, fruits)",
+    "unite": "",
+    "typ": "texte",
+    "crit": 1
+  },
+  {
+    "k": "r14_rendement",
+    "fiche": "A08",
+    "cr": "R14",
+    "label": "Gâteau — rendement réel constaté (détail masqué)",
+    "unite": "portions",
+    "typ": "nombre",
+    "crit": 0
+  },
+  {
+    "k": "r10_rendement",
+    "fiche": "A03",
+    "cr": "R10",
+    "label": "Boules — rendement réel après assèchement (détail masqué)",
+    "unite": "pièces",
+    "typ": "nombre",
+    "crit": 0
+  },
+  {
+    "k": "r12_pickles",
+    "fiche": "A05",
+    "cr": "R12",
+    "label": "Pickles bánh mì — volume de production",
+    "unite": "",
+    "typ": "choix",
+    "crit": 0,
+    "choix": [
+      "Option de démonstration 1",
+      "Option de démonstration 2"
+    ]
+  },
+  {
+    "k": "r16_siphon",
+    "fiche": "A07",
+    "cr": "R16",
+    "label": "Chantilly — capacité du siphon",
+    "unite": "",
+    "typ": "choix",
+    "crit": 0,
+    "choix": [
+      "Option de démonstration 1",
+      "Option de démonstration 2"
+    ]
+  }
+];
+function a09Load() { try { return JSON.parse(localStorage.getItem('coriandre_a09_public_demo_v1') || '{}'); } catch (e) { return {}; } }
+function a09Save(d) { localStorage.setItem('coriandre_a09_public_demo_v1', JSON.stringify(d)); }
 function a09Toggle(k) {
   const f = document.getElementById('a09-form-' + k);
   const willOpen = !f.classList.contains('open');
@@ -7381,7 +7472,7 @@ const ME_SEUIL_POP = 40.0, ME_SEUIL_MARGE = 9.59;
 const ME_RESUME = {fc_pondere: 24.1, ca_semaine: 11995, marge_semaine: 8898, dans_cible: 12, total: 14};
 
 const MEP_NIVEAUX = [
-  {item:'Grillade de Valleyfield — portions 150 g', poste:'Chaud', niveau:18, cible:40, unite:'portions', gfs:'porc', cmd:2, ref:'R21'},
+  {item:'Grillade de Valleyfield — portions [SDC:QTE]', poste:'Chaud', niveau:18, cible:40, unite:'portions', gfs:'porc', cmd:2, ref:'R21'},
   {item:'Houmous — bacs de service',                poste:'Garde-manger', niveau:1, cible:4, unite:'bacs', gfs:'pois chiches', cmd:1, ref:'R06'},
   {item:'Pickliz — pots',                           poste:'Garde-manger', niveau:1, cible:3, unite:'pots', gfs:'chou', cmd:1, ref:'R05'},
   {item:'Sauce bravas',                             poste:'Chaud', niveau:3, cible:8, unite:'L', gfs:'tomate', cmd:1, ref:'R01'},
@@ -8913,5 +9004,61 @@ document.addEventListener('DOMContentLoaded', function(){ setTimeout(buildHorair
 <script id="sdc-goatcounter" data-goatcounter="https://os-coriandre.goatcounter.com/count"
         async src="https://gc.zgo.at/count.js" onload="window.sdcFlushAnalytics()"></script>
 <!-- /SDC GoatCounter -->
+
+<!-- SDC public recipe redaction: neutral placeholders only; no hidden recipe values. -->
+<style id="sdc-recipe-redaction-style">
+.sdc-recipe-note{padding:9px 12px;margin:0 0 12px;border-left:2px solid #8B5CF6;background:rgba(139,92,246,.065);color:#c4bbd6;font-size:11px;line-height:1.5;}
+.sdc-recipe-mask{display:inline-block;position:relative;vertical-align:baseline;min-width:4.5em;max-width:100%;line-height:1.5;user-select:none;-webkit-user-select:none;}
+.sdc-recipe-mask::before{content:'000 000 000';display:inline-block;filter:blur(4px);opacity:.65;letter-spacing:.05em;color:currentColor;}
+.sdc-recipe-mask[data-kind="ETAPE"]{display:block;width:min(100%,34em);min-height:2.3em;}
+.sdc-recipe-mask[data-kind="ETAPE"]::before{content:'Préparation et technique réservées à la cuisine.';max-width:100%;line-height:1.8;}
+.sdc-recipe-mask[data-kind="DETAIL"]::before{content:'Détail de préparation réservé';}
+.sdc-recipe-mask[data-kind="COUT"]::before{content:'00,00 $';}
+@media print{.sdc-recipe-mask::before{content:'[Donnée masquée — démo]'!important;filter:none!important;opacity:1!important;color:#333!important;letter-spacing:0!important;}}
+</style>
+<script id="sdc-recipe-redaction-ui">
+(function(){
+  'use strict';
+  var pattern=/\[SDC:(QTE|ETAPE|DETAIL|COUT)\]/g;
+  var labels={QTE:'Quantité masquée dans la démo',ETAPE:'Étape masquée dans la démo',DETAIL:'Détail masqué dans la démo',COUT:'Coût par ingrédient masqué dans la démo'};
+  function convert(root){
+    if(!root)return;
+    var list=[];
+    if(root.nodeType===3)list=[root];
+    else if(root.nodeType===1){
+      if(root.matches('script,style,textarea,input,option,.sdc-recipe-mask'))return;
+      var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),n;
+      while((n=w.nextNode()))list.push(n);
+    }
+    list.forEach(function(n){
+      var parent=n.parentElement;
+      if(!parent||parent.closest('script,style,textarea,input,option,.sdc-recipe-mask'))return;
+      var value=n.nodeValue;pattern.lastIndex=0;
+      if(!pattern.test(value))return;
+      pattern.lastIndex=0;
+      var f=document.createDocumentFragment(),last=0,m;
+      while((m=pattern.exec(value))){
+        f.appendChild(document.createTextNode(value.slice(last,m.index)));
+        var span=document.createElement('span');span.className='sdc-recipe-mask';
+        span.dataset.kind=m[1];span.setAttribute('role','img');
+        span.setAttribute('aria-label',labels[m[1]]);span.title=labels[m[1]];
+        f.appendChild(span);last=m.index+m[0].length;
+      }
+      f.appendChild(document.createTextNode(value.slice(last)));
+      parent.replaceChild(f,n);
+    });
+  }
+  function boot(){
+    convert(document.body);
+    new MutationObserver(function(records){records.forEach(function(r){
+      if(r.type==='characterData')convert(r.target);
+      else r.addedNodes.forEach(convert);
+    });}).observe(document.body,{childList:true,subtree:true,characterData:true});
+    window.addEventListener('beforeprint',function(){convert(document.body);});
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
+})();
+</script>
+
 </body>
 </html>
