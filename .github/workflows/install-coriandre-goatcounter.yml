@@ -9,9 +9,9 @@ jobs:
   install:
     if: github.repository == 'maximeleveuglesdc/os-coriandre'
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           ref: sdc/goatcounter-coriandre-20260922
       - name: Add tracker without changing existing application bytes
@@ -129,12 +129,11 @@ jobs:
       - name: Install browser test tools
         run: |
           python -m pip install --quiet playwright
-          python -m playwright install --with-deps chromium
+          python -m playwright install chromium
       - name: Verify navigation events and one labelled technical request
         shell: python
         run: |
           from pathlib import Path
-          from urllib.parse import urlsplit
           import json
           from playwright.sync_api import sync_playwright
           html = Path('index.html').read_text()
@@ -143,6 +142,7 @@ jobs:
           with sync_playwright() as pw:
               browser = pw.chromium.launch()
               page = browser.new_page()
+              page.on('pageerror', lambda error: print('PAGE_ERROR', str(error)))
               def route(r):
                   if r.request.resource_type == 'document':
                       r.fulfill(body=html, content_type='text/html')
@@ -152,7 +152,7 @@ jobs:
                       r.abort()
               page.route('**/*', route)
               page.goto('https://coriandre.structuredecuisine.ca/?utm_campaign=coriandre_avis&utm_source=facebook_groupes&email=must-not-leak&fbclid=must-not-leak')
-              page.wait_for_function('window.__gcHits && window.sdcFlushAnalytics')
+              page.wait_for_function('!!(window.__gcHits && window.sdcFlushAnalytics)')
               for js in ["selectRole('admin')", "showSection('sec-admin-foodcost')", "selectRole('cuisinier')", "showSection('sec-cuisinier-mapaq')"]:
                   page.evaluate(js)
                   page.wait_for_timeout(250)
@@ -169,7 +169,6 @@ jobs:
               assert 'must-not-leak' not in json.dumps(hits)
               assert len(paths) == len(set(paths))
               print('MOCKED_BROWSER_TESTS_PASSED', json.dumps(paths))
-              # Separate from user statistics: exactly one explicitly labelled technical event.
               script = page.request.get('https://gc.zgo.at/count.js')
               assert script.ok, script.status
               test = browser.new_page()
@@ -191,3 +190,38 @@ jobs:
           git add -- index.html
           git commit -m 'feat: connect Coriandre GoatCounter visits profiles modules and SDC contact clicks'
           git push origin HEAD:refs/heads/sdc/goatcounter-coriandre-20260922
+      - name: Verify live page after reviewed merge and Pages deployment
+        shell: python
+        run: |
+          import time, json
+          from urllib.request import Request, urlopen
+          from playwright.sync_api import sync_playwright
+          url = 'https://coriandre.structuredecuisine.ca/?sdc_build=goatcounter_20260922'
+          for attempt in range(48):
+              try:
+                  request = Request(url, headers={'Cache-Control':'no-cache'})
+                  with urlopen(request, timeout=15) as response:
+                      live = response.read().decode('utf-8')
+                  if 'id="sdc-goatcounter-events"' in live and 'https://os-coriandre.goatcounter.com/count' in live:
+                      print('LIVE_HTML_TRACKER_CONFIRMED', flush=True)
+                      break
+              except Exception as error:
+                  print('LIVE_WAIT', type(error).__name__, flush=True)
+              time.sleep(10)
+          else:
+              raise SystemExit('Live publication not yet confirmed; no claim of deployment success.')
+          with sync_playwright() as pw:
+              browser = pw.chromium.launch()
+              page = browser.new_page()
+              responses = []
+              page.on('response', lambda r: responses.append({'status':r.status}) if r.url.startswith('https://os-coriandre.goatcounter.com/count?') else None)
+              page.route('**/*', lambda r: r.abort() if r.request.resource_type in ['image','font','media'] and not r.request.url.startswith('https://os-coriandre.goatcounter.com/count?') else r.continue_())
+              page.goto('https://coriandre.structuredecuisine.ca/?utm_campaign=controle_installation&utm_source=test_technique', wait_until='domcontentloaded')
+              page.wait_for_function('!!(window.goatcounter && window.goatcounter.count && window.sdcFlushAnalytics)')
+              page.wait_for_timeout(3000)
+              info = page.evaluate('''() => ({endpoint:window.goatcounter.endpoint, filter:window.goatcounter.filter(), integrated:!!window.__sdcCoriandreAnalytics})''')
+              print('LIVE_BROWSER_STATE', json.dumps(info), flush=True)
+              print('LIVE_BROWSER_COUNT_RESPONSES', json.dumps(responses), flush=True)
+              assert info['integrated']
+              assert info['endpoint'] == 'https://os-coriandre.goatcounter.com/count'
+              browser.close()
