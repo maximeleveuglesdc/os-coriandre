@@ -8831,5 +8831,87 @@ document.addEventListener('DOMContentLoaded', function(){ setTimeout(buildHorair
 }
 </style>
 
+
+<!-- SDC GoatCounter — Coriandre only — 2026-09-22 -->
+<script id="sdc-goatcounter-events">
+(function () {
+  'use strict';
+  if (window.__sdcCoriandreAnalytics) return;
+  window.__sdcCoriandreAnalytics = true;
+  var gc = window.goatcounter = window.goatcounter || {};
+  // Keep only campaign tags; never send fbclid, email, searches or form data.
+  gc.path = function () {
+    var input = new URLSearchParams(location.search), output = new URLSearchParams();
+    ['utm_campaign', 'utm_source'].forEach(function (key) {
+      var value = input.get(key);
+      if (value && /^[a-z0-9_-]{1,80}$/i.test(value)) output.set(key, value);
+    });
+    return location.pathname + (output.toString() ? '?' + output.toString() : '');
+  };
+  gc.referrer = function () {
+    try { return document.referrer ? new URL(document.referrer).origin : ''; }
+    catch (_) { return ''; }
+  };
+  var pending = [], seen = Object.create(null);
+  function flush() {
+    if (!window.goatcounter || typeof window.goatcounter.count !== 'function') return;
+    pending.splice(0).forEach(function (item) {
+      try { window.goatcounter.count(item); } catch (_) { /* Analytics must never stop the demo. */ }
+    });
+  }
+  window.sdcFlushAnalytics = flush;
+  function record(path, title) {
+    if (seen[path]) return;
+    seen[path] = true;
+    if (pending.length < 50) pending.push({path: path, title: title, event: true});
+    flush();
+  }
+  var labels = {
+    accueil: 'Accueil', cockpit: 'Cockpit', dashboard: 'Tableau de bord',
+    foodcost: 'Food cost', achats: 'Achats', menu: 'Menu', equipe: 'Equipe',
+    commande: 'Commandes', contact: 'Contacts', horaires: 'Horaires',
+    taches: 'Taches', production: 'Production', recettes: 'Recettes',
+    assemblage: 'Assemblage', mep: 'Mise en place', mapaq: 'MAPAQ'
+  };
+  function navigation() {
+    var active = document.querySelector('.section.active');
+    if (!active || (!document.body.classList.contains('role-admin') &&
+                    !document.body.classList.contains('role-cuisinier'))) return;
+    var match = /^sec-(admin|cuisinier)-([a-z]+)$/.exec(active.id);
+    if (!match || !Object.prototype.hasOwnProperty.call(labels, match[2])) return;
+    var role = match[1] === 'admin' ? 'gestionnaire' : 'cuisinier';
+    record('profil-' + role, 'Espace ' + role);
+    record('section-' + role + '-' + match[2], role + ' - ' + labels[match[2]]);
+  }
+  function start() {
+    if (typeof MutationObserver !== 'undefined') {
+      var observer = new MutationObserver(navigation);
+      document.querySelectorAll('.section').forEach(function (section) {
+        observer.observe(section, {attributes: true, attributeFilter: ['class']});
+      });
+    }
+    document.addEventListener('click', function (event) {
+      var target = event.target;
+      var link = target && target.closest ? target.closest('a[href]') : null;
+      if (!link) return;
+      var href = (link.getAttribute('href') || '').trim();
+      if (/^tel:/i.test(href)) {
+        var digits = href.slice(4).replace(/\D/g, '');
+        if (digits === '8192667473' || digits === '18192667473')
+          record('contact-sdc-telephone', 'Clic sur le telephone SDC');
+      } else if (/^mailto:info@structuredecuisine\.ca(?:\?|$)/i.test(href)) {
+        record('contact-sdc-courriel', 'Clic sur le courriel SDC');
+      }
+    }, true);
+    navigation();
+    flush();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, {once: true});
+  else start();
+})();
+</script>
+<script id="sdc-goatcounter" data-goatcounter="https://os-coriandre.goatcounter.com/count"
+        async src="https://gc.zgo.at/count.js" onload="window.sdcFlushAnalytics()"></script>
+<!-- /SDC GoatCounter -->
 </body>
 </html>
