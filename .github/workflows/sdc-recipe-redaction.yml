@@ -16,6 +16,27 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           ref: sdc/recipe-demo-redaction-20260922
+      - name: Include duplicated recipe details in source redaction
+        shell: python
+        run: |
+          from pathlib import Path
+          p=Path('.github/sdc_redact_recipes.py')
+          s=p.read_text()
+          extra='''
+          # Redact duplicated technical prose outside the general MAPAQ module.
+          ma=s.index('<div class="section" id="sec-cuisinier-mapaq">')
+          mb=s.index('<div class="section"',ma+30)
+          left,safety,right=s[:ma],s[ma:mb],s[mb:]
+          for text in removed:
+              if len(text)<55:continue
+              variants={text,json.dumps(text,ensure_ascii=True)[1:-1],json.dumps(text,ensure_ascii=False)[1:-1]}
+              for v in variants:
+                  left=left.replace(v,D)
+                  right=right.replace(v,D)
+          s=left+safety+right
+          '''
+          s=s.replace('# Existing tracking and financial/catalogue data must remain byte-for-byte identical.',extra+'\n# Existing tracking and financial/catalogue data must remain byte-for-byte identical.')
+          p.write_text(s)
       - name: Mask only public recipe source and linked disclosures
         run: python .github/sdc_redact_recipes.py
       - name: Verify inline JavaScript syntax
