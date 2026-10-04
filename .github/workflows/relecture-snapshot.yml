@@ -1,0 +1,48 @@
+name: Coriandre review snapshot - no deployment
+on:
+  push:
+    branches: ['audit/cinq-points-20261004']
+    paths: ['.github/workflows/relecture-snapshot.yml']
+permissions: {}
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Capture public bytes and provenance
+        shell: python
+        run: |
+          import json,hashlib,re
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.parse import urljoin,urlsplit
+          out=Path('snapshot');out.mkdir()
+          commit='47d2c98ae44d26888bed1e8ab6a5e5a0cb6b8f17'
+          urls={'index-before.html':f'https://raw.githubusercontent.com/maximeleveuglesdc/os-coriandre/{commit}/index.html','index-live.html':'https://coriandre.structuredecuisine.ca/','site.html':'https://structuredecuisine.ca/','restaurant.html':'https://structuredecuisine.ca/restaurant'}
+          report={'source_commit':commit,'files':{}}
+          def capture(name,url):
+            try:
+              with urlopen(Request(url,headers={'User-Agent':'SDC-review-snapshot','Cache-Control':'no-cache'}),timeout=30) as r:
+                b=r.read(); final=r.geturl();status=r.status
+              (out/name).write_bytes(b)
+              report['files'][name]={'url':url,'final':final,'status':status,'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest(),'git_blob':hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()}
+              return b.decode('utf-8')
+            except Exception as e:report['files'][name]={'url':url,'error':str(e)};return ''
+          for n,u in urls.items():
+            t=capture(n,u)
+            if n=='site.html':
+              for path in re.findall(r'(?:src|href)=[\"\x27]([^\"\x27]+)[\"\x27]',t):
+                if '/sdc-static/assets/' in path and path.endswith('.js'):
+                  code=capture('site-main.js',urljoin(u,path))
+                  for module in set(re.findall(r'[^\"\x27/]*sectorPages-[^\"\x27/]+\.js',code)):
+                    if len(module)<120:capture('site-sector.js',urljoin(u,'/sdc-static/assets/'+module))
+          report['repo_equals_live']=((out/'index-before.html').read_bytes()==(out/'index-live.html').read_bytes()) if all((out/n).exists() for n in ['index-before.html','index-live.html']) else None
+          (out/'manifest.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
+          print(json.dumps(report,ensure_ascii=False,indent=2))
+          assert (out/'index-before.html').exists()
+      - name: Store review backup
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: coriandre-review-snapshot
+          path: snapshot/
+          retention-days: 7
