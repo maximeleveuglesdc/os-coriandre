@@ -685,7 +685,7 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
     <div id="login-citation" style="text-align:center;padding:4px 18px;font-size:13px;color:var(--muted);font-style:italic;line-height:1.65;"></div>
   </div>
 
-  <div style="width:100%;max-width:430px;margin-top:14px;background:rgba(232,80,10,.08);border:1px solid rgba(232,80,10,.3);border-radius:7px;padding:10px 13px;font-size:11px;color:#ffbb90;line-height:1.6;text-align:center;font-weight:600;">Version de démonstration. La Coriandre est un bistro fictif. Les fiches, les rendements et les prix fournisseurs sont réels et cohérents entre eux, le volume de ventes est celui d'une semaine de référence.</div>
+  <div style="width:100%;max-width:430px;margin-top:14px;background:rgba(232,80,10,.08);border:1px solid rgba(232,80,10,.3);border-radius:7px;padding:10px 13px;font-size:11px;color:#ffbb90;line-height:1.6;text-align:center;font-weight:600;">Version de démonstration. La Coriandre est un bistro fictif. Les recettes, rendements et prix présentés servent de références pour ce scénario de démonstration; les ventes et indicateurs ne représentent pas l’activité d’un établissement réel. En implantation, le suivi repose sur vos données vérifiées.</div>
 
   <div class="role-footer">
     <span style="color:rgba(232,80,10,.6);font-weight:900;">SDC</span> · structuredecuisine.ca · Maxime Leveugle
@@ -708,10 +708,10 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
   <div style="text-align:center;padding:22px 0 8px;">
     <div style="font-size:40px;margin-bottom:8px;">📊</div>
     <div style="font-size:20px;font-weight:900;color:var(--text);">Espace Gestionnaire</div>
-    <div style="font-size:11.5px;color:var(--orange);font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-top:5px;">Il s'active avec vos données réelles</div>
+    <div style="font-size:11.5px;color:var(--orange);font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-top:5px;">Démonstration · suivi réel avec vos données</div>
   </div>
 
-  <div class="info-box" style="margin-bottom:14px;line-height:1.75;">Ici, <strong>aucune donnée fictive</strong>. Dans cette démonstration, l'espace Gestionnaire reste fermé volontairement : le tableau de bord, les food costs et les marges se construisent uniquement avec les chiffres réels de votre établissement — vos prix, vos factures, vos horaires. C'est un principe SDC : <strong>pas de données, pas d'écran</strong>. Un gestionnaire prend ses décisions sur des chiffres vrais, jamais sur des chiffres inventés.</div>
+  <div class="info-box" style="margin-bottom:14px;line-height:1.75;">L’espace Gestionnaire présente un <strong>scénario de démonstration</strong> pour découvrir les tableaux de bord, les coûts et les marges. Lors de l’implantation dans votre établissement, ces indicateurs reposent sur <strong>vos données réelles, vérifiées</strong> : prix, factures, ventes, inventaires et horaires.</div>
 
   <div class="s-header" style="margin-top:18px;">Ce qui s'active à l'implantation</div>
   <div class="card">
@@ -819,7 +819,7 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
 
     <div class="s-header">Food cost — Semaine de référence</div>
     <div class="grid2">
-      <div class="stat-box"><div class="stat-num green">25,8 %</div><div class="stat-label">FC pondéré réel</div></div>
+      <div class="stat-box"><div class="stat-num green">25,8 %</div><div class="stat-label">FC pondéré · démo</div></div>
       <div class="stat-box"><div class="stat-num green">74,2 %</div><div class="stat-label">Marge brute</div></div>
     </div>
     <div class="grid3">
@@ -917,17 +917,15 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
     <div class="mapaq-crit" style="background:rgba(232,80,10,.10);border-color:rgba(232,80,10,.35);">
       <div class="mapaq-crit-title" style="color:var(--col-admin);">💰 Food cost — La Coriandre</div>
       <div class="mapaq-crit-body" style="color:var(--text-sub);">Chaque coût affiché ici est calculé au gramme
-      à partir des 136 articles de la pricelist et des 22 fiches du classeur. Les grammages et le détail par ingrédient sont masqués dans cette démo :
-      les indicateurs de démonstration restent consultables.</div>
+      à partir des 136 articles de la pricelist et des 22 fiches du classeur. Cette vue financière n’affiche pas le détail du calcul par ingrédient. Les quantités des recettes et certains grammages restent accessibles dans les espaces cuisine et assistant.</div>
     </div>
 
     <div class="grid3">
-      <div class="stat-box"><div class="stat-num green">25,8 %</div><div class="stat-label">FC pondéré réel</div></div>
+      <div class="stat-box"><div class="stat-num green">25,8 %</div><div class="stat-label">FC pondéré · démo</div></div>
       <div class="stat-box"><div class="stat-num green">24,1 %</div><div class="stat-label">FC théorique</div></div>
       <div class="stat-box"><div class="stat-num">30 %</div><div class="stat-label">Cible SDC</div></div>
     </div>
-    <div class="info-box">Le food cost théorique sort des fiches. Le food cost réel ajoute 7,0 % : parage hors fiche,
-    casse et retours, repas d'employés, écarts d'inventaire. C'est le second qui paie les factures.</div>
+    <div class="info-box">Le food cost théorique est calculé à partir des fiches. Dans ce scénario, le coût modélisé applique une majoration de 7,0 % au coût théorique pour illustrer les pertes et écarts possibles. Cette hypothèse n’est pas une mesure des pertes constatées; en implantation, le suivi utilise les données vérifiées de l’établissement.</div>
 
     <div class="s-header">Food cost par assiette</div>
     <div style="display:flex;justify-content:space-between;font-size:9px;font-weight:900;letter-spacing:.1em;
@@ -1602,6 +1600,7 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
   <div class="section" id="sec-cuisinier-mapaq">
 
     <div class="s-header">MAPAQ — Hygiène &amp; salubrité</div>
+    <div class="info-box" style="line-height:1.7;">Les fiches R01–R03 et M01–M16 sont des aide-mémoires SDC, distincts des publications officielles. Sources consultées le 4 octobre 2026 : <a href="https://www.quebec.ca/sante/alimentation/salubrite-aliments-prevention-risques/etablissements-alimentaires/approche-5m/methode" target="_blank" rel="noopener noreferrer">Méthode — établissements alimentaires (Québec)</a> et <a href="https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/agriculture-pecheries-alimentation/alimentation/salubrite/GM_manipulateur_MAPAQ.pdf" target="_blank" rel="noopener noreferrer">Guide des bonnes pratiques d’hygiène et de salubrité alimentaires (MAPAQ)</a>. Les repères de refroidissement et de réchauffage ont été rapprochés de ces sources; les consignes propres aux recettes nécessitent une validation adaptée aux produits et procédés. Ces aide-mémoires ne constituent pas une certification de conformité.</div>
     <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;align-items:center;"><span style="font-size:10px;color:var(--muted);font-weight:700;margin-right:2px;">NIVEAUX :</span><span class="tag tag-info">Référence</span><span class="tag tag-orange">Contrôle obligatoire</span><span class="tag tag-red">Danger · blocage</span><span class="tag tag-green">Conforme · stable</span></div>
 
     <div class="s-header" id="reg-titre">Registre du jour — vivant</div>
@@ -6277,7 +6276,8 @@ A08 Gâteau chocolat noir 70 % | Portionnement et service · fiche 14
 Grammages clés: houmous 150 g/entrée · pickliz burger 50-60 g (-55 g) · bánh mì: pâté 10 g, mayo 15 g, giò lụa 50 g, pickles 20-25 g égouttés · panna cotta -90 g · gâteau 120 g/part.
 Ordre bánh mì: pâté → mayo → giò lụa → concombre → pickles → coriandre → piment → Maggi.
 
-=== MAPAQ — CLASSEUR 3 (R01-R03, M01-M16) ===
+=== AIDE-MÉMOIRES SDC — CLASSEUR 3 (R01-R03, M01-M16) ===
+Références officielles : Guide des bonnes pratiques MAPAQ et page Québec « Méthode — établissements alimentaires », consultés le 2026-10-04. Les consignes du menu sont des repères internes à valider selon le produit et le procédé; ne pas les présenter comme des prescriptions officielles universelles.
 Frigo 0-4°C · Congélateur -18°C · Zone de danger 4-60°C (APD: max 2 h cumulées) · Maintien chaud ≥60°C.
 Refroidissement: 60→21°C en <2 h puis 4°C en <6 h total. Réchauffage: 74°C ou 63°C/3 min, une seule fois. Décongélation: jamais à T° ambiante.
 Cuissons menu: flétan poché 63°C · beignet frit au service 74°C · keftas (viande hachée) 68°C · gâteau (œufs) 68°C min, cible 92-95°C · boules à grand-pa (volaille) 74°C direct congelé 170°C.
