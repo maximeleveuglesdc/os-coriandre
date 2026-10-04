@@ -1,0 +1,27 @@
+name: Coriandre five-point review - browser tests only
+on:
+  push:
+    branches: ['audit/cinq-points-20261004']
+    paths: ['.github/workflows/cinq-points-browser.yml', 'review/run_review.py', 'review/cinq-points.patch.zlib.b64']
+permissions: {}
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Prepare browser
+        run: |
+          python -m pip install --quiet playwright
+          python -m playwright install chromium
+      - name: Run review without deployment
+        run: |
+          curl --fail --silent --show-error --retry 2 'https://raw.githubusercontent.com/maximeleveuglesdc/os-coriandre/audit/cinq-points-20261004/review/run_review.py' -o run_review.py
+          python run_review.py
+      - name: Keep candidate, checks and screenshots for human review
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: coriandre-five-point-review
+          path: review-output/
+          retention-days: 7
+          if-no-files-found: warn
