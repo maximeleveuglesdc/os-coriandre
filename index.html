@@ -637,6 +637,32 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
 @media(max-width:699px){#login-heure{font-size:34px!important;}}
 
 .role-cards{margin-top:24px;}
+
+/* Demande SDC, disponible depuis le choix de rôle et la démonstration. */
+.sdc-lead-entry{display:inline-flex;align-items:center;justify-content:center;min-height:46px;margin-top:18px;padding:11px 18px;border:1px solid var(--orange);border-radius:999px;background:var(--orange);color:#fff;font-family:inherit;font-size:13px;font-weight:800;line-height:1.3;cursor:pointer;text-align:center;box-shadow:0 10px 28px rgba(232,80,10,.22);}
+.sdc-lead-entry:hover,.sdc-lead-float:hover{background:#c94408;}
+.sdc-lead-float{position:fixed;right:12px;bottom:84px;z-index:125;display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:11px 15px;border:1px solid var(--orange);border-radius:999px;background:var(--orange);color:#fff;font-family:inherit;font-size:12px;font-weight:800;line-height:1.3;cursor:pointer;box-shadow:0 8px 25px #0008;}
+.sdc-lead-overlay{position:fixed;inset:0;z-index:10010;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.82);}
+.sdc-lead-overlay.open{display:flex;}
+.sdc-lead-panel{position:relative;width:min(100%,560px);max-height:calc(100dvh - 32px);overflow-y:auto;border:1px solid #ffffff24;border-radius:22px;background:#191919;padding:28px;box-shadow:0 30px 80px #000b;user-select:text;-webkit-user-select:text;}
+.sdc-lead-close{position:absolute;top:15px;right:15px;width:42px;height:42px;border:1px solid #ffffff30;border-radius:50%;background:#2a2a2a;color:#fff;font-family:inherit;font-size:22px;font-weight:700;line-height:1;cursor:pointer;}
+.sdc-lead-kicker{margin:0 48px 8px 0;color:#ff9a68;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;}
+.sdc-lead-panel h2{margin:0 48px 8px 0;font-size:27px;line-height:1.15;}
+.sdc-lead-panel p{color:#d1d1d1;font-size:13px;line-height:1.55;}
+.sdc-lead-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px;}
+.sdc-lead-panel label{display:block;color:#e2e2e2;font-size:12px;font-weight:700;}
+.sdc-lead-panel input,.sdc-lead-panel textarea{display:block;width:100%;min-height:44px;margin-top:6px;padding:10px 12px;border:1px solid #ffffff35;border-radius:10px;background:#292929;color:#fff;font-family:inherit;font-size:14px;font-weight:500;line-height:1.4;user-select:text;-webkit-user-select:text;}
+.sdc-lead-panel textarea{min-height:100px;resize:vertical;}
+.sdc-lead-wide{margin-top:13px;}
+.sdc-lead-panel input:focus,.sdc-lead-panel textarea:focus{outline:2px solid var(--orange);outline-offset:1px;}
+.sdc-lead-submit{display:block;width:100%;min-height:48px;margin-top:18px;border:0;border-radius:999px;background:var(--orange);color:#fff;font-family:inherit;font-size:14px;font-weight:800;line-height:1.3;cursor:pointer;}
+.sdc-lead-submit:disabled{opacity:.65;cursor:wait;}
+.sdc-lead-status{min-height:20px;margin-top:12px!important;}
+.sdc-lead-status.error{color:#ff9f95!important;}
+.sdc-lead-direct{margin-top:15px!important;font-size:12px!important;}
+.sdc-lead-direct a,.sdc-lead-privacy a{color:#ff9a68;}
+.sdc-lead-privacy{margin-top:12px!important;font-size:11px!important;}
+@media(max-width:560px){.sdc-lead-grid{grid-template-columns:1fr;}.sdc-lead-panel{padding:22px 18px;}.sdc-lead-panel h2{font-size:23px;}}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -681,6 +707,8 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
     </div>
   </div>
 
+  <button type="button" class="sdc-lead-entry" onclick="openSdcLead()">Parler de ma cuisine · appel gratuit 30 min</button>
+
   <div style="width:100%;max-width:430px;margin-top:18px;opacity:0;animation:fadeUp .5s .35s ease forwards;">
     <div id="login-citation" style="text-align:center;padding:4px 18px;font-size:13px;color:var(--muted);font-style:italic;line-height:1.65;"></div>
   </div>
@@ -692,6 +720,29 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
   </div></div>
 
 <!-- APP PRINCIPALE -->
+<button type="button" class="sdc-lead-float" onclick="openSdcLead()">📞 Parler à SDC</button>
+<div class="sdc-lead-overlay" id="sdc-lead-overlay" role="dialog" aria-modal="true" aria-labelledby="sdc-lead-title" onclick="if(event.target===this)closeSdcLead()">
+  <div class="sdc-lead-panel">
+    <button type="button" class="sdc-lead-close" aria-label="Fermer le formulaire" onclick="closeSdcLead()">×</button>
+    <div class="sdc-lead-kicker">Structure de Cuisine · appel découverte gratuit</div>
+    <h2 id="sdc-lead-title">Parlez-nous de votre cuisine.</h2>
+    <p>Décrivez votre projet ou votre blocage. Nous vous contacterons pour convenir d’un appel de 30 minutes.</p>
+    <form id="sdc-lead-form">
+      <div class="sdc-lead-grid">
+        <label>Votre nom *<input name="name" autocomplete="name" required></label>
+        <label>Votre courriel *<input name="email" type="email" autocomplete="email" required></label>
+        <label>Téléphone<input name="phone" type="tel" autocomplete="tel"></label>
+        <label>Établissement<input name="organization" autocomplete="organization"></label>
+      </div>
+      <label class="sdc-lead-wide">Qu’aimeriez-vous structurer? *<textarea name="message" required placeholder="Décrivez le projet, le blocage ou l’ouverture…"></textarea></label>
+      <label class="sdc-lead-wide">Moment souhaité pour un appel de 30 minutes (facultatif)<input name="preferredTime" placeholder="Ex. mardi après-midi, heure du Québec"></label>
+      <p class="sdc-lead-privacy">Ces renseignements servent à traiter votre demande. <a href="https://structuredecuisine.ca/confidentialite" target="_blank" rel="noopener noreferrer">Politique de confidentialité</a>.</p>
+      <button class="sdc-lead-submit" type="submit">Transmettre à l’équipe SDC</button>
+      <p id="sdc-lead-status" class="sdc-lead-status" role="status" aria-live="polite"></p>
+    </form>
+    <p class="sdc-lead-direct">Contact direct : <a href="tel:+18192667473">819-266-7473</a> · <a href="mailto:info@structuredecuisine.ca">info@structuredecuisine.ca</a></p>
+  </div>
+</div>
 <div class="search-overlay" id="search-overlay">
   <div class="search-box">
     <div style="display:flex;gap:10px;align-items:center;">
@@ -9060,5 +9111,64 @@ document.addEventListener('DOMContentLoaded', function(){ setTimeout(buildHorair
 })();
 </script>
 
+<script id="sdc-lead-form-script">
+(function(){
+  'use strict';
+  var overlay=document.getElementById('sdc-lead-overlay');
+  var form=document.getElementById('sdc-lead-form');
+  var status=document.getElementById('sdc-lead-status');
+  var submit=form.querySelector('button[type="submit"]');
+  var previousFocus=null;
+  window.openSdcLead=function(){
+    previousFocus=document.activeElement;
+    overlay.classList.add('open');
+    form.querySelector('[name="name"]').focus();
+  };
+  window.closeSdcLead=function(){
+    overlay.classList.remove('open');
+    if(previousFocus&&previousFocus.focus)previousFocus.focus();
+  };
+  document.addEventListener('keydown',function(event){
+    if(event.key==='Escape'&&overlay.classList.contains('open'))window.closeSdcLead();
+  });
+  form.addEventListener('submit',async function(event){
+    event.preventDefault();
+    status.textContent='Transmission en cours…';
+    status.classList.remove('error');
+    submit.disabled=true;
+    var data=new FormData(form);
+    try{
+      var response=await fetch('https://formsubmit.co/ajax/info@structuredecuisine.ca',{
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify({
+          name:String(data.get('name')||'').trim(),
+          email:String(data.get('email')||'').trim(),
+          phone:String(data.get('phone')||'').trim(),
+          organization:String(data.get('organization')||'').trim(),
+          message:String(data.get('message')||'').trim(),
+          preferred_time:String(data.get('preferredTime')||'').trim(),
+          source:'Démo Coriandre — demande de contact / rendez-vous',
+          _subject:'Demande de contact / rendez-vous — Démo Coriandre',
+          _template:'table',
+          _captcha:'false',
+          _honey:'',
+          _url:location.href
+        })
+      });
+      var result=await response.json().catch(function(){return null;});
+      if(!response.ok||!result||(result.success!==true&&result.success!=='true'))throw new Error('Transmission non confirmée');
+      form.reset();
+      status.textContent='Merci. Votre demande a été transmise. Nous vous contacterons pour confirmer l’heure de l’appel.';
+    }catch(error){
+      console.error('SDC lead form failed',error);
+      status.textContent='La transmission n’a pas été confirmée. Réessayez ou contactez-nous directement ci-dessous.';
+      status.classList.add('error');
+    }finally{
+      submit.disabled=false;
+    }
+  });
+})();
+</script>
 </body>
 </html>
