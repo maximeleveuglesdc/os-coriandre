@@ -657,6 +657,11 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
 .sdc-lead-panel input:focus,.sdc-lead-panel textarea:focus{outline:2px solid var(--orange);outline-offset:1px;}
 .sdc-lead-submit{display:block;width:100%;min-height:48px;margin-top:18px;border:0;border-radius:999px;background:var(--orange);color:#fff;font-family:inherit;font-size:14px;font-weight:800;line-height:1.3;cursor:pointer;}
 .sdc-lead-submit:disabled{opacity:.65;cursor:wait;}
+.sdc-booking-link{display:flex;align-items:center;justify-content:center;min-height:48px;margin:17px 0 9px;padding:11px 16px;border-radius:999px;background:var(--orange);color:#fff!important;font-size:13px;font-weight:800;text-align:center;text-decoration:none;}
+.sdc-booking-link:hover{background:#c94408;}
+.sdc-booking-details{margin:12px 0 22px;border:1px solid #ffffff35;border-radius:12px;background:#242424;overflow:hidden;}
+.sdc-booking-details summary{padding:13px 15px;color:#fff;font-size:12px;font-weight:800;cursor:pointer;}
+.sdc-booking-details iframe{display:block;width:100%;height:620px;border:0;background:#fff;}
 .sdc-lead-status{min-height:20px;margin-top:12px!important;}
 .sdc-lead-status.error{color:#ff9f95!important;}
 .sdc-lead-direct{margin-top:15px!important;font-size:12px!important;}
@@ -726,7 +731,13 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
     <button type="button" class="sdc-lead-close" aria-label="Fermer le formulaire" onclick="closeSdcLead()">×</button>
     <div class="sdc-lead-kicker">Structure de Cuisine · appel découverte gratuit</div>
     <h2 id="sdc-lead-title">Parlez-nous de votre cuisine.</h2>
-    <p>Décrivez votre projet ou votre blocage. Nous vous contacterons pour convenir d’un appel de 30 minutes.</p>
+    <p>Choisissez un créneau libre de 30 minutes dans notre agenda, 7 jours sur 7 de 6 h à 22 h (heure du Québec), ou décrivez votre projet ci-dessous.</p>
+    <a class="sdc-booking-link" href="https://calendar.app.google/C6T8ht7aV2FZx1hf7" target="_blank" rel="noopener noreferrer">📅 Réserver un appel de 30 minutes</a>
+    <details class="sdc-booking-details">
+      <summary>Voir les dates et heures disponibles ici</summary>
+      <iframe title="Réserver un appel avec Structure de Cuisine" src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3_3-YktV9Ux2OE0r7LwFwhdB6bPHs3m_5uNzH-5RT-5CffRZ68KLWYLWkcyzopp2jbsliRIJeL?gv=true" loading="lazy"></iframe>
+    </details>
+    <p>Vous préférez nous écrire ?</p>
     <form id="sdc-lead-form">
       <div class="sdc-lead-grid">
         <label>Votre nom *<input name="name" autocomplete="name" required></label>
@@ -735,7 +746,6 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
         <label>Établissement<input name="organization" autocomplete="organization"></label>
       </div>
       <label class="sdc-lead-wide">Qu’aimeriez-vous structurer? *<textarea name="message" required placeholder="Décrivez le projet, le blocage ou l’ouverture…"></textarea></label>
-      <label class="sdc-lead-wide">Moment souhaité pour un appel de 30 minutes (facultatif)<input name="preferredTime" placeholder="Ex. mardi après-midi, heure du Québec"></label>
       <p class="sdc-lead-privacy">Ces renseignements servent à traiter votre demande. <a href="https://structuredecuisine.ca/confidentialite" target="_blank" rel="noopener noreferrer">Politique de confidentialité</a>.</p>
       <button class="sdc-lead-submit" type="submit">Transmettre à l’équipe SDC</button>
       <p id="sdc-lead-status" class="sdc-lead-status" role="status" aria-live="polite"></p>
@@ -9159,7 +9169,7 @@ document.addEventListener('DOMContentLoaded', function(){ setTimeout(buildHorair
       var result=await response.json().catch(function(){return null;});
       if(!response.ok||!result||(result.success!==true&&result.success!=='true'))throw new Error('Transmission non confirmée');
       form.reset();
-      status.textContent='Merci. Votre demande a été transmise. Nous vous contacterons pour confirmer l’heure de l’appel.';
+      status.textContent='Merci. Votre demande a été transmise. Nous vous répondrons par courriel. Pour choisir un horaire, utilisez la réservation en direct ci-dessus.';
     }catch(error){
       console.error('SDC lead form failed',error);
       status.textContent='La transmission n’a pas été confirmée. Réessayez ou contactez-nous directement ci-dessous.';
