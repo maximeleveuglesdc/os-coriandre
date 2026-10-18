@@ -672,6 +672,24 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+
+/* Liens SDC intégrés à la page : aucune commande flottante. */
+.sdc-crossnav{display:flex;align-items:center;gap:8px;width:100%;min-height:52px;padding:5px 10px;box-sizing:border-box;background:#171b20;border-bottom:1px solid #ffffff26}
+.sdc-crossnav a{display:flex;align-items:center;justify-content:center;flex:1;min-width:0;min-height:40px;padding:6px 8px;box-sizing:border-box;border-radius:8px;font:800 12px/1.2 system-ui,sans-serif;text-align:center;text-decoration:none;color:#fff}
+.sdc-crossnav-booking{background:#e8500a}
+.sdc-crossnav-home{background:#323b44;border:1px solid #ffffff55}
+.sdc-crossnav a:focus-visible{outline:3px solid #fff;outline-offset:2px}
+@media(max-width:370px){.sdc-crossnav a{font-size:11px;padding:5px}}
+
+.sdc-role-links{display:flex;gap:8px;width:100%;max-width:430px;margin-top:14px;opacity:0;animation:fadeUp .5s .35s ease forwards}
+.sdc-role-links a{display:flex;align-items:center;justify-content:center;flex:1;min-width:0;min-height:44px;padding:8px;box-sizing:border-box;border-radius:9px;text-align:center;text-decoration:none;color:#fff;font:800 12px/1.2 system-ui,sans-serif}
+.sdc-role-booking{background:#e8500a}.sdc-role-home{background:#303030;border:1px solid #ffffff55}
+#main-app>.topbar{position:relative}
+#main-app>.sdc-crossnav{position:sticky;top:0;z-index:101;background:#1c1c1c}
+#role-selector{overflow-y:auto;overflow-x:hidden;justify-content:safe center}
+
+</style>
 </head>
 <body>
 
@@ -712,7 +730,11 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
     </div>
   </div>
 
-  <button type="button" class="sdc-lead-entry" onclick="openSdcLead()">Parler de ma cuisine · appel gratuit 30 min</button>
+<nav class="sdc-role-links" aria-label="Liens Structure de Cuisine">
+  <a class="sdc-role-booking" href="https://calendar.app.google/C6T8ht7aV2FZx1hf7" target="_blank" rel="noopener noreferrer">Prendre rendez-vous · 30 min</a>
+  <a class="sdc-role-home" href="https://structuredecuisine.ca/">Accueil SDC</a>
+</nav>
+  <button type="button" class="sdc-lead-entry" onclick="openSdcLead()">Écrire à SDC</button>
 
   <div style="width:100%;max-width:430px;margin-top:18px;opacity:0;animation:fadeUp .5s .35s ease forwards;">
     <div id="login-citation" style="text-align:center;padding:4px 18px;font-size:13px;color:var(--muted);font-style:italic;line-height:1.65;"></div>
@@ -725,7 +747,6 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
   </div></div>
 
 <!-- APP PRINCIPALE -->
-<button type="button" class="sdc-lead-float" onclick="openSdcLead()">📞 Parler à SDC</button>
 <div class="sdc-lead-overlay" id="sdc-lead-overlay" role="dialog" aria-modal="true" aria-labelledby="sdc-lead-title" onclick="if(event.target===this)closeSdcLead()">
   <div class="sdc-lead-panel">
     <button type="button" class="sdc-lead-close" aria-label="Fermer le formulaire" onclick="closeSdcLead()">×</button>
@@ -809,6 +830,10 @@ nav{padding-bottom:env(safe-area-inset-bottom);}
       <span id="topbar-clock" style="font-size:13px;font-weight:800;color:var(--text-sub);letter-spacing:.02em;margin-right:10px;font-variant-numeric:tabular-nums;"></span><button class="btn-switch" onclick="openSearch()" style="margin-right:6px;">🔍</button><button class="btn-switch" onclick="switchRole()">⇄ Rôle</button>
     </div>
   </div>
+<nav class="sdc-crossnav" aria-label="Liens Structure de Cuisine">
+  <a class="sdc-crossnav-booking" href="https://calendar.app.google/C6T8ht7aV2FZx1hf7" target="_blank" rel="noopener noreferrer">Prendre rendez-vous · 30 min</a>
+  <a class="sdc-crossnav-home" href="https://structuredecuisine.ca/">Accueil SDC</a>
+</nav>
   <div id="sdc-watermark" style="position:fixed;bottom:72px;right:12px;z-index:98;opacity:0.07;pointer-events:none;">
       </div>
 
